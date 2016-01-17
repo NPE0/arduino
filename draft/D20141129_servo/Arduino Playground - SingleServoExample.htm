@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!--html5-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  	<meta charset="utf-8" />
+
+	<title>Arduino Playground - SingleServoExample </title>
+	<link rel="shortcut icon" type="image/x-icon" href="http://playground.arduino.cc/favicon.png" />
+
+	<link rel="stylesheet" href="http://arduino.cc/fonts/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="http://arduino.cc/css/arduino-icons.css">
+	<link rel="stylesheet" href="http://arduino.cc/css/animation.css"><!--[if IE 7]>
+	<link rel="stylesheet" href="http://arduino.cc/css/arduino-icons-ie7.css"><![endif]-->
+	<!--[if gte IE 9]><!-->
+	<link rel='stylesheet' href='http://arduino.cc/css/foundation2.css' type='text/css' />
+	<![endif]-->
+	<!--[if IE 8]>
+		<link rel='stylesheet' href='http://arduino.cc/css/foundation_ie8.css' type='text/css' />	
+	<![endif]-->	
+	<link rel='stylesheet' href='http://arduino.cc/css/arduino_code_highlight.css' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://arduino.cc/css/typeplate.css">
+	<link rel='stylesheet' href='http://playground.arduino.cc/pub/skins/arduinoWide_SSO/css/arduinoWide_SSO.css' type='text/css' />
+	<link rel='stylesheet' href='http://arduino.cc/css/common.css' type='text/css' />	  
+	<link href="https://plus.google.com/114839908922424087554" rel="publisher" />
+	<script src="http://arduino.cc/js/vendor/custom.modernizr.js"></script>
+</head>
+<body>
+	<div id="menuWings" class="fixed"></div>
+	<div id="page">
+		
+<script>
+	var userAgent = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
+	if(userAgent.indexOf('mac')>0){
+		$("head").append('<style type="text/css">@-moz-document url-prefix() {h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, th a, th a:hover, h3 a:hover, h4 a:hover, h5 a:hover, #wikitext h2 a:hover, #wikitext h3 a:hover, #wikitext h4 a:hover {padding-bottom: 0.5em!important;} #pageheader .search input{font-family: "TyponineSans Regular 18";} #pagefooter .monospace{margin-top: -4px;} #navWrapper ul.left &gt; li{margin-top: -2px; padding-bottom: 2px;}#navWrapper ul.right &gt; li{margin-top: -5px; padding-bottom: 5px;}#navWrapper ul.right &gt; li ul{margin-top: 4px;} .slider-container .fixed-caption p{padding:8px 0 14px 0}}</style>');
+	}
+</script>
+
+<!--[if IE]>
+<link rel='stylesheet' href='https://id.arduino.cc//css/ie-monospace.css' type='text/css' />
+<![endif]-->
+
+<div id="menuWings" class="fixed"></div>
+
+<!--[if IE 8]>
+<div class="alert-box panel ie8alert">
+  <p><strong>Arduino.cc offers limited compatibility for Internet Explorer 8. Get a modern browser as Chrome, Firefox or Safari.</strong></p>
+  <a href="" class="close">&times;</a>
+</div>
+<![endif]-->
+
+<div id="pageheader">
+	<div class="row" class="contain-to-grid">
+		<div class="small-6 large-8 eight columns">
+			<div class="title"><a href="http://arduino.cc">Arduino</a></div>
+		</div>
+		<div class="small-6 large-4 four columns search">
+			<div class="row collapse">
+				<form method="GET" action="http://www.google.com/search">
+	<div class="small-12 twelve columns">
+		<i class="icon-search-2"></i>
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="hidden" name="oe" value="UTF-8">
+		<input type="text" name="q" size="25" maxlength="255" value="" placeholder="Search the Arduino Playground">
+		<input type="submit" name="btnG" VALUE="search">
+		<input type="hidden" name="domains" value="http://playground.arduino.cc">
+		<input type="hidden" name="sitesearch" value="http://playground.arduino.cc">
+	</div>
+</form>			</div>
+		</div>
+	</div>
+
+	<!--[if gte IE 9]><!-->
+	<div id="navWrapper"  class="sticky">
+	<![endif]-->
+	<!--[if IE 8]>
+		<div id="navWrapper">
+	<![endif]-->
+		<nav class="top-bar"  data-options="is_hover:true" >
+			<ul class="title-area">
+				<li class="name"></li>
+			</ul>
+
+			<section class="top-bar-section">
+				<ul class="left">
+					<li id="navLogo">
+						<a href="http://arduino.cc">
+							<img src="http://arduino.cc/img/logo_46.png" alt="userpicture" />
+						</a>
+					</li>
+					<li id="navHome"><a href="http://arduino.cc">Home</a></li>
+					<li><a href="http://store.arduino.cc">Buy</a></li>
+					<li><a href="http://arduino.cc/en/Main/Software">Download</a></li>
+					<li class="has-dropdown"><a href="http://arduino.cc/en/Main/Products">Products</a>
+						<ul class="dropdown">
+							<li><a href="http://arduino.cc/en/Main/Products">Arduino</a></li>
+							<li><a href="http://arduino.cc/en/ArduinoAtHeart/Products">AtHeart</a></li>
+							<li><a href="http://arduino.cc/en/ArduinoCertified/Products">Certified</a></li>
+						</ul>
+					</li>
+					<li class="has-dropdown active"><a href="#">Learning</a>
+						<ul class="dropdown">
+							<li><a href="http://arduino.cc/en/Guide/HomePage">Getting started</a></li>
+							<li><a href="http://arduino.cc/en/Tutorial/HomePage">Examples</a></li>
+							<li><a href="http://arduino.cc/en/Reference/HomePage">Reference</a></li>
+							<li><a href="http://playground.arduino.cc">Playground</a></li>
+						</ul>
+					</li>
+					<li><a href="http://forum.arduino.cc">Forum</a></li>
+					<li class="has-dropdown"><a href="#">Support</a>
+						<ul class="dropdown">
+							<li><a href="http://arduino.cc/en/Main/FAQ">FAQ</a></li>
+							<li><a href="http://arduino.cc/en/ContactUs">Contact Us</a></li>
+						</ul>
+					</li>
+					<li><a href="http://blog.arduino.cc">Blog</a></li>
+				</ul>
+
+								<ul class="right">
+					<li><a href="https://id.arduino.cc/auth/login/?returnurl=http%3A%2F%2Fplayground.arduino.cc%2FLearning%2FSingleServoExample" class="cart">LOG IN</a></li>
+					<li><a href="https://id.arduino.cc/auth/signup" class="cart">SIGN UP</a></li>
+				</ul>
+							</section>
+		</nav>
+	</div>
+</div>
+
+
+
+		<br class="clear"/>
+
+		<!--PageLeftFmt-->
+		<div id="pagenav">
+			<p><em>The <a class='wikilink' href='http://playground.arduino.cc/Main/HomePage'>playground</a> is a publicly-editable wiki about <a class='urllink' href='http://www.arduino.cc/' rel='nofollow'>Arduino</a>.</em>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/ManualsAndCurriculum'>Manuals and Curriculum</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='http://arduino.stackexchange.com' rel='nofollow'>Arduino StackExchange</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/ArduinoCoreHardware'>Board Setup and Configuration</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/DevelopmentTools'>Development Tools</a>
+</p>
+<p class='vspace'></p><p class='sidehead'> <a class='wikilink' href='http://playground.arduino.cc/Main/ArduinoOnOtherAtmelChips'>Arduino on other Atmel Chips</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithHardware'>Interfacing With Hardware</a>
+</p><ul><li><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithHardware#Output'>Output</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithHardware#InputTOC'>Input</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithHardware#ui'>User Interface</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithHardware#Storage'>Storage</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithHardware#Communication'>Communication</a> 
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/IntWithHW-PwrSup'>Power supplies</a> 
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithHardware#General'>General</a> 
+</li></ul><p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/InterfacingWithSoftware'>Interfacing with Software</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/GeneralCodeLibrary'>User Code Library</a>
+</p><ul><li><a class='wikilink' href='http://playground.arduino.cc/Main/SketchList'>Snippets and Sketches</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/LibraryList'>Libraries</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/TutorialList'>Tutorials</a>
+</li></ul><p class='vspace'></p><p class='sidehead'><a class='urllink' href='http://code.google.com/p/arduino/issues/list' rel='nofollow'>Suggestions &amp; Bugs</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/ElectroInfoResources'>Electronics Technique</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/Resources'>Sources for Electronic Parts</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/SimilarBoards'>Related Hardware and Initiatives</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='http://playground.arduino.cc/Main/People' rel='nofollow'>Arduino People/Groups &amp; Sites</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='http://playground.arduino.cc/Projects/ArduinoUsers' rel='nofollow'>Exhibition</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='http://playground.arduino.cc/Projects/Ideas' rel='nofollow'>Project Ideas</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='http://playground.arduino.cc/Main/Languages'>Languages</a>
+</p>
+<p class='vspace'></p><hr />
+<p class='vspace'></p><p class='sidehead'> <a class='wikilink' href='http://playground.arduino.cc/Main/Participate'>PARTICIPATE</a>
+</p><ul><li><a class='urllink' href='http://code.google.com/p/arduino/issues/list' rel='nofollow'>Suggestions</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/Participate#contribrules'>Formatting guidelines</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Site/AllRecentChanges'>All recent changes</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/PmWiki/PmWiki'>PmWiki</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/Main/WikiSandbox'>WikiSandBox training</a>
+</li><li><a class='wikilink' href='http://playground.arduino.cc/PmWiki/BasicEditing'>Basic Editing</a>
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/CookbookBasics' rel='nofollow'>Cookbook (addons)</a>
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/DocumentationIndex' rel='nofollow'>Documentation index</a>
+<p class='vspace'></p></li><li><a class='urllink' href='http://www.bartoloilliano.com/arduino-tutorial-costruire-un-drone-con-webcam-telecomandato-da-pc-tramite-csharp.html' rel='nofollow'>Drone with Arduino</a>
+<p class='vspace'></p></li><li><a class='urllink' href='http://arduinothermostat.blogspot.co.uk' rel='nofollow'>Thermostat with Arduino</a>
+</li></ul><p class='vspace'></p>
+
+		</div>
+		<!--/PageLeftFmt-->
+
+		
+
+		<div id="pagetext" class="playground">
+				<!--PageText-->
+<div id='wikitext'>
+<h1>Simple Servo Control tutorial</h1>
+<h2>Introduction</h2>
+<p>This tutorial explains how to control a servo from your computer using arduino, processing and Arduino Diecimilia. Don't be fooled, almost none of this is my own code. I've just done all the cut and pasting for you :p
+</p>
+<p class='vspace'></p><p>This example uses the <a class='wikilink' href='http://playground.arduino.cc/ComponentLib/Servo'>Software Servo Library</a>. 
+</p>
+<p class='vspace'></p><div><img src='http://playground.arduino.cc/uploads/Learning/simpleservocontrol.jpg' alt='' title='' /></div>
+<p class='vspace'></p><h2>Connections</h2>
+<p>It's really very simple to connect the servo to the arduino board.
+</p>
+<p class='vspace'></p><p><strong>See the pictures:</strong>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://playground.arduino.cc/uploads/Learning/simpleservocontrol1.jpg' rel='nofollow'>http://playground.arduino.cc/uploads/Learning/simpleservocontrol1.jpg</a>
+<a class='urllink' href='http://playground.arduino.cc/uploads/Learning/simpleservocontrol2.jpg' rel='nofollow'>http://playground.arduino.cc/uploads/Learning/simpleservocontrol2.jpg</a>
+</p>
+<p class='vspace'></p><h3>Power</h3>
+<p>Connect the red from servo to +5V on arduino.
+</p>
+<p class='vspace'></p><h3>Ground</h3>
+<p>Connect black/brown from servo to Gnd on arduino.
+</p>
+<p class='vspace'></p><h3>Signal</h3>
+<p>Connect white/orange from servo to Analog in 0 on arduino.
+</p>
+<p class='vspace'></p><h2>Arduino code</h2>
+<p>This code is the same as in <a class='wikilink' href='http://playground.arduino.cc/ComponentLib/Servo'>Software Servo Library</a>. It's made for two servos, but we're going to take advantage of just one.
+</p>
+<p class='vspace'></p><p>For this code to compile succesfully in arduino, you'll need the code: <a class='urllink' href='http://playground.arduino.cc/uploads/ComponentLib/servo.zip' rel='nofollow'>http://playground.arduino.cc/uploads/ComponentLib/servo.zip</a>. 
+</p>
+<p class='vspace'></p><p>The contents of that zip-package go into <em>arduino-xxxx/hardware/liraries</em>-directory.
+</p>
+<p class='vspace'></p><pre>
+#include &lt;Servo.h&gt;
+
+Servo servo1; Servo servo2; 
+
+
+void setup() {
+
+  pinMode(1,OUTPUT);
+  servo1.attach(14); //analog pin 0
+  //servo1.setMaximumPulse(2000);
+  //servo1.setMinimumPulse(700);
+
+  servo2.attach(15); //analog pin 1
+  Serial.begin(19200);
+  Serial.println("Ready");
+
+}
+
+void loop() {
+
+  static int v = 0;
+
+  if ( Serial.available()) {
+    char ch = Serial.read();
+
+    switch(ch) {
+      case '0'...'9':
+        v = v * 10 + ch - '0';
+        break;
+      case 's':
+        servo1.write(v);
+        v = 0;
+        break;
+      case 'w':
+        servo2.write(v);
+        v = 0;
+        break;
+      case 'd':
+        servo2.detach();
+        break;
+      case 'a':
+        servo2.attach(15);
+        break;
+    }
+  }
+
+  Servo::refresh();
+
+} 
+
+
+</pre>
+<p class='vspace'></p><h2>Processing code</h2>
+<p>To control the servo with a mouse, here's a simple code made with processing to do the job. You don't have to use this code, you can also send commands to the arduino board from arduino <span class='wikiword'>IDEs</span> Serial monitor. (Servo position 0 to 180 are commands <code>0s</code> and <code>180s</code> respectively)
+</p>
+<p class='vspace'></p><p>There's some graphics code also, but really only the lines with comments are relevant to controlling the servo.
+</p>
+<p class='vspace'></p><p>Basically this code takes the mouseX position (0 to 720) and divides it with 4 to get an angle for the servo (0-180). Finally the value is outputted to serial port with a prefix 's'. (Note: the 's' should actually be a suffix, but since this is ran over and over it does not matter for the result)
+</p>
+<p class='vspace'></p><p>Remember to first just check with <em>println(Serial.list())</em> the COM-port that should be used. 
+</p>
+<p class='vspace'></p><pre>
+
+/**
+ * Servocontrol (derived from processing Mouse 1D example.) 
+ * 
+ * Updated 24 November 2007
+ */
+
+
+// Use the included processing code serial library
+import processing.serial.*;        
+
+
+int gx = 15;
+int gy = 35;
+int spos=90;
+
+float leftColor = 0.0;
+float rightColor = 0.0;
+Serial port;                         // The serial port
+
+
+
+void setup() 
+{
+  size(720, 720);
+  colorMode(RGB, 1.0);
+  noStroke();
+  rectMode(CENTER);
+  frameRate(100);
+
+  println(Serial.list()); // List COM-ports
+
+  //select second com-port from the list
+  port = new Serial(this, Serial.list()[1], 19200); 
+}
+
+void draw() 
+{
+  background(0.0);
+  update(mouseX); 
+  fill(mouseX/4); 
+  rect(150, 320, gx*2, gx*2); 
+  fill(180 - (mouseX/4)); 
+  rect(450, 320, gy*2, gy*2);
+}
+
+void update(int x) 
+{
+  //Calculate servo postion from mouseX
+  spos= x/4;
+
+  //Output the servo position ( from 0 to 180)
+  port.write("s"+spos); 
+
+
+
+  // Just some graphics
+  leftColor = -0.002 * x/2 + 0.06;
+  rightColor =  0.002 * x/2 + 0.06;
+
+  gx = x/2;
+  gy = 100-x/2;
+
+}
+
+</pre>
+</div>
+
+
+				<!-- AddThis Button Style BEGIN -->
+<style>
+  .addthis_toolbox {
+    margin: 2em 0 1em;
+  }
+  .addthis_toolbox img {
+    float: left;
+    height: 25px;
+    margin-right: 10px;
+    width: auto;
+  }
+  .addthis_toolbox .social-container {
+    float: left;
+    height: 27px; 
+    width: auto; 
+  }
+  .addthis_toolbox .social-container .social-content {
+    float: left;
+    margin-top: 2px;
+    max-width: 0;
+    overflow: hidden;
+    -moz-transition: max-width .3s ease-out;
+    -webkit-transition: max-width .3s ease-out;
+    -o-transition: max-width .3s ease-out;
+    transition: max-width .3s ease-out;
+  }
+  .addthis_toolbox .social-container:hover .social-content {
+    max-width: 100px;
+    -moz-transition: max-width .2s ease-in;
+    -webkit-transition: max-width .2s ease-in;
+    -o-transition: max-width .2s ease-in;
+    transition: max-width .2s ease-in;
+  }
+  .addthis_toolbox .social-container .social-content a {
+    float: left;
+    margin-right: 5px;
+  }
+
+  .addthis_toolbox h3 {
+    font-size: 24px;
+    text-align: left;
+  }
+</style>
+<!-- AddThis Button Style END -->
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+  <h3>Share</h3>
+  <!-- FACEBOOK -->
+  <div class="social-container">
+    <img src="/pub/skins/arduinoWide_SSO/img/facebook.png" />
+    <div class="social-content">
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    </div>
+  </div>
+  <!-- TWITTER -->
+  <div class="social-container">
+    <img src="/pub/skins/arduinoWide_SSO/img/twitter.png">
+    <div class="social-content">
+      <a class="addthis_button_tweet"></a>
+    </div>
+  </div>
+  <!-- PINTEREST -->
+  <div class="social-container">
+    <img src="/pub/skins/arduinoWide_SSO/img/pinterest.png">
+    <div class="social-content">
+      <a class="addthis_button_pinterest_pinit" pi:pinit:url="http://www.addthis.com/features/pinterest" pi:pinit:media="http://www.addthis.com/cms-content/images/features/pinterest-lg.png"></a>
+    </div>
+  </div>
+  <!-- G+ -->
+  <div class="social-container">
+    <img src="/pub/skins/arduinoWide_SSO/img/gplus.png">
+    <div class="social-content">
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+  </div>
+
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50573fab238b0d34"></script>
+</div>
+<!-- AddThis Button END -->
+
+			</div> <!-- eof pagetext -->
+			
+	</div> <!-- eof page -->
+		
+	<!--PageFooterFmt-->
+	<div id="pagefooter">
+		<div id="pagefooter" class="pagefooter">
+  <div class="row">
+    <div class="large-8 eight columns">
+      <div class="large-4 four columns newsletter-box">
+        <!-- Begin MailChimp Signup Form -->
+        <h6>Newsletter</h6>
+        <form action="http://arduino.us5.list-manage.com/subscribe/post?u=0140d17584d1c002bcd94d0e8&amp;id=69a7d1abe4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email to sign up" required>
+          <i class="icon-right-small"></i>
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="newsletter-button">
+        </form>
+        <!--End mc_embed_signup-->
+      </div>
+      <div class="clearfix"></div>
+      <ul class="inline-list">
+        <li class="monospace">&copy;2014 Arduino</li>
+        <li><a href="http://arduino.cc/en/Main/CopyrightNotice">Copyright Notice</a></li>
+        <li><a href='http://arduino.cc/en/Main/ContactUs'>Contact us</a></li>
+      </ul>
+    </div>
+    <div class="large-4 four columns">
+      <ul id="arduinoSocialLinks" class="arduino-social-links">
+        <li>
+          <a href="https://twitter.com/arduino">
+            <img src="http://arduino.cc/img/twitter.png" />
+          </a>
+        </li>
+        <li>
+          <a href="http://www.facebook.com/official.arduino">
+            <img src="http://arduino.cc/img/facebook.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/+Arduino">
+            <img src="http://arduino.cc/img/gplus.png" />
+          </a>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/arduino_cc">
+            <img src="http://arduino.cc/img/flickr.png" />
+          </a>
+        </li>
+        <li>
+          <a href="http://youtube.com/arduinoteam">
+            <img src="http://arduino.cc/img/youtube.png" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+	</div>
+	<!--/PageFooterFmt-->
+	
+		
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<!--[if gte IE 9]><!-->
+	<script src="http://arduino.cc/js/foundation.min.js"></script>
+	<script src="http://arduino.cc/js/foundation.topbar.custom.js"></script>
+	<script>
+	  $(document).foundation();
+	</script>
+	<!--<![endif]-->
+	<!--[if IE 8]>
+	<script src="http://arduino.cc/js/foundation_ie8.min.js"></script>
+	<script src="http://arduino.cc/js/ie8/jquery.foundation.alerts.js"></script>
+	<script src="http://arduino.cc/js/app.js"></script>
+	<![endif]-->
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-22581631-3']);
+	  _gaq.push(['_setDomainName', 'arduino.cc']);
+	  _gaq.push(['_trackPageview']);
+	
+	    (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.ultimatesbplugin_top {
+	float:right;
+	text-align:center;
+	margin:0 0 10px 10px;
+}
+.ultimatesbplugin_top a {
+}
+.ultimatesbplugin_bottom {
+}
+.ultimatesbplugin_bottom a img {
+	border:solid 1px #CCCCCC;
+	padding:1px;
+	margin:2px;
+}
+.ultimatesbplugin_bottom a:hover img {
+	border:solid 1px #666666;
+}
+.ultimatesbplugin_bottom a {
+	
+}
+.ultimatesbplugin_bottom a:hover {
+}

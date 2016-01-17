@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Communication between Arduino via radio frequencyZygzax | 
+Proyectos y tutoriales, electrónica y diseño 3D | Zygzax | Proyectos y 
+tutoriales, electrónica y diseño 3D</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://zygzax.com/xmlrpc.php?lang=en">
+<!--[if lt IE 9]>
+<script src="http://zygzax.com/wp-content/themes/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="Zygzax | Proyectos y tutoriales, electrónica y diseño 3D » Feed" href="http://zygzax.com/feed/?lang=en">
+<link rel="alternate" type="application/rss+xml" title="Zygzax | Proyectos y tutoriales, electrónica y diseño 3D » Comments Feed" href="http://zygzax.com/comments/feed/?lang=en">
+
+            <script async="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/cbgapi.loaded_1"></script><script async="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/plusone.js" async="" type="text/javascript"></script><script src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/widgets.js" id="twitter-wjs"></script><script src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/ga.js" async="" type="text/javascript"></script><script src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+            // Google Analytics for WordPress by Yoast v4.3.5 | http://yoast.com/wordpress/google-analytics/
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-41495282-1']);
+				            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+            //]]></script>
+			<link rel="alternate" type="application/rss+xml" title="Zygzax | Proyectos y tutoriales, electrónica y diseño 3D » Communication between Arduino via radio frequency Comments Feed" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en/feed/&amp;lang=en">
+<link rel="stylesheet" id="twentytwelve-fonts-css" href="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="cached-styles-css" href="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/concat-8cff6ef711fd0a7b9b1f200f6d773c38.css" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/sharing.css" type="text/css" media="all">
+<link rel="stylesheet" id="cookillian-pub-css" href="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/pub.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var cookillian = {"use_async_ajax":false,"scrub_cookies":false};
+/* ]]> */
+</script>
+<script type="text/javascript">/* <![CDATA[ */window.cookillian_ajax={"url":"http:\/\/zygzax.com\/wp-admin\/admin-ajax.php","action":"cookillian","nonce":"b668e46a7d","nonceresponse":"44f6b5501b"};/* ]]> */</script>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/concat-c57a919131c8ca5e8f88a90b0b41aba7.js"></script>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/pub.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://zygzax.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://zygzax.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="(Español) Cargar Bootloader en Arduino usando una segunda placa" href="http://zygzax.com/2013/03/13/cargar-bootloader-en-arduino-usando-una-segunda-placa/?lang=en">
+<link rel="next" title="(Español) Opinión sobre Nexus 7" href="http://zygzax.com/2013/04/13/opinion-sobre-nexus-7/?lang=en">
+<meta name="generator" content="WordPress 3.8.3">
+<link rel="shortlink" href="http://wp.me/p2IROt-hS">
+
+<!-- BEGIN Creative Commons License added by Creative-Commons-Configurator plugin for WordPress -->
+<style type="text/css"><!--
+p.cc-block { clear: both; width: 90%; margin: 8px auto; padding: 4px; text-align: center; border: 1px solid #cccccc; color: #000000; background-color: #eef6e6; }
+--></style>
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+<!-- END Creative Commons License added by Creative-Commons-Configurator plugin for WordPress -->
+
+
+<meta http-equiv="Content-Language" content="en-US">
+<style type="text/css" media="screen">
+.qtrans_flag span { display:none }
+.qtrans_flag { height:12px; width:18px; display:block }
+.qtrans_flag_and_text { padding-left:20px }
+.qtrans_flag_es { background:url(http://zygzax.com/wp-content/plugins/qtranslate/flags/es.png) no-repeat }
+.qtrans_flag_en { background:url(http://zygzax.com/wp-content/plugins/qtranslate/flags/gb.png) no-repeat }
+</style>
+<link hreflang="es" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/" rel="alternate">
+<style type="text/css">img#wpstats{display:none}</style><!-- All in one Favicon 4.3 --><link rel="shortcut icon" href="http://zygzax.com/wp-content/uploads/2012/09/favicon.ico">
+
+<!-- All in One SEO Pack 2.1.5 by Michael Torbert of Semper Fi Web Design[313,428] -->
+<meta name="description" content="Hello, the other day I bought on eBay this RF module for Arduino: FS1000A This module includes a receiver and a transmitter operating in the">
+
+<meta name="keywords" content="arduino,communication,comunicacion,electronica,frequency,fs1000a,radio,radiofrecuencia,receptor,rf,transmisor,via,xd-fst,xd-rf-5v,xy-fst,xy-rf-5v">
+
+<link rel="canonical" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en">
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-41495282-1']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+<!-- /all in one seo pack -->
+	<style type="text/css" id="twentytwelve-header-css">
+			.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px 1px 1px 1px); /* IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #c9e7ff; background-image: url('http://zygzax.com/wp-content/uploads/2013/10/fondo1040.jpg'); background-repeat: repeat-y; background-position: top center; background-attachment: fixed; }
+</style>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/services.css"></head>
+
+<body data-twttr-rendered="true" class="single single-post postid-1108 single-format-standard custom-background custom-font-enabled">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="http://zygzax.com/" title="Zygzax | Proyectos y tutoriales, electrónica y diseño 3D" rel="home">Zygzax | Proyectos y tutoriales, electrónica y diseño 3D</a></h1>
+			<h2 class="site-description">Proyectos y tutoriales de electrónica, arduino, diseño 3D y programación.</h2>
+		</hgroup>
+
+		
+
+					<a href="http://zygzax.com/"><img src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/banner1040.jpg" class="header-image" alt="" height="225" width="1040"></a>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<h3 class="menu-toggle">Menu</h3>
+			<a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+			<div class="menu-menu-container"><ul id="menu-menu" class="nav-menu"><li id="menu-item-1327" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1327"><a href="http://zygzax.com/">HOME</a></li>
+<li id="menu-item-1335" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1335"><a href="#">CATEGORIES</a>
+<ul class="sub-menu">
+	<li id="menu-item-1328" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1328"><a href="http://zygzax.com/category/arduino/?lang=en">Arduino</a></li>
+	<li id="menu-item-1329" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1329"><a href="http://zygzax.com/category/electronica/?lang=en">Electronics</a></li>
+	<li id="menu-item-1333" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1333"><a href="http://zygzax.com/category/proyectos/?lang=en">Projects</a></li>
+	<li id="menu-item-1334" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1334"><a href="http://zygzax.com/category/proyectos/molinon/?lang=en">Molinón</a></li>
+	<li id="menu-item-1330" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1330"><a href="http://zygzax.com/category/kickstarter/?lang=en">Kickstarter</a></li>
+	<li id="menu-item-1332" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1332"><a href="http://zygzax.com/category/opinion/tablets/?lang=en">Tablets</a></li>
+	<li id="menu-item-1331" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1331"><a href="http://zygzax.com/category/opinion/?lang=en">Review</a></li>
+</ul>
+</li>
+<li id="menu-item-1452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1452"><a href="#">PROJECTS</a>
+<ul class="sub-menu">
+	<li id="menu-item-1079" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1079"><a href="http://zygzax.com/webmolinon/?lang=en">“EL MÓLINON” SOCCER STADIUM IN 3D (Stopped)</a></li>
+	<li id="menu-item-973" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-973"><a href="http://zygzax.com/webpcronometro/?lang=en">ARDUINO DIGITAL STOPWATCH</a></li>
+	<li id="menu-item-975" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-975"><a href="http://zygzax.com/websensorus-100/?lang=en">DISTANCE MEASURING WITH THE MODULE US-100 OR HC-SR04 FOR ARDUINO</a></li>
+	<li id="menu-item-1105" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1105"><a href="http://zygzax.com/category/proyectos/?lang=en">Other blog projects</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1106" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1106"><a href="http://zygzax.com/category/arduino/?lang=en">Arduino</a></li>
+		<li id="menu-item-1107" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1107"><a href="http://zygzax.com/category/electronica/?lang=en">Electronics</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1451" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1451"><a href="#">TUTORIALS</a>
+<ul class="sub-menu">
+	<li id="menu-item-977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-977"><a href="http://zygzax.com/webtservidor/?lang=en">Web and Ftp server for Linux</a>
+	<ul class="sub-menu">
+		<li id="menu-item-978" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-978"><a href="http://zygzax.com/webtservidor/instalacionubuntu/?lang=en">Installing Ubuntu server</a></li>
+		<li id="menu-item-979" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-979"><a href="http://zygzax.com/webtservidor/ipfijalocal/?lang=en">Set a local fixed IP for the server</a></li>
+		<li id="menu-item-980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="http://zygzax.com/webtservidor/confpuertos/?lang=en">Port configuration</a></li>
+		<li id="menu-item-981" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-981"><a href="http://zygzax.com/webtservidor/ipinternet/?lang=en">Get a fixed IP on the Internet</a></li>
+		<li id="menu-item-982" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-982"><a href="http://zygzax.com/webtservidor/accederssh/?lang=en">Access the server console via ssh</a></li>
+		<li id="menu-item-983" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-983"><a href="http://zygzax.com/webtservidor/conf-mysql-php/?lang=en">Configuring MySQL and phpmyadmin</a></li>
+		<li id="menu-item-984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-984"><a href="http://zygzax.com/webtservidor/conf-ftp-web/?lang=en">Configuring the FTP server and Web server</a></li>
+		<li id="menu-item-985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-985"><a href="http://zygzax.com/webtservidor/inst-phpsysinfo/?lang=en">Installing phpsysinfo (Optional)</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1448" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1448"><a href="http://zygzax.com/2012/09/12/como-leer-datos-de-arduino-con-matlab-a-traves-del-puerto-usb/">How to read data from Arduino to Matlab through USB port</a></li>
+</ul>
+</li>
+<li id="menu-item-1456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1456"><a href="http://zygzax.com/webcontacto/?lang=en">CONTACT US</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			
+				
+	<article id="post-1108" class="post-1108 post type-post status-publish format-standard hentry category-arduino tag-arduino tag-communication tag-comunicacion tag-electronica-2 tag-frequency tag-fs1000a tag-radio tag-radiofrecuencia tag-receptor tag-rf tag-transmisor tag-via tag-xd-fst tag-xd-rf-5v tag-xy-fst tag-xy-rf-5v">
+				<header class="entry-header">
+									<h1 class="entry-title">Communication between Arduino via radio frequency</h1>
+										<div class="comments-link">
+					<a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comments" title="Comment on Communication between Arduino via radio frequency">36 Replies</a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			
+<!-- Easy AdSense V7.20 -->
+<!-- [leadin: 1 urCount: 0 urMax: 0] -->
+<div class="ezAdsense adsense adsense-leadin" style="text-align:center;margin:12px;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4408315840589795";
+/* zygzax3 */
+google_ad_slot = "5295192447";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/show_ads.js">
+</script></div>
+<!-- Easy AdSense V7.20 -->
+<p>Hello, the other day I bought on eBay this RF module for Arduino:</p>
+<ul>
+<li><a href="http://dx.com/p/220194?Utm_rid=89095133&amp;Utm_source=affiliate" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://dx.com']);" target="_blank">FS1000A</a></li>
+</ul>
+<p><a href="http://zygzax.com/wp-content/uploads/2013/03/IMG_0103.jpg"><img class="aligncenter size-medium wp-image-1119" alt="img1" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/IMG_0103-300x174.jpg" height="174" width="300"></a></p>
+<p><a href="http://zygzax.com/wp-content/uploads/2013/03/IMG_0102.jpg"><img class="aligncenter size-medium wp-image-1118" alt="img2" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/IMG_0102-300x147.jpg" height="147" width="300"></a><br>
+<span id="more-1108"></span><br>
+This module includes a receiver and a transmitter operating in the frequency 315MHz, the connections with Arduino are simple:</p>
+<p>In the case of the transmitter (XY-FST):</p>
+<ul>
+<li>ATAD (Data) —&gt; Digital pin 3 (You can change to another pin in the program code).</li>
+<li>VCC —&gt; +5V</li>
+<li>GND —&gt; GND</li>
+</ul>
+<p>For the receiver&nbsp;(XY-RF-5V):</p>
+<ul>
+<li>GND —&gt; GND</li>
+<li>DATA —&gt; Digital pin 3&nbsp;(You can change to another pin in the program code).</li>
+<li>DATA —&gt; We can leave this pin unconnected, we will use only one data pin (We can use either of them).</li>
+<li>VCC —&gt; +5V</li>
+</ul>
+
+<!-- Easy AdSense V7.20 -->
+<!-- [midtext: 2 urCount: 1 urMax: 0] -->
+<div class="ezAdsense adsense adsense-midtext" style="text-align:center;margin:12px;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4408315840589795";
+/* zygzax4 */
+google_ad_slot = "5741003244";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/show_ads.js">
+</script></div>
+<!-- Easy AdSense V7.20 -->
+<p>Before loading the code you need to download and install the library&nbsp;<a href="http://www.open.com.au/mikem/arduino/VirtualWire/index.html" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.open.com.au']);" target="_blank">VirtualWire</a>, The direct download link is the following:</p>
+<p><a href="http://www.open.com.au/mikem/arduino/VirtualWire/VirtualWire-1.14.zip" onclick="javascript:_gaq.push(['_trackEvent','download','http://www.open.com.au/mikem/arduino/VirtualWire/VirtualWire-1.14.zip']);">http://www.open.com.au/mikem/arduino/VirtualWire/VirtualWire-1.14.zip</a></p>
+<p>The following code allows you to send and receive a message between two Arduino boards:</p>
+<p>Code for the transmitter:</p>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/embed_js_002.htm"></script><style>		div.embedPastebin { padding: 0; color: #000; margin: 0; font-family: monospace; background: #eee; border: 1px solid ccc; }		div.embedPastebin {  }		div.embedPastebin div.embedFooter { background: #ccc; font-size: 100%; padding: 0px 6px; }		div.embedPastebin div.embedFooter a,		div.embedPastebin div.embedFooter a:visited { color: #336699; text-decoration:none; }		div.embedPastebin div.embedFooter a:hover { color: red; }		.noLines ol { list-style-type: none; padding-left: 0.5em; }		.embedPastebin{background-color:#F8F8F8;border:1px solid #ddd;font-size:12px;overflow:auto;margin: 0 0 0 0;padding:0 0 0 0;line-height:21px}		.embedPastebin div { line-height:21px; font-family:Consolas, Menlo, Monaco, Lucida Console,'Bitstream Vera Sans Mono','Courier',monospace; }		ol { margin:0; padding: 0 0 0 48px}		li.ln-xtra .de1, li.ln-xtra .de2 {background:#FFFF88;}.embedPastebin ol li.li1 { margin: 0; } .embedPastebin ol li.li2 { margin: 0; } .c .de1, .c .de2 {-moz-user-select: text;-khtml-user-select: text;-webkit-user-select: text;-ms-user-select: text;user-select: text;margin:0; padding: 0 5px; background:none; vertical-align:top;color:#000;border-left: 1px solid #ccc; margin: 0 0 0 -7px; position: relative; background: #ffffff;}.c  {color:#ACACAC;}.c .imp {font-weight: bold; color: red;}.c li, .c .li1 {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;}.c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}.c .kw1 {color: #b1b100;}.c .kw2 {color: #000000; font-weight: bold;}.c .kw3 {color: #000066;}.c .kw4 {color: #993333;}.c .co1 {color: #666666; font-style: italic;}.c .co2 {color: #339933;}.c .coMULTI {color: #808080; font-style: italic;}.c .es0 {color: #000099; font-weight: bold;}.c .es1 {color: #000099; font-weight: bold;}.c .es2 {color: #660099; font-weight: bold;}.c .es3 {color: #660099; font-weight: bold;}.c .es4 {color: #660099; font-weight: bold;}.c .es5 {color: #006699; font-weight: bold;}.c .br0 {color: #009900;}.c .sy0 {color: #339933;}.c .st0 {color: #ff0000;}.c .nu0 {color: #0000dd;}.c .nu6 {color: #208080;}.c .nu8 {color: #208080;}.c .nu12 {color: #208080;}.c .nu16 {color:#800080;}.c .nu17 {color:#800080;}.c .nu18 {color:#800080;}.c .nu19 {color:#800080;}.c .me1 {color: #202020;}.c .me2 {color: #202020;}.c .ln-xtra, .c li.ln-xtra, .c div.ln-xtra {color:black;background:#FFFF88;}.c span.xtra { display:block; }	</style>	<div class="embedPastebin">		<div class="embedFooter">Data hosted with ♥ by <a href="http://pastebin.com/" target="_top">Pastebin.com</a> - <a href="http://pastebin.com/raw.php?i=McSUxZUd" target="_top">Download Raw</a> - <a href="http://pastebin.com/McSUxZUd" target="_top">See Original</a></div><div class="c"><ol><li class="li1"><div class="de1"><span class="co1">//Test and text transmission with RF module for Arduino http://zygzax.com</span></div></li><li class="li2"><div class="de2"><span class="co1">//TRANSMITTER</span></div></li><li class="li1"><div class="de1"><span class="co2">#include &lt;VirtualWire.h&gt;</span></div></li><li class="li2"><div class="de2"><span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span></div></li><li class="li1"><div class="de1"><span class="br0">{</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; vw_set_ptt_inverted<span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">// Required by the RF module</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; vw_setup<span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// bps connection speed</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; vw_set_tx_pin<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Arduino pin to connect the receiver data pin</span></div></li><li class="li1"><div class="de1"><span class="br0">}</span></div></li><li class="li2"><div class="de2">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span></div></li><li class="li2"><div class="de2"><span class="br0">{</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp;<span class="co1">//Message to send:</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp;<span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>msg <span class="sy0">=</span> <span class="st0">"HELLO WORLD"</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp;vw_send<span class="br0">(</span><span class="br0">(</span><span class="kw4">uint8_t</span> <span class="sy0">*</span><span class="br0">)</span>msg<span class="sy0">,</span> <span class="kw3">strlen</span><span class="br0">(</span>msg<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp;vw_wait_tx<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// We wait to finish sending the message</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp;delay<span class="br0">(</span><span class="nu0">200</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// We wait to send the message again &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div></li><li class="li2"><div class="de2"><span class="br0">}</span></div></li></ol></div></div>
+<p>Code for the receiver:</p>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/embed_js.htm"></script><style>		div.embedPastebin { padding: 0; color: #000; margin: 0; font-family: monospace; background: #eee; border: 1px solid ccc; }		div.embedPastebin {  }		div.embedPastebin div.embedFooter { background: #ccc; font-size: 100%; padding: 0px 6px; }		div.embedPastebin div.embedFooter a,		div.embedPastebin div.embedFooter a:visited { color: #336699; text-decoration:none; }		div.embedPastebin div.embedFooter a:hover { color: red; }		.noLines ol { list-style-type: none; padding-left: 0.5em; }		.embedPastebin{background-color:#F8F8F8;border:1px solid #ddd;font-size:12px;overflow:auto;margin: 0 0 0 0;padding:0 0 0 0;line-height:21px}		.embedPastebin div { line-height:21px; font-family:Consolas, Menlo, Monaco, Lucida Console,'Bitstream Vera Sans Mono','Courier',monospace; }		ol { margin:0; padding: 0 0 0 48px}		li.ln-xtra .de1, li.ln-xtra .de2 {background:#FFFF88;}.embedPastebin ol li.li1 { margin: 0; } .embedPastebin ol li.li2 { margin: 0; } .c .de1, .c .de2 {-moz-user-select: text;-khtml-user-select: text;-webkit-user-select: text;-ms-user-select: text;user-select: text;margin:0; padding: 0 5px; background:none; vertical-align:top;color:#000;border-left: 1px solid #ccc; margin: 0 0 0 -7px; position: relative; background: #ffffff;}.c  {color:#ACACAC;}.c .imp {font-weight: bold; color: red;}.c li, .c .li1 {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;}.c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}.c .kw1 {color: #b1b100;}.c .kw2 {color: #000000; font-weight: bold;}.c .kw3 {color: #000066;}.c .kw4 {color: #993333;}.c .co1 {color: #666666; font-style: italic;}.c .co2 {color: #339933;}.c .coMULTI {color: #808080; font-style: italic;}.c .es0 {color: #000099; font-weight: bold;}.c .es1 {color: #000099; font-weight: bold;}.c .es2 {color: #660099; font-weight: bold;}.c .es3 {color: #660099; font-weight: bold;}.c .es4 {color: #660099; font-weight: bold;}.c .es5 {color: #006699; font-weight: bold;}.c .br0 {color: #009900;}.c .sy0 {color: #339933;}.c .st0 {color: #ff0000;}.c .nu0 {color: #0000dd;}.c .nu6 {color: #208080;}.c .nu8 {color: #208080;}.c .nu12 {color: #208080;}.c .nu16 {color:#800080;}.c .nu17 {color:#800080;}.c .nu18 {color:#800080;}.c .nu19 {color:#800080;}.c .me1 {color: #202020;}.c .me2 {color: #202020;}.c .ln-xtra, .c li.ln-xtra, .c div.ln-xtra {color:black;background:#FFFF88;}.c span.xtra { display:block; }	</style>	<div class="embedPastebin">		<div class="embedFooter">Data hosted with ♥ by <a href="http://pastebin.com/" target="_top">Pastebin.com</a> - <a href="http://pastebin.com/raw.php?i=LdHECxg7" target="_top">Download Raw</a> - <a href="http://pastebin.com/LdHECxg7" target="_top">See Original</a></div><div class="c"><ol><li class="li1"><div class="de1"><span class="co1">//Test and text transmission with RF module for Arduino http://zygzax.com</span></div></li><li class="li2"><div class="de2"><span class="co1">//RECEIVER</span></div></li><li class="li1"><div class="de1"><span class="co2">#include &lt;VirtualWire.h&gt;</span></div></li><li class="li2"><div class="de2">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span></div></li><li class="li2"><div class="de2"><span class="br0">{</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// Configure the serial connection to the computer</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; vw_set_ptt_inverted<span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">// Required by the RF module</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; vw_setup<span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// bps connection speed</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; vw_set_rx_pin<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Arduino pin to connect the receiver data pin</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; vw_rx_start<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Start the receiver</span></div></li><li class="li2"><div class="de2"><span class="br0">}</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li2"><div class="de2"><span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span></div></li><li class="li1"><div class="de1"><span class="br0">{</span></div></li><li class="li2"><div class="de2">&nbsp; <span class="kw4">uint8_t</span> buf<span class="br0">[</span>VW_MAX_MESSAGE_LEN<span class="br0">]</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp; <span class="kw4">uint8_t</span> buflen <span class="sy0">=</span> VW_MAX_MESSAGE_LEN<span class="sy0">;</span></div></li><li class="li2"><div class="de2">&nbsp; <span class="kw1">if</span> <span class="br0">(</span>vw_get_message<span class="br0">(</span>buf<span class="sy0">,</span> <span class="sy0">&amp;</span>buflen<span class="br0">)</span><span class="br0">)</span> &nbsp; &nbsp; &nbsp;<span class="co1">// We check if we have received data</span></div></li><li class="li1"><div class="de1">&nbsp; <span class="br0">{</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw4">int</span> i<span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; <span class="co1">// Message with proper check &nbsp; &nbsp;</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> buflen<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">{</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; Serial.<span class="me1">write</span><span class="br0">(</span>buf<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">// The received data is stored in the buffer</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// and sent through the serial port to the computer</span></div></li><li class="li2"><div class="de2">&nbsp; &nbsp; <span class="br0">}</span></div></li><li class="li1"><div class="de1">&nbsp; &nbsp; Serial.<span class="me1">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">&nbsp; <span class="br0">}</span></div></li><li class="li1"><div class="de1"><span class="br0">}</span></div></li></ol></div></div>
+<p>Once loaded and running the programs, connecting the serial monitor 
+of the Arduino application with the receiver board to 9600, we should 
+see the message that we are sending from the transmitter board.</p>
+<br><hr noshade="noshade"><p><i>Source</i> : <a href="http://www.open.com.au/mikem/arduino/VirtualWire/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.open.com.au']);" title="VirtualWire" target="_blank">VirtualWire</a>
+</p><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share it:</h3><div class="sd-content"><ul><li class="share-twitter"><div class="twitter_button"><iframe allowtransparency="true" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/tweet_button.htm" style="width:101px; height:20px;" frameborder="0" scrolling="no"></iframe></div></li><li class="share-google-plus-1"><div class="googleplus1_button"><div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 82px; height: 20px;"><iframe title="+Share" data-gapiattached="true" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/sharebutton.htm" name="I0_1399048243171" id="I0_1399048243171" vspace="0" tabindex="0" style="position: static; top: 0px; width: 82px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div></div></li><li class="share-reddit"><div class="reddit_button"><iframe src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/button1.htm" frameborder="0" height="22" scrolling="no" width="120"></iframe></div></li><li class="share-print"><a rel="nofollow" class="share-print sd-button" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div>
+<!-- Creative Commons License -->
+<p class="cc-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Licencia Creative Commons" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/88x31.png" class="cc-button"></a><br><em><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en">Communication between Arduino via radio frequency</a></em> por <em><a href="http://zygzax.com/author/jasirgo/?lang=en">Zygzax | Proyectos y tutoriales, electrónica y diseño 3D</a></em>, a excepción del contenido de terceros y de que se indique lo contrario, se encuentra bajo una Licencia <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported Licencia</a>.</p>
+<!-- /Creative Commons License -->
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="http://zygzax.com/category/arduino/?lang=en" title="View all posts in Arduino" rel="category tag">Arduino</a> and tagged <a href="http://zygzax.com/tag/arduino/?lang=en" rel="tag">Arduino</a>, <a href="http://zygzax.com/tag/communication/?lang=en" rel="tag">communication</a>, <a href="http://zygzax.com/tag/comunicacion/?lang=en" rel="tag">comunicacion</a>, <a href="http://zygzax.com/tag/electronica-2/?lang=en" rel="tag">electronica</a>, <a href="http://zygzax.com/tag/frequency/?lang=en" rel="tag">frequency</a>, <a href="http://zygzax.com/tag/fs1000a/?lang=en" rel="tag">FS1000A</a>, <a href="http://zygzax.com/tag/radio/?lang=en" rel="tag">radio</a>, <a href="http://zygzax.com/tag/radiofrecuencia/?lang=en" rel="tag">radiofrecuencia</a>, <a href="http://zygzax.com/tag/receptor/?lang=en" rel="tag">receptor</a>, <a href="http://zygzax.com/tag/rf/?lang=en" rel="tag">RF</a>, <a href="http://zygzax.com/tag/transmisor/?lang=en" rel="tag">transmisor</a>, <a href="http://zygzax.com/tag/via/?lang=en" rel="tag">via</a>, <a href="http://zygzax.com/tag/xd-fst/?lang=en" rel="tag">XD-FST</a>, <a href="http://zygzax.com/tag/xd-rf-5v/?lang=en" rel="tag">XD-RF-5V</a>, <a href="http://zygzax.com/tag/xy-fst/?lang=en" rel="tag">XY-FST</a>, <a href="http://zygzax.com/tag/xy-rf-5v/?lang=en" rel="tag">XY-RF-5V</a> on <a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en" title="12:00" rel="bookmark"><time class="entry-date" datetime="c">15/03/2013</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="http://zygzax.com/author/jasirgo/?lang=en" title="View all posts by javiersb" rel="author">javiersb</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+				<nav class="nav-single">
+					<h3 class="assistive-text">Post navigation</h3>
+					<span class="nav-previous"><a href="http://zygzax.com/2013/03/13/cargar-bootloader-en-arduino-usando-una-segunda-placa/?lang=en" rel="prev"><span class="meta-nav">←</span> (Español) Cargar Bootloader en Arduino usando una segunda placa</a></span>
+					<span class="nav-next"><a href="http://zygzax.com/2013/04/13/opinion-sobre-nexus-7/?lang=en" rel="next">(Español) Opinión sobre Nexus 7 <span class="meta-nav">→</span></a></span>
+				</nav><!-- .nav-single -->
+
+				
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			36 thoughts on “<span>Communication between Arduino via radio frequency</span>”		</h2>
+
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-2349">
+		<article id="comment-2349" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-ac905ecd8a1efd4224c64a8f56f0cf99-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/ac905ecd8a1efd4224c64a8f56f0cf99.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Grant</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2349"><time datetime="c">17/04/2013 at 12:28</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for this article, has helped me!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2349#respond" onclick='return addComment.moveForm("comment-2349", "2349", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-2609">
+		<article id="comment-2609" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-48afcffd699ada7312b6f845b21d6b22-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/48afcffd699ada7312b6f845b21d6b22.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Lynch</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2609"><time datetime="c">18/05/2013 at 0:14</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Que tal, antes que nada quiero felicitarte por el excelente 
+tutorial, funciona a la perfección, pero tengo una duda. Como puedo 
+mandar (vía RF) un byte de tipo entero?. saludos.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2609#respond" onclick='return addComment.moveForm("comment-2609", "2609", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor even depth-2" id="li-comment-2762">
+		<article id="comment-2762" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2762"><time datetime="c">04/06/2013 at 10:42</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hola, muchas gracias.<br>
+Cuando hice el post intente enviar variables enteras pero en esta 
+librería solo encontré la forma de enviar datos en cadena de caracteres.<br>
+Lo que puedes intentar hacer es convertir en el emisor la variable 
+entera a cadena de caracteres y luego en el receptor convertir la cadena
+ de caracteres a variable entera, yo intente hacer esto pero no conseguí
+ que funcionase correctamente, siempre me daba algún error y finalmente 
+lo descarte.<br>
+Cuando tenga un poco más de tiempo igual vuelvo a intentarlo.<br>
+Si consigues algún resultado para hacer esto te agradecería que lo compartieses con nosotros <img src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/icon_wink.gif" alt=";)" class="wp-smiley"><br>
+Un saludo, siento la espera y no haber podido resolver tu problema.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2762#respond" onclick='return addComment.moveForm("comment-2762", "2762", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-3" id="li-comment-2945">
+		<article id="comment-2945" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-99b96ec99ed8968f7408432a4ad8d60f-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/99b96ec99ed8968f7408432a4ad8d60f.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Xavi Covarrubias</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2945"><time datetime="c">03/07/2013 at 2:43</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>a mi se me ocurre ponerle una condicion para que en caso de que 
+llegue un caracter asignar un valor a una variable definida preciamente 
+por ejemplo<br>
+if (*msg = “E” )<br>
+{<br>
+var = 89<br>
+}<br>
+espero haberme explicado</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2945#respond" onclick='return addComment.moveForm("comment-2945", "2945", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-2751">
+		<article id="comment-2751" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-6c447532a07a3963472d59f4d1b6d06a-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/6c447532a07a3963472d59f4d1b6d06a.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">alexander suhopertramp</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2751"><time datetime="c">02/06/2013 at 3:05</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>This was GREAT this was the first code I found that works and it 
+works well thanks! Do you have any where I could send some kind of 
+variable, like from a DHT11 thermometer?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2751#respond" onclick='return addComment.moveForm("comment-2751", "2751", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor odd alt depth-2" id="li-comment-2763">
+		<article id="comment-2763" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-1" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2763"><time datetime="c">04/06/2013 at 11:06</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks, I tried to send a variable but I didn’t found the way in 
+the library, so I gave up. Maybe I’ll try again when I have more time.<br>
+You could try to convert in the transmitter the variable to a char 
+string and in the receiver the char string to a variable. I tried that 
+but I always get errors with something and I didn’t get a good code.<br>
+Regards and sorry for the wait and for failing to solve your problem.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2763#respond" onclick='return addComment.moveForm("comment-2763", "2763", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2761">
+		<article id="comment-2761" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-9f03cebcc66a47a156a3bf0af1d13541-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/9f03cebcc66a47a156a3bf0af1d13541.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Igor</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2761"><time datetime="c">04/06/2013 at 10:05</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>i copyed all the code exacly but can’t see anything on the serial screan</p>
+<p>the arduinoes work fine , how can i check if my transmiter or the resiver work fine?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2761#respond" onclick='return addComment.moveForm("comment-2761", "2761", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor odd alt depth-2" id="li-comment-2964">
+		<article id="comment-2964" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-2" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2964"><time datetime="c">05/07/2013 at 10:38</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hello, have you selected the correct USB ports for the receiver and the transmitter?<br>
+Are you reading the serial port of the receiver?</p>
+<p>Could you specify a bit more your problem?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2964#respond" onclick='return addComment.moveForm("comment-2964", "2964", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-2781">
+		<article id="comment-2781" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-7321a466c21ae379ca9f8f287ba83e33-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/7321a466c21ae379ca9f8f287ba83e33.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">yulia retno</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2781"><time datetime="c">07/06/2013 at 8:54</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Can I ask something ?<br>
+what arduino board do you use ?<br>
+and what arduino IDE ?<br>
+because I use with arduino ide 022 it still doesn’t work ,, can you help me ?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2781#respond" onclick='return addComment.moveForm("comment-2781", "2781", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor odd alt depth-2" id="li-comment-2963">
+		<article id="comment-2963" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-3" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2963"><time datetime="c">05/07/2013 at 10:35</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hello, I use Arduino IDE 1.0.2 version for MacOs.<br>
+That example was done with an Arduino Duemilanove and an Arduino UNO.<br>
+Could you specify a bit more your problem or the error that you get?</p>
+<p>Check that you change an select the correct usb port for the receiver and the transmitter.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2963#respond" onclick='return addComment.moveForm("comment-2963", "2963", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2986">
+		<article id="comment-2986" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-7269fd555f3628dc7e8efb032b93c28b-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/7269fd555f3628dc7e8efb032b93c28b.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">NG</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2986"><time datetime="c">11/07/2013 at 23:08</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi,</p>
+<p>Thanks so much for this guide. It was excellent! </p>
+<p>Question: What range are you getting? </p>
+<p>I am only getting around 1meter before the signal drops out.</p>
+<p>Thanks,</p>
+<p>NG</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2986#respond" onclick='return addComment.moveForm("comment-2986", "2986", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor odd alt depth-2" id="li-comment-2988">
+		<article id="comment-2988" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-4" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2988"><time datetime="c">12/07/2013 at 14:27</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi, thanks for reading us.<br>
+I haven’t made any test to check the range, but I think I’ve read that 
+you can increase the range by soldering a wire (as an antenna) in the 
+hole labeled “ANT” in the transmitter. On the receiver, I’m not sure if 
+the hole next to the coil is for the antenna or not.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2988#respond" onclick='return addComment.moveForm("comment-2988", "2988", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-3" id="li-comment-2994">
+		<article id="comment-2994" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-7269fd555f3628dc7e8efb032b93c28b-1" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/7269fd555f3628dc7e8efb032b93c28b.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">NG</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-2994"><time datetime="c">14/07/2013 at 10:16</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Genius! I cut some copper wire to a quarter of the wavelength and soldered it to the ANT holes.</p>
+<p>Now I can transmit from the 3rd floor and still receive on the ground floor! </p>
+<p>Thanks again,</p>
+<p>NG</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=2994#respond" onclick='return addComment.moveForm("comment-2994", "2994", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-3067">
+		<article id="comment-3067" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-f364812ec4e3264fa61244096e531b50-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/f364812ec4e3264fa61244096e531b50.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Álvaro</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-3067"><time datetime="c">23/07/2013 at 13:35</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Enhorabuena Javier. Un gran tutorial.</p>
+<p>Solo quería compartir dos cosillas. </p>
+<p>Yo tengo el juego de emisor-receptor de seeed y en su página dicen 
+que el receptor debe tener puenteadas las dos salidas al 
+microcontrolador (<a href="http://www.seeedstudio.com/wiki/index.php?title=433Mhz_RF_link_kit" onclick="javascript:_gaq.push(['_trackEvent','outbound-comment','http://www.seeedstudio.com']);">http://www.seeedstudio.com/wiki/index.php?title=433Mhz_RF_link_kit</a>).</p>
+<p>Para transmitir números hay dos funciones, que son itoa() (int to 
+array) y atoy() (array to int) que valen para el emisor y el receptor 
+respectivamente.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=3067#respond" onclick='return addComment.moveForm("comment-3067", "3067", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor even depth-2" id="li-comment-3475">
+		<article id="comment-3475" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-5" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-3475"><time datetime="c">12/08/2013 at 12:28</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Muchas gracias por tu visita y por compartir esta información con nosotros.<br>
+Un saludo.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=3475#respond" onclick='return addComment.moveForm("comment-3475", "3475", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-3785">
+		<article id="comment-3785" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-154bd1283e288dd740d87abd4273a1e1-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/154bd1283e288dd740d87abd4273a1e1.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Alberto</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-3785"><time datetime="c">05/09/2013 at 21:15</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hola que tal, copié tu código y lo adapté al luachpad MSP430 de 
+TI, pero no muestra nada en la pantalla serial del receptor, la única 
+conexión que tienes es al pin PWM (pin 3) verdad?*, claro, hice la 
+conexión de los 5 volts externos y conecté tierras, pero no muestra nada</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=3785#respond" onclick='return addComment.moveForm("comment-3785", "3785", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor even depth-2" id="li-comment-4174">
+		<article id="comment-4174" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-6" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-4174"><time datetime="c">29/09/2013 at 13:28</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>En efecto esa es la única conexión PWM, pero desconozco cómo funciona el MSP430 siento no poder ayudarte.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=4174#respond" onclick='return addComment.moveForm("comment-4174", "4174", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-3786">
+		<article id="comment-3786" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-c89c06ca52fe832b5f2b4458ffd3bce9-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/c89c06ca52fe832b5f2b4458ffd3bce9.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Luke</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-3786"><time datetime="c">05/09/2013 at 21:31</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Is it fine to use Arduino Uno board for both?</p>
+<p>Thanks</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=3786#respond" onclick='return addComment.moveForm("comment-3786", "3786", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor even depth-2" id="li-comment-4175">
+		<article id="comment-4175" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-7" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-4175"><time datetime="c">29/09/2013 at 13:30</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>DigiGram:”Yes you can use UNO for both. I used Uno for the 
+receiver and a standalone Atmega 328p for the transmitter, so you can 
+use just what you have”</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=4175#respond" onclick='return addComment.moveForm("comment-4175", "4175", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-3814">
+		<article id="comment-3814" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-292f7b6a6934541923373eae9b85aa85-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/292f7b6a6934541923373eae9b85aa85.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">ADAN CERVANTES</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-3814"><time datetime="c">07/09/2013 at 2:17</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>…hola saludos a todos…antes que nada buen tutorial me agrado 
+mucho y me ayudaste con unas dudas pero ammm te explico yo estoy en un 
+proyecto queriendo hacer un robot inalambrico y quiero mandar las señles
+ por medio de este dispositivo…mi pregunta es si serviria estas 
+bibliotecas para usarlas con un pic 16f877a….o debo encontrar alguna 
+otra libreria…y si es posible hacerlo funcionar de la misma 
+manera…espero y puedas ayudarme…saludos….</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=3814#respond" onclick='return addComment.moveForm("comment-3814", "3814", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor even depth-2" id="li-comment-4173">
+		<article id="comment-4173" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-8" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-4173"><time datetime="c">29/09/2013 at 13:25</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hola, no he probado este módulo con un PIC, pero la librería 
+VirtualWire está hecha para Arduino que usa microcontroladores de ATMEL y
+ probablemente su configuración sea distinta a la de tu PIC16f877a. 
+Supongo que tendrás que buscar una compatible con tu microcontrolador o 
+escribir un programa que no use esta librería.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=4173#respond" onclick='return addComment.moveForm("comment-4173", "4173", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-3864">
+		<article id="comment-3864" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-4616053c315e59753398b30bdd5db913-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/4616053c315e59753398b30bdd5db913.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Carlos Rojas</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-3864"><time datetime="c">07/09/2013 at 21:18</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi thanks for this great tutorial, I have following questions,<br>
+1.- can this be use with several transmitters and just one receiver for all of them ?<br>
+2.- can I use then instead of the Moteino in this project <a href="http://goo.gl/4oaZhO" onclick="javascript:_gaq.push(['_trackEvent','outbound-comment','http://goo.gl']);">http://goo.gl/4oaZhO</a> ?</p>
+<p>Again kudos for excellent tutorial and I will really appreciate your answers.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=3864#respond" onclick='return addComment.moveForm("comment-3864", "3864", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-4060">
+		<article id="comment-4060" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-98e7b393ec322982aac6d562b62c8947-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/98e7b393ec322982aac6d562b62c8947.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://blog.digigram.za.net/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://blog.digigram.za.net']);" rel="external nofollow" class="url">DigiGram</a></b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-4060"><time datetime="c">20/09/2013 at 22:09</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>@Carlos, yes several transmitters can talk to one receiver BUT 
+NOT at the same time! As long as the transmitters don’t transmit 
+simultaneously the receiver will receive all of them.</p>
+<p>And as to distance, I got roughly 10m tonight through doors and walls, with a regulated 5V supply and NO external ANT.</p>
+<p>@Luke: Yes you can use UNO for both. I used Uno for the receiver and a
+ standalone Atmega 328p for the transmitter, so you can use just what 
+you have</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=4060#respond" onclick='return addComment.moveForm("comment-4060", "4060", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor odd alt depth-3" id="li-comment-4176">
+		<article id="comment-4176" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-9" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-4176"><time datetime="c">29/09/2013 at 13:34</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hello, thanks for your response.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=4176#respond" onclick='return addComment.moveForm("comment-4176", "4176", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback even thread-odd thread-alt depth-1" id="comment-4239">
+		<p>Pingback: <a href="http://www.pi-quer.de/?p=1622" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://www.pi-quer.de']);" rel="external nofollow" class="url">A nice longer weekend being able to play with the Arduino board… »</a> </p>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-5223">
+		<article id="comment-5223" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-506a02f9e909a42f4db60e580e76e4d3-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/506a02f9e909a42f4db60e580e76e4d3.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">José Luis</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-5223"><time datetime="c">29/11/2013 at 19:04</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Interesante amigo, yo no uso arduino pero estoy a punto de 
+comprar este kit para utilizarlo con un MSP430, de Texas Instruments, 
+solo tengo algunas preguntas: ya no requiere codificador y decodificador
+ el tx y rx respectivamente verdad? porque he visto unos modulos que si 
+lo requieren y otra cuestion mas: en mi caso yo tengo en mi 
+microcontrolador terminales de tx y rx de la uart, ahi serian las 
+conexiones de data? muy amable y ya te contare como estuvo.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=5223#respond" onclick='return addComment.moveForm("comment-5223", "5223", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-5230">
+		<article id="comment-5230" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-5db8397140a33d5739e90821fddaa892-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/5db8397140a33d5739e90821fddaa892.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://blog.digigram.za.net/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://blog.digigram.za.net']);" rel="external nofollow" class="url">DigiGram</a></b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-5230"><time datetime="c">29/11/2013 at 21:59</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>I would rather not use your tx/rx as that is programmed to work 
+in one set way, while the virtualwire library is set up to use 
+input/output pins. The encoder/decoder is not necessary for the 
+virtualwire library, but you might get interference from other devices. 
+The MSP430 is very nice, and virtualwire is written to work with MSP430 
+as well. Good luck and enjoy.</p>
+<p>PS. I’m now having 40m of reception outside while the receiver is 
+inside the house, inside a cupboard on the other side of the house. Can 
+turn my back lights on from my gate, about 40m away. Running the 
+transmitter from 3*1.5V AAA batteries and the receiver from a 5V 
+regulated supply.</p>
+<p>PPS. Hope the English replies are fine</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=5230#respond" onclick='return addComment.moveForm("comment-5230", "5230", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-5563">
+		<article id="comment-5563" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-baa9807f2196d498dd69c3320a767753-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/baa9807f2196d498dd69c3320a767753.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Gabriel R</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-5563"><time datetime="c">05/12/2013 at 18:58</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Gracias por este tutorial, fue de much ayuda! Alguien sabe cual 
+es la maxima distancia que se puede obtener con estos modulos? Necesito 
+obtener mas distancia para que mi projecto funcione, talvez tenga que 
+usar X-bees pero son muy caras comparadas con estos modulos. </p>
+<p>Gracias</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=5563#respond" onclick='return addComment.moveForm("comment-5563", "5563", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-12098">
+		<article id="comment-12098" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-6a8f2f5f292c75c5e81a6607530a0ab6-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/6a8f2f5f292c75c5e81a6607530a0ab6.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Wojtek</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-12098"><time datetime="c">12/02/2014 at 16:06</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hello,</p>
+<p>Thanks for the great write-up. Would you know how to set the working 
+frequency of the receiver (you mention 315 MHz, there are other 
+available but I cannot find any information on how to set them up)</p>
+<p>Thank you!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=12098#respond" onclick='return addComment.moveForm("comment-12098", "12098", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-2" id="li-comment-12102">
+		<article id="comment-12102" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-5db8397140a33d5739e90821fddaa892-1" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/5db8397140a33d5739e90821fddaa892.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://blog.digigram.za.net/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://blog.digigram.za.net']);" rel="external nofollow" class="url">DigiGram</a></b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-12102"><time datetime="c">12/02/2014 at 17:36</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Wojtek, the receiver is set to 315MHz when you buy it. Most 
+versions does feature a variable inductor, but you don’t want to change 
+that!! So decide if you want 315MHz or 433Mhz, and buy the set you need.
+ Don’t try to set these.</p>
+<p>I absolutely love these RF kits, so I try to use them for as many projects as possible</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=12102#respond" onclick='return addComment.moveForm("comment-12102", "12102", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-12113">
+		<article id="comment-12113" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-0592592c377992d8a7b9f8872286f73e-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/0592592c377992d8a7b9f8872286f73e.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">alejandro</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-12113"><time datetime="c">12/02/2014 at 19:47</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>disculpa quería saber si puedes ayudarme con el diagrama de el armado de las 2 placas de arduino y de el receptor y emisor.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=12113#respond" onclick='return addComment.moveForm("comment-12113", "12113", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-12951">
+		<article id="comment-12951" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-8c86d9afba6f168bed4e36e29f585e5f-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/8c86d9afba6f168bed4e36e29f585e5f.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">Eduardo</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-12951"><time datetime="c">12/03/2014 at 1:11</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi. I got this erro</p>
+<p>Arduino: 1.5.6-r2 (Windows 7), Placa:”Arduino Uno”</p>
+<p>Build options changed, rebuilding all</p>
+<p>In file included from Simple_Transmitter_Code.ino:3:<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:54: error: variable or field ‘vw_set_tx_pin’ declared void<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:54: error: ‘uint8_t’ was not declared in this scope<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:58: error: variable or field ‘vw_set_rx_pin’ declared void<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:58: error: ‘uint8_t’ was not declared in this scope<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:62: error: variable or field ‘vw_set_ptt_pin’ declared void<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:62: error: ‘uint8_t’ was not declared in this scope<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:66: 
+error: variable or field ‘vw_set_ptt_inverted’ declared void<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:66: error: ‘uint8_t’ was not declared in this scope<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:71: error: variable or field ‘vw_setup’ declared void<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:71: error: ‘uint16_t’ was not declared in this scope<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:90: error: ‘uint8_t’ does not name a type<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:96: error: ‘uint8_t’ does not name a type<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:99: error: ‘uint8_t’ does not name a type<br>
+C:\Program Files (x86)\Arduino\libraries\VirtualWire/VirtualWire.h:104: error: ‘uint8_t’ does not name a type<br>
+Simple_Transmitter_Code.ino: In function ‘void setup()’:<br>
+Simple_Transmitter_Code:6: error: ‘vw_set_ptt_inverted’ was not declared in this scope<br>
+Simple_Transmitter_Code:7: error: ‘vw_setup’ was not declared in this scope<br>
+Simple_Transmitter_Code:8: error: ‘vw_set_tx_pin’ was not declared in this scope<br>
+Simple_Transmitter_Code.ino: In function ‘void loop()’:<br>
+Simple_Transmitter_Code:15: error: ‘vw_send’ was not declared in this scope</p>
+<p>  Este relatório deveria ter mais informações<br>
+  “Mostrar saída verbosa durante a compilação”<br>
+  habilitado em Arquivo &gt; Preferências.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=12951#respond" onclick='return addComment.moveForm("comment-12951", "12951", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-jasirgo bypostauthor even depth-2" id="li-comment-13000">
+		<article id="comment-13000" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-3545deebb3790f7b7692e0ef05cd825b-10" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/3545deebb3790f7b7692e0ef05cd825b.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://zygzax.com/" rel="external nofollow" class="url">javiersb</a></b> <span>Post author</span></cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-13000"><time datetime="c">12/03/2014 at 16:34</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hola, según parece la versión 1.5.6-r2 es una beta y debe de 
+tener algún problema con la librería VirtualWire o no está incluida.<br>
+Prueba a descargarte una versión estable de la aplicación de Arduino 
+como la 1.0.5, con ella el programa debería compilar correctamente.</p>
+<p>Gracias por tu visita,<br>
+Javier.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=13000#respond" onclick='return addComment.moveForm("comment-13000", "13000", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-14309">
+		<article id="comment-14309" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-ff1c71e4edf5c0223ac39245c6cf5fe2-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/ff1c71e4edf5c0223ac39245c6cf5fe2.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">roukao</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-14309"><time datetime="c">25/03/2014 at 19:32</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>hello,<br>
+I try to send “hello” from a self ATmega328. I put a LED on the PIN3 to 
+see when a signal is emitted. But nothing! I tested the LED, I 5V, the 
+atmega loaded, but nothing.<br>
+ I don’t understand, when you load the atmega, the library “VirtualWire”
+ is still in the PC … The atmega does not need to issue the library? . 
+Have you an idea of ​​the error I am! Thank you !!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=14309#respond" onclick='return addComment.moveForm("comment-14309", "14309", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-14332">
+		<article id="comment-14332" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-5db8397140a33d5739e90821fddaa892-2" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/5db8397140a33d5739e90821fddaa892.jpg" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn"><a href="http://blog.digigram.za.net/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://blog.digigram.za.net']);" rel="external nofollow" class="url">DigiGram</a></b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-14332"><time datetime="c">25/03/2014 at 23:35</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hey Roukao,</p>
+<p>The library will stay on the PC yes. Arduino compiles the library 
+with your code and writes that to the ATmega, but will not remove the 
+library from your PC. Also, a LED on pin 3 might indicate transfer, but 
+keep in mind it will be very short bursts, so your LED might not even 
+light up (mine never did, even though my project is working).</p>
+<p>Maybe put the exact code you used in a pastepin or hastepaste.com and
+ paste here. A schematic of your setup (with the LED) might also help in
+ figuring this out.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=14332#respond" onclick='return addComment.moveForm("comment-14332", "14332", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-18983">
+		<article id="comment-18983" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img id="grav-6db1ad822cfdf4a44aaef1ca43f45aab-0" alt="" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/6db1ad822cfdf4a44aaef1ca43f45aab.png" class="avatar avatar-44 photo grav-hashed grav-hijack" height="44" width="44"><cite><b class="fn">felix</b> </cite><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en#comment-18983"><time datetime="c">13/04/2014 at 23:12</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>i did everything  exactly as you said but mine still doesn’t show anything on the serial monitor.here are the steps i took</p>
+<p>1.downloaded arduino 1.0.2 for windows,unzipped and copied it to c:program files<br>
+2.downloaded virtual wire 1.14,unzipped it and copied it to c:program file/Arduino/libraries<br>
+3.copy pasted the above code for transmitter and receiver and uploaded them to their respective arduino uno boards.</p>
+<p>still nothing shows on serial monitor window of receiver.could i have done something wrong in steps 1and 2?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?replytocom=18983#respond" onclick='return addComment.moveForm("comment-18983", "18983", "respond", "1108")'>Reply</a> <span>↓</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+		</ol><!-- .commentlist -->
+
+		
+		
+	
+									<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://zygzax.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" size="30" type="text"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" id="submit" value="Post Comment" type="submit">
+							<input name="comment_post_ID" value="1108" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="d69051a2e8" type="hidden"></p><p class="comment-subscription-form"><input name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/form.js"></script>
+<p style="display: none;"></p>					<input id="ak_js" name="ak_js" value="1399048242866" type="hidden"></form>
+							</div><!-- #respond -->
+			        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                jQuery('#commentform').submit(function () {
+                    _gaq.push(
+                            ['_setAccount', 'UA-41495282-1'],
+                            ['_trackEvent', 'comment', 'submit']
+                    );
+                });
+            });
+        </script>
+		
+</div><!-- #comments .comments-area -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="qtranslate-2" class="widget widget_qtranslate"><h3 class="widget-title">Language</h3><ul class="qtrans_language_chooser" id="qtranslate-2-chooser"><li><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/" class="qtrans_flag_es qtrans_flag_and_text" title="Español"><span>Español</span></a></li><li class="active"><a href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?lang=en" class="qtrans_flag_en qtrans_flag_and_text" title="English"><span>English</span></a></li></ul><div class="qtrans_widget_end"></div></aside><aside id="text-12" class="widget widget_text">			<div class="textwidget"><p><iframe style="width: 143px; height: 28px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/follow_button.htm" allowtransparency="true" id="twitter-widget-0" frameborder="0" scrolling="no"></iframe><br>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
+</div>
+		</aside><aside id="ezadswidget-3" class="widget EzAdsWidget"><h3 class="widget-title">Publicidad:</h3>
+<!-- Easy AdSense V7.20 -->
+<!-- [widget: 2 urCount: 2 urMax: 0] -->
+<div class="ezAdsense adsense adsense-widget" style="text-align:center;margin:12px;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4408315840589795";
+/* zygzax1 */
+google_ad_slot = "2341726045";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/show_ads.js">
+</script></div>
+<!-- Easy AdSense V7.20 -->
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://zygzax.com/2013/12/15/leer-datos-en-sd-con-arduino-modulo-microsd-y-ethernet-shield/?lang=en">Read Data from SD with Arduino (MicroSD module and Ethernet Shield)</a>
+						</li>
+					<li>
+				<a href="http://zygzax.com/2013/12/14/escribir-datos-en-una-tarjeta-sd-con-arduino-modulo-microsd-y-ethernet-shield/?lang=en">Write data on a SD card with Arduino (MicroSD module and Ethernet Shield)</a>
+						</li>
+					<li>
+				<a href="http://zygzax.com/2013/07/13/colorduino-mostrar-numeros/?lang=en">Colorduino RGB matrix controller – Print numbers</a>
+						</li>
+					<li>
+				<a href="http://zygzax.com/2013/07/08/enviar-y-recibir-datos-con-modulo-bluetooth-para-arduino/?lang=en">Send and receive data with Bluetooth module for Arduino</a>
+						</li>
+					<li>
+				<a href="http://zygzax.com/2013/04/22/reloj-con-arduino-y-el-modulo-tiny-rtc-i2c/?lang=en">Arduino and the module Tiny RTC I2C</a>
+						</li>
+				</ul>
+		</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href="http://zygzax.com/2013/12/?lang=en">December 2013</a></li>
+	<li><a href="http://zygzax.com/2013/07/?lang=en">July 2013</a></li>
+	<li><a href="http://zygzax.com/2013/04/?lang=en">April 2013</a></li>
+	<li><a href="http://zygzax.com/2013/03/?lang=en">March 2013</a></li>
+	<li><a href="http://zygzax.com/2013/02/?lang=en">February 2013</a></li>
+	<li><a href="http://zygzax.com/2012/11/?lang=en">November 2012</a></li>
+	<li><a href="http://zygzax.com/2012/10/?lang=en">October 2012</a></li>
+	<li><a href="http://zygzax.com/2012/09/?lang=en">September 2012</a></li>
+		</ul>
+</aside><aside id="linkcat-82" class="widget widget_links"><h3 class="widget-title">Links</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.rastreablogs.com/" title="Directorio de Blogs" target="_blank" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.rastreablogs.com']);">Directorio de Blogs</a></li>
+
+	</ul>
+</aside>
+<aside id="text-7" class="widget widget_text">			<div class="textwidget"><p><a href="http://www.blogesfera.com/ping/41240" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.blogesfera.com']);" title="Directorio de Blogs Hispanos - Agrega tu Blog"><img src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/blogesfera_azul.gif" alt="BlogESfera Directorio de Blogs Hispanos - Agrega tu Blog" border="0"></a><br>
+ <a href="http://es.paperblog.com/" rel="paperblog jasirgo" title="Paperblog : Los mejores artículos de los blogs"><br>
+  <img src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/minilogo.png" alt="Paperblog : Los mejores artículos de los blogs" border="0"><br>
+ </a></p>
+</div>
+		</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="http://zygzax.com/wp-login.php">Log in</a></li>
+			<li><a href="http://zygzax.com/feed/?lang=en" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://zygzax.com/comments/feed/?lang=en" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
+</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+						<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<div style="display:none">
+	<div class="grofile-hash-map-ac905ecd8a1efd4224c64a8f56f0cf99">
+	</div>
+	<div class="grofile-hash-map-48afcffd699ada7312b6f845b21d6b22">
+	</div>
+	<div class="grofile-hash-map-3545deebb3790f7b7692e0ef05cd825b">
+	</div>
+	<div class="grofile-hash-map-99b96ec99ed8968f7408432a4ad8d60f">
+	</div>
+	<div class="grofile-hash-map-6c447532a07a3963472d59f4d1b6d06a">
+	</div>
+	<div class="grofile-hash-map-9f03cebcc66a47a156a3bf0af1d13541">
+	</div>
+	<div class="grofile-hash-map-7321a466c21ae379ca9f8f287ba83e33">
+	</div>
+	<div class="grofile-hash-map-7269fd555f3628dc7e8efb032b93c28b">
+	</div>
+	<div class="grofile-hash-map-5271787e1f28e95bb1091fefd7b2e4d1">
+	</div>
+	<div class="grofile-hash-map-f364812ec4e3264fa61244096e531b50">
+	</div>
+	<div class="grofile-hash-map-154bd1283e288dd740d87abd4273a1e1">
+	</div>
+	<div class="grofile-hash-map-c89c06ca52fe832b5f2b4458ffd3bce9">
+	</div>
+	<div class="grofile-hash-map-292f7b6a6934541923373eae9b85aa85">
+	</div>
+	<div class="grofile-hash-map-4616053c315e59753398b30bdd5db913">
+	</div>
+	<div class="grofile-hash-map-98e7b393ec322982aac6d562b62c8947">
+	</div>
+	<div class="grofile-hash-map-506a02f9e909a42f4db60e580e76e4d3">
+	</div>
+	<div class="grofile-hash-map-5db8397140a33d5739e90821fddaa892">
+	</div>
+	<div class="grofile-hash-map-baa9807f2196d498dd69c3320a767753">
+	</div>
+	<div class="grofile-hash-map-6a8f2f5f292c75c5e81a6607530a0ab6">
+	</div>
+	<div class="grofile-hash-map-0592592c377992d8a7b9f8872286f73e">
+	</div>
+	<div class="grofile-hash-map-8c86d9afba6f168bed4e36e29f585e5f">
+	</div>
+	<div class="grofile-hash-map-ff1c71e4edf5c0223ac39245c6cf5fe2">
+	</div>
+	<div class="grofile-hash-map-6db1ad822cfdf4a44aaef1ca43f45aab">
+	</div>
+	</div>
+<div class="cookillian-alert" style="display:none;"><a class="close">×</a><h3 class="alert-heading">Información relativa a las cookies</h3><p>Este
+ sitio utiliza cookies propias y de terceros. Si continúa navegando está
+ dando su consentimiento para la utilización de cookies y la aceptación 
+de nuestra <a href="http://zygzax.com/politica-de-cookies/" target="_blank">política de cookies</a>.</p><div class="buttons"><a class="btn btn-ok" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?cookillian_resp=1" rel="nofollow"><i class=""></i>Acepto el uso de cookies.</a>&nbsp;
+        <a class="btn btn-no" href="http://zygzax.com/2013/03/15/comunicacion-entre-arduinos-por-medio-de-radiofrecuencia/?cookillian_resp=0" rel="nofollow"><i class=""></i>No, solo recuerde esta respuesta.</a></div></div>		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+					<script type="text/javascript">
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+			<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/concat-7de42a99ae8df4cd957a016ebc68b933.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"en"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/sharing.js"></script>
+
+	<script src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/e-201418.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.9.3',blog:'40245965',post:'1108',tz:'2'});
+	var load_cmc = function(){linktracker_init(40245965,1108,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/g.gif" alt="">
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Communication%20between%20Arduino%20via%20radio%20frequencyZygzax_files/postmessageRelay.htm" id="oauth2relay825143280" name="oauth2relay825143280"></iframe></body><iframe src="" style="display: none;"></iframe></html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced (Requested URI contains query)
+Database Caching 9/9 queries in 0.003 seconds using disk
+Object Caching 3301/3345 objects using disk
+
+ Served from: zygzax.com @ 2014-05-02 18:30:38 by W3 Total Cache -->

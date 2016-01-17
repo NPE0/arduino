@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+	<title>Arduino Урок 4. Регистр Сдвига 74HC595 и Восемь Светодиодов для Arduino</title>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" charset="utf-8"> 
+	<meta name="kewords" content="">
+	<meta name="discription" content="">
+	<link href="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/css.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/style.css"> 
+	<script type="text/javascript" src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/jquery.js"></script>
+	<script type="text/javascript" src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/leson.js"></script>
+</head>
+<body>
+	<div id="hover">
+		<div id="a_logo">
+			<a href="http://lesson.iarduino.ru/" title="Уроки arduino на iarduino.ru"><img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/logo_lesson.png" alt="Уроки arduino на iarduino.ru"></a>
+		</div>
+		<div>
+			
+		</div>
+	</div>
+		
+	<div id="status-bar">
+		<div class="left">
+			<a href="http://lesson.iarduino.ru/">ГЛАВНАЯ </a><span>ᗌ</span>
+						
+		</div>
+		<div class="right">
+			<a href="http://iarduino.ru/">МАГАЗИН</a>
+		</div>
+	</div>	
+
+		
+
+	<div id="content">
+		<div class="left">
+			<div class="title">Arduino Урок 4. Регистр Сдвига 74HC595 и Восемь Светодиодов</div>
+			<ul>
+				<li class="activ"><a href="http://lesson.iarduino.ru/lesson/arduino-urok-4-registr-sdviga-74hc595-i-vosem-svetodiodov/">Обзор<span>ᗌ</span></a></li>
+				<li><a href="http://lesson.iarduino.ru/lesson/arduino-urok-4-registr-sdviga-74hc595-i-vosem-svetodiodov/maketnaya-plata.html">Макетная плата<span>ᗌ</span></a></li><li><a href="http://lesson.iarduino.ru/lesson/arduino-urok-4-registr-sdviga-74hc595-i-vosem-svetodiodov/74hc595-registr-sdviga.html">74HC595 Регистр сдвига<span>ᗌ</span></a></li><li><a href="http://lesson.iarduino.ru/lesson/arduino-urok-4-registr-sdviga-74hc595-i-vosem-svetodiodov/kod-dlya-arduino.html">Код для Arduino<span>ᗌ</span></a></li>			</ul>
+
+			
+			
+			
+			
+			<div class="title">Необходимые детали</div>
+			<ul>
+				
+						<li>
+							<div class="div_rek_tov">
+								<img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/47d36d561c1d5ac3c49ccff1b49aaa32.jpg" alert="Купить Arduino Uno r3 ">
+								<span>890р.</span><br>
+								<div>
+									<a href="http://iarduino.ru/shop/arduino/arduino-uno-r3.html">Купить Arduino Uno r3 </a>
+								</div>
+							</div>
+						</li>
+						
+						<li>
+							<div class="div_rek_tov">
+								<img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/41.jpg" alert="Купить Breadboard 170 контактов">
+								<span>149р.</span><br>
+								<div>
+									<a href="http://iarduino.ru/shop/Makety/breadboard-170-kontaktov.html">Купить Breadboard 170 контактов</a>
+								</div>
+							</div>
+						</li>
+						
+						<li>
+							<div class="div_rek_tov">
+								<img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/949b04e6255c5dac9191f6494fc14879.jpg" alert="Купить 74HC595D регисрт в корпусе SOP16 для arduino ">
+								<span>18р.</span><br>
+								<div>
+									<a href="http://iarduino.ru/shop/radioparts/74hc595d-regisrt-v-korpuse-sop16-dlya-arduino.html">Купить 74HC595D регисрт в корпусе SOP16 для arduino </a>
+								</div>
+							</div>
+						</li>
+						
+						<li>
+							<div class="div_rek_tov">
+								<img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/11111.jpg" alert="Купить Набор проводов для Breadboard Arduino">
+								<span>197р.</span><br>
+								<div>
+									<a href="http://iarduino.ru/shop/Provoda-kabeli/nabor-provodov-dlya-breadboard-arduino.html">Купить Набор проводов для Breadboard Arduino</a>
+								</div>
+							</div>
+						</li>
+						
+						<li>
+							<div class="div_rek_tov">
+								<img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/bd82582167e132bdc5b5ca7c6e1d2e02.jpg" alert="Купить Светодиод Красный  3мм.">
+								<span>5р.</span><br>
+								<div>
+									<a href="http://iarduino.ru/shop/Displei/svetodiod-krasnyy.html">Купить Светодиод Красный  3мм.</a>
+								</div>
+							</div>
+						</li>
+						
+						<li>
+							<div class="div_rek_tov">
+								<img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/2fbb5ec4614907e52dd7f3985f9e2c1b.jpg" alert="Купить Сверхъяркий светодиод Белый 5мм.">
+								<span>10р.</span><br>
+								<div>
+									<a href="http://iarduino.ru/shop/Displei/sverhyarkiy-svetodiod-belyy.html">Купить Сверхъяркий светодиод Белый 5мм.</a>
+								</div>
+							</div>
+						</li>
+						
+						<li>
+							<div class="div_rek_tov">
+								<img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/159c844a5dee2f793abb89d54a5b3a0f.jpg" alert="Купить Набор резисторов MAXI  (290 резисторов) ">
+								<span>249р.</span><br>
+								<div>
+									<a href="http://iarduino.ru/shop/radioparts/nabor-rezistorov.html">Купить Набор резисторов MAXI  (290 резисторов) </a>
+								</div>
+							</div>
+						</li>
+									
+			
+
+			</ul>
+			
+		</div>
+		
+	
+		<div class="right">
+		<h1>Arduino Урок 4. Регистр Сдвига 74HC595 и Восемь Светодиодов</h1>
+			<div class="page-content">			
+				В этом уроке мы научимся управлять 8 светодиодами с нашего arduino 
+не используя 8 выходов, это очень актуально если вам нужно управлять 
+большим количеством устройств (например диоды)<br>
+ <img src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/8gad6yog180xk7jk4h68f663yate2hpayzo4ycl0lly5shqxzx.jpg"> <br>
+Для этого мы будем использовать 74HC595(регистр сдвига) он имеет 8 
+выходов которые мы подключим к нашим светодиодам через ограничивающие 
+ток резисторы и он имеет всего 3 входа, с помощью которых мы будем 
+записывать в него информацию с ардуино.<br>
+Скорость управления сигналом снижается к сожалению до 500 000 раз в 
+секунду вместо 8,000,000 в секунду, но это все равно очень быстро и наш 
+глаз не заметит разницы!				
+				<div class="page-content-niz"><a href="#" class="dalee"><span>Далее</span> Следующий урок</a></div>
+			</div>
+		<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/openapi.js"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 3922481, onlyWidgets: true});
+</script>
+
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div style="height: 148px; width: 520px; background: none repeat scroll 0% 0% transparent;" id="vk_comments"><iframe style="overflow: hidden; height: 148px;" id="vkwidget1" src="Arduino%20%D0%A3%D1%80%D0%BE%D0%BA%204.%20%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%20%D0%A1%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%2074HC595%20%D0%B8%20%D0%92%D0%BE%D1%81%D0%B5%D0%BC%D1%8C%20%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Arduino_files/widget_comments.htm" name="fXD5d456" frameborder="0" height="133" scrolling="no" width="520"></iframe></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 10, width: "520", attach: false});
+</script>
+
+		
+		</div>
+	</div>
+	
+	<div id="foter">
+		<a href="http://lesson.iarduino.ru/">На главную</a>
+	
+	<!--LiveInternet counter--><script type="text/javascript">new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"" : ";s"+screen.width+"*"+screen.height+"*" + (screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u"+escape(document.URL) + ";h"+escape(document.title.substring(0,80)) + ";" +Math.random();</script><!--/LiveInternet--> 
+	</div>
+	
+
+
+	</body></html>

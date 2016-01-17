@@ -1,0 +1,1 @@
+sio._receive_domain_data({"data":"{\"lang\":\"ru\",\"search_field\":\"flag-9\",\"search_layout\":\"t_style\",\"t_style_template\":\"sio-bb\",\"colors\":{\"sf_bg\":\"65aefd\",\"sf_text_color\":\"000000\"},\"dimensions\":{\"column_width\":869,\"column_margin\":-436,\"font_size\":40}}"});

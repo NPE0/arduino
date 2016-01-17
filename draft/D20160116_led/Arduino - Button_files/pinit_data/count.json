@@ -1,0 +1,1 @@
+receiveCount({"error":"Invalid Url","url":"//www.addthis.com/features/pinterest"})

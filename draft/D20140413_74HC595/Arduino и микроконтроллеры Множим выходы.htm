@@ -1,0 +1,1101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Стрелковый Форум AIRGUNSTYLE.ru Arduino и микроконтроллеры Множим выходы -  </title>
+<link rel="stylesheet" type="text/css" href="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/html5.css"><link href="http://airgunstyle.ru/thread-642-1-1.html" rel="canonical">
+<meta name="keywords" content="Стрелковый Форум AIRGUNSTYLE.ru Arduino и микроконтроллеры Множим выходы">
+<meta name="description" content="Стрелковый Форум AIRGUNSTYLE.ru Arduino и микроконтроллеры Множим выходы ">
+<meta name="generator" content="Discuz! X3.1">
+<meta name="author" content="Discuz! Team and Comsenz UI Team">
+<meta name="copyright" content="2001-2013 Comsenz Inc.">
+<meta name="MSSmartTagsPreventParsing" content="True">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<!-- base href="http://airgunstyle.ru/" --><link rel="stylesheet" type="text/css" href="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/style_142_common.css"><link rel="stylesheet" type="text/css" href="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/style_142_forum_viewthread.css"><script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/watch.js" async="" type="text/javascript"></script><script type="text/javascript">var STYLEID = '142', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'x9x', charset = 'utf-8', discuz_uid = '0', cookiepre = 'fNHU_ea4f_', cookiedomain = '.airgunstyle.ru', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread', creditnotice = '1|Опыт|,2|Деньги|,3|Вклад|,4|Реалов|', defaultstyle = '', REPORTURL = 'aHR0cDovL2Fpcmd1bnN0eWxlLnJ1L3RocmVhZC02NDItMS0xLmh0bWw=', SITEURL = 'http://airgunstyle.ru/', JSPATH = 'static/js/', DYNAMICURL = '';</script>
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/common.js" type="text/javascript"></script>
+<meta name="application-name" content="Стрелковый Форум AIRGUNSTYLE.ru">
+<meta name="msapplication-tooltip" content="Стрелковый Форум AIRGUNSTYLE.ru">
+<meta name="msapplication-task" content="name=Портал;action-uri=http://airgunstyle.ru/portal.php;icon-uri=http://airgunstyle.ru/static/image/common/portal.ico"><meta name="msapplication-task" content="name=Форум;action-uri=http://airgunstyle.ru/forum.php;icon-uri=http://airgunstyle.ru/static/image/common/bbs.ico">
+<meta name="msapplication-task" content="name=Сообщества;action-uri=http://airgunstyle.ru/group.php;icon-uri=http://airgunstyle.ru/static/image/common/group.ico"><meta name="msapplication-task" content="name=Мой мир;action-uri=http://airgunstyle.ru/home.php;icon-uri=http://airgunstyle.ru/static/image/common/home.ico"><link rel="archives" title="Стрелковый Форум AIRGUNSTYLE.ru" href="http://airgunstyle.ru/archiver/">
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/forum.js" type="text/javascript"></script>
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/ITrhQGe0" async="" type="text/javascript"></script><style id="ya_share_style" type="text/css">.b-share-popup-wrap{z-index:1073741823;position:absolute;width:500px}.b-share-popup{position:absolute;z-index:1073741823;border:1px solid #888;background:#FFF;color:#000}.b-share-popup-wrap .b-share-popup_down{top:0}.b-share-popup-wrap .b-share-popup_up{bottom:0}.b-share-popup-wrap_state_hidden{position:absolute!important;top:-9999px!important;right:auto!important;bottom:auto!important;left:-9999px!important;visibility:hidden!important}.b-share-popup,x:nth-child(1){border:0;padding:1px!important}@media all and (resolution = 0dpi){.b-share-popup,x:nth-child(1),x:-o-prefocus{padding:0!important;border:1px solid #888}}.b-share-popup__i{display:-moz-inline-box;display:inline-block;padding:5px 0!important;overflow:hidden;vertical-align:top;white-space:nowrap;visibility:visible;background:#FFF;-webkit-box-shadow:0 2px 9px rgba(0,0,0,0.6);-moz-box-shadow:0 2px 9px rgba(0,0,0,0.6);box-shadow:0 2px 9px rgba(0,0,0,0.6)}.b-share-popup__item{font:1em/1.25em Arial,sans-serif;display:block;padding:5px 15px!important;white-space:nowrap;background:#FFF}.b-share-popup__item,a.b-share-popup__item:link,a.b-share-popup__item:visited{text-decoration:none!important;border:0!important}a.b-share-popup__item{cursor:pointer}a.b-share-popup__item .b-share-popup__item__text{display:inline;text-decoration:underline;color:#1A3DC1}a.b-share-popup__item:hover{word-spacing:0}a.b-share-popup__item:hover .b-share-popup__item__text{color:#F00;cursor:pointer}.b-share-popup__icon{display:-moz-inline-box;display:inline-block;margin:-3px 0 0 0;padding:0 5px 0 0!important;vertical-align:middle}.b-share-popup__icon_input{width:21px;height:16px;margin-top:-6px;padding:0!important}.b-share-popup__icon__input{margin-right:0;margin-left:2px;vertical-align:top}.b-share-popup__spacer{display:block;padding-top:10px!important}.b-share-popup__header{font:86%/1em Verdana,sans-serif;display:block;padding:10px 15px 5px 15px!important;color:#999}.b-share-popup__header_first{padding-top:5px!important}.b-share-popup__input{font:86%/1em Verdana,sans-serif;display:block;padding:5px 15px!important;color:#999;text-align:left}.b-share-popup__input__input{font:1em/1em Verdana,sans-serif;display:block;width:10px;margin:5px 0 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;resize:none;text-align:left;direction:ltr}.b-share-popup_down .b-share-popup_with-link .b-share-popup__input_link{position:absolute;top:5px;right:0;left:0}.b-share-popup_up .b-share-popup_with-link .b-share-popup__input_link{position:absolute;right:0;bottom:5px;left:0}.b-share-popup_down .b-share-popup_with-link{padding-top:55px!important}.b-share-popup_up .b-share-popup_with-link{padding-bottom:55px!important}.b-share-popup_down .b-share-popup_expandable .b-share-popup__main{padding-bottom:25px!important}.b-share-popup_up .b-share-popup_expandable .b-share-popup__main{padding-top:25px!important}.b-share-popup_down .b-share-popup_yandexed{padding-bottom:10px!important}.b-share-popup_up .b-share-popup_yandexed{padding-top:10px!important}.b-share-popup__yandex{position:absolute;right:4px;bottom:2px;font:78.125%/1em Verdana,sans-serif;padding:3px!important;background:transparent}a.b-share-popup__yandex:link,a.b-share-popup__yandex:visited{color:#C6C5C5;text-decoration:none}a.b-share-popup__yandex:link:hover,a.b-share-popup__yandex:visited:hover{color:#F00;text-decoration:underline}.b-share-popup_up .b-share-popup__yandex{top:2px;bottom:auto}.b-share-popup_expandable .b-share-popup__yandex{right:auto;left:4px}.b-share-popup_to-right .b-share-popup_expandable .b-share-popup__yandex{right:4px;left:auto}.b-share-popup__expander .b-share-popup__item{position:absolute;bottom:5px;font:86%/1em Verdana,sans-serif;margin:10px 0 0;padding:5px 10px!important;cursor:pointer;color:#999;background:transparent}.b-share-popup_to-right,.b-share-popup_to-right .b-share-popup__expander{direction:rtl}.b-share-popup_to-right .b-share-popup__expander .b-share-popup__icon{padding:0 0 0 5px!important}.b-share-popup_up .b-share-popup__expander .b-share-popup__item{top:-5px;bottom:auto}.b-share-popup__expander .b-share-popup__item:hover .b-share-popup__item__text{text-decoration:underline}.b-share-popup__expander .b-ico_action_rarr,.b-share-popup_to-right .b-share-popup__expander .b-ico_action_larr,.b-share-popup_full .b-share-popup__expander .b-ico_action_larr,.b-share-popup_to-right .b-share-popup_full .b-share-popup__expander .b-ico_action_rarr,.b-share-popup__expander .b-share-popup__item__text_collapse,.b-share-popup_full .b-share-popup__item__text_expand{display:none}.b-share-popup_to-right .b-share-popup__expander .b-ico_action_rarr,.b-share-popup_full .b-share-popup__item__text_collapse,.b-share-popup_full .b-share-popup__expander .b-ico_action_rarr,.b-share-popup_to-right .b-share-popup_full .b-share-popup__expander .b-ico_action_larr{display:inline}.b-ico_action_rarr,.b-ico_action_larr{width:8px;height:7px;border:0}.b-share-popup__main,.b-share-popup__extra{direction:ltr;vertical-align:bottom;text-align:left}.b-share-popup_down .b-share-popup__main,.b-share-popup_down .b-share-popup__extra{vertical-align:top}.b-share-popup__main{display:-moz-inline-stack;display:inline-block}.b-share-popup__extra{display:none;margin:0 -10px 0 0}.b-share-popup_full .b-share-popup__extra{display:-moz-inline-stack;display:inline-block}.b-share-popup_to-right .b-share-popup__extra{margin:0 0 0 -10px}.b-share-popup__tail{position:absolute;width:21px;height:10px;margin:0 0 0 -11px}.b-share-popup_down .b-share-popup__tail{top:-10px;background:url(//yandex.st/share/static/b-share-popup_down__tail.gif) 0 0 no-repeat}.b-share-popup_up .b-share-popup__tail{bottom:-10px;background:url(//yandex.st/share/static/b-share-popup_up__tail.gif) 0 0 no-repeat}.b-share-popup_down .b-share-popup__tail,x:nth-child(1){top:-9px;background-image:url(//yandex.st/share/static/b-share-popup_down__tail.png)}.b-share-popup_up .b-share-popup__tail,x:nth-child(1){bottom:-9px;background-image:url(//yandex.st/share/static/b-share-popup_up__tail.png)}@media all and (resolution = 0dpi){.b-share-popup_down .b-share-popup__tail,x:nth-child(1),x:-o-prefocus{top:-10px;background-image:url(//yandex.st/share/static/b-share-popup_down__tail.gif)}.b-share-popup_up .b-share-popup__tail,x:nth-child(1),x:-o-prefocus{bottom:-10px;background-image:url(//yandex.st/share/static/b-share-popup_up__tail.gif)}}.b-share-popup .b-share-popup_show_form_mail,.b-share-popup .b-share-popup_show_form_html{padding:0!important}.b-share-popup .b-share-popup_show_form_mail .b-share-popup__main,.b-share-popup .b-share-popup_show_form_html .b-share-popup__main,.b-share-popup .b-share-popup_show_form .b-share-popup__main,.b-share-popup .b-share-popup_show_form_mail .b-share-popup__extra,.b-share-popup .b-share-popup_show_form_html .b-share-popup__extra,.b-share-popup .b-share-popup_show_form .b-share-popup__extra{height:15px;padding:0!important;overflow:hidden;visibility:hidden}.b-share-popup_show_form_mail .b-share-popup__expander,.b-share-popup_show_form_html .b-share-popup__expander,.b-share-popup_show_form .b-share-popup__expander,.b-share-popup_show_form_mail .b-share-popup__input_link,.b-share-popup_show_form_html .b-share-popup__input_link,.b-share-popup_show_form .b-share-popup__input_link{display:none}.b-share-popup__form{position:relative;display:none;overflow:hidden;padding:5px 0 0!important;margin:0 0 -15px;white-space:normal}.b-share-popup_show_form_mail .b-share-popup__form_mail,.b-share-popup_show_form_html .b-share-popup__form_html,.b-share-popup_show_form .b-share-popup__form{display:block}.b-share-popup__form__link{font:86%/1.4545em Verdana,sans-serif;float:left;display:inline;padding:5px!important;margin:0 0 5px 10px;text-decoration:underline;cursor:pointer;color:#1A3DC1}.b-share-popup__form__button{font:86%/1.4545em Verdana,sans-serif;float:left;display:inline;margin:5px 0 0 15px}.b-share-popup__form__close{font:86%/1.4545em Verdana,sans-serif;float:right;display:inline;padding:5px!important;margin:0 10px 5px 0;cursor:pointer;color:#999}a.b-share-popup__form__link:hover,a.b-share-popup__form__close:hover{text-decoration:underline;color:#F00}.b-share-popup_font_fixed .b-share-popup__item{font-size:12.8px}.b-share-popup_font_fixed .b-share-popup__header,.b-share-popup_font_fixed .b-share-popup__input,.b-share-popup_font_fixed .b-share-popup__expander .b-share-popup__item,.b-share-popup_font_fixed .b-share-popup__form__link,.b-share-popup_font_fixed .b-share-popup__form__button,.b-share-popup_font_fixed .b-share-popup__form__close{font-size:11px}.b-share-popup_font_fixed .b-share-popup__yandex{font-size:10px}.b-share-form-button{font:86%/17px Verdana,Arial,sans-serif;display:-moz-inline-box;display:inline-block;position:relative;height:19px;margin:0 3px;padding:0 4px;cursor:default;white-space:nowrap;text-decoration:none!important;color:#000!important;border:none;outline:none;background:url(//yandex.st/share/static/b-share-form-button.png) 0 -20px repeat-x}.b-share-form-button:link:hover,.b-share-form-button:visited:hover{color:#000!important}.b-share-form-button__before,.b-share-form-button__after{position:absolute;width:3px;height:19px;background:url(//yandex.st/share/static/b-share-form-button.png)}.b-share-form-button__before{margin-left:-7px}.b-share-form-button__after{margin-left:4px;background-position:-3px 0}.b-share-form-button::-moz-focus-inner{border:none}button.b-share-form-button .b-share-form-button__before,button.b-share-form-button .b-share-form-button__after{margin-top:-1px}@-moz-document url-prefix(){button.b-share-form-button .b-share-form-button__after{margin-top:-2px;margin-left:6px}button.b-share-form-button .b-share-form-button__before{margin-top:-2px;margin-left:-9px}}SPAN.b-share-form-button:hover,.b-share-form-button_state_hover{background-position:0 -60px}SPAN.b-share-form-button:hover .b-share-form-button__before,.b-share-form-button_state_hover .b-share-form-button__before{background-position:0 -40px}SPAN.b-share-form-button:hover .b-share-form-button__after,.b-share-form-button_state_hover .b-share-form-button__after{background-position:-3px -40px}.b-share-form-button_state_pressed,.b-share-form-button_state_pressed .b-share-form-button_share{background-position:0 -100px!important}.b-share-form-button_state_pressed .b-share-form-button__before{background-position:0 -80px!important}.b-share-form-button_state_pressed .b-share-form-button__after{background-position:-3px -80px!important}button.b-share-form-button_state_pressed{overflow:visible}.b-share-form-button_icons{position:relative;padding:0;background-position:0 -20px!important}.b-share-form-button_icons .b-share-form-button__before{left:0;margin-left:-3px;background-position:0 0!important}.b-share-form-button_icons .b-share-form-button__after{z-index:-1;margin-left:0;background-position:-3px 0!important}.b-share-form-button_icons .b-share__handle{padding:2px!important}.b-share-form-button_icons .b-share__handle_more{position:relative;padding-right:6px!important;margin-right:-4px}.b-share-form-button_icons .b-share-icon{opacity:.5;background-image:url(//yandex.st/share/static/b-share-icon_size_14.png)}.b-share-form-button_icons A.b-share__handle:hover .b-share-icon{opacity:1}.b-share{font:86%/1.4545em Arial,sans-serif;display:-moz-inline-box;display:inline-block;padding:1px 3px 1px 4px!important;vertical-align:middle}.b-share .b-share-form-button{font-size:1em}.b-share__text .b-share-icon{margin:0 5px 0 0;border:none}.b-share__text{margin-right:5px}.b-share__handle{float:left;cursor:pointer;text-align:left;text-decoration:none!important;height:16px;padding:5px 3px 5px 2px!important;cursor:pointer;text-align:left;text-decoration:none!important}.b-share__handle_cursor_default{cursor:default}.b-share__handle .b-share-form-button{margin-top:-2px}.b-share__hr{display:none;float:left;width:1px;height:26px;margin:0 3px 0 2px}a.b-share__handle:hover .b-share__text{text-decoration:underline;color:#F00}.b-share_bordered{padding:0 2px 0 3px!important;border:1px solid #E4E4E4;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.b-share_bordered .b-share__hr{display:inline;background:#E4E4E4}.b-share_link{margin:-8px 0}a.b-share_link{margin:0}.b-share_link .b-share__text{text-decoration:underline;color:#1A3DC1}.b-share-form-button_share{padding-left:26px!important;vertical-align:top}.b-share-form-button_share .b-share-form-button__before{margin-left:-29px}.b-share-form-button_share .b-share-form-button__icon{position:absolute;width:20px;height:17px;margin:1px 0 0 -23px;background:url(//yandex.st/share/static/b-share-form-button_share__icon.png) 0 0 no-repeat}.b-share-pseudo-link{border-bottom:1px dotted;cursor:pointer;text-decoration:none!important}.b-share_font_fixed{font-size:11px}.b-share__handle_more{font-size:9px;margin-top:-1px;color:#7B7B7B}A.b-share__handle_more:hover{color:#000}.b-share__group{float:left}.b-share-icon{float:left;display:inline;overflow:hidden;width:16px;height:16px;padding:0!important;vertical-align:top;border:0;background:url(//yandex.st/share/static/b-share-icon.png) 0 99px no-repeat}.b-share-icon_vkontakte,.b-share-icon_custom{background-position:0 0}.b-share-icon_yaru,.b-share-icon_yaru_photo,.b-share-icon_yaru_wishlist{background-position:0 -17px}.b-share-icon_lj{background-position:0 -34px}.b-share-icon_twitter{background-position:0 -51px}.b-share-icon_facebook{background-position:0 -68px}.b-share-icon_moimir{background-position:0 -85px}.b-share-icon_friendfeed{background-position:0 -102px}.b-share-icon_mail{background-position:0 -119px}.b-share-icon_html{background-position:0 -136px}.b-share-icon_postcard{background-position:0 -153px}.b-share-icon_odnoklassniki{background-position:0 -170px}.b-share-icon_blogger{background-position:0 -187px}.b-share-icon_greader{background-position:0 -204px}.b-share-icon_delicious{background-position:0 -221px}.b-share-icon_gbuzz{background-position:0 -238px}.b-share-icon_linkedin{background-position:0 -255px}.b-share-icon_myspace{background-position:0 -272px}.b-share-icon_evernote{background-position:0 -289px}.b-share-icon_digg{background-position:0 -306px}.b-share-icon_juick{background-position:0 -324px}.b-share-icon_moikrug{background-position:0 -341px}.b-share-icon_yazakladki{background-position:0 -358px}.b-share-icon_liveinternet{background-position:0 -375px}.b-share-icon_tutby{background-position:0 -392px}.b-share-icon_diary{background-position:0 -409px}.b-share-icon_gplus{background-position:0 -426px}.b-share-icon_pocket{background-position:0 -443px}.b-share-icon_surfingbird{background-position:0 -460px}.b-share-icon_pinterest{background-position:0 -477px}.b-share-icon_renren{background:url(//yandex.st/share/static/b-share-icon__china.png) no-repeat;background-position:0 0}.b-share-icon_sina_weibo{background:url(//yandex.st/share/static/b-share-icon__china.png) no-repeat;background-position:-18px 0}.b-share-icon_qzone{background:url(//yandex.st/share/static/b-share-icon__china.png) no-repeat;background-position:-36px 0}.b-share-icon_tencent_weibo{background:url(//yandex.st/share/static/b-share-icon__china.png) no-repeat;background-position:-54px 0}.b-share_theme_dark .b-share-icon{background:url(//yandex.st/share/static/b-share-icons__theme_dark.png) 99px 0 no-repeat}.b-share_theme_dark .b-share-icon_odnoklassniki{background-position:-4px -3px}.b-share_theme_dark .b-share-icon_vkontakte{background-position:-24px -3px}.b-share_theme_dark .b-share-icon_twitter{background-position:-44px -3px}.b-share_theme_dark .b-share-icon_facebook{background-position:-64px -3px}.b-share_theme_dark .b-share-icon_lj{background-position:-85px -3px}.b-share_theme_dark .b-share-icon_yaru{background-position:-105px -3px}.b-share_theme_dark .b-share-popup .b-share-icon_odnoklassniki,.b-share_theme_dark .b-share-icon_odnoklassniki:hover{background-position:-4px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_vkontakte,.b-share_theme_dark .b-share-icon_vkontakte:hover{background-position:-24px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_twitter,.b-share_theme_dark .b-share-icon_twitter:hover{background-position:-44px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_facebook,.b-share_theme_dark .b-share-icon_facebook:hover{background-position:-64px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_lj,.b-share_theme_dark .b-share-icon_lj:hover{background-position:-85px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_yaru,.b-share_theme_dark .b-share-icon_yaru:hover{background-position:-105px -28px}.b-share_theme_dark .b-share__text{color:#fff}.b-share_theme_dark .b-share-form-button_share .b-share-form-button__icon{background-image:url("//yandex.st/share/static/b-share-form-button_share__icon_dark.png")}.b-share_theme_dark .b-share-form-button{color:#fff!important;opacity:.8}.b-share_theme_dark .b-share__handle:hover .b-share-form-button,.b-share_theme_dark .b-share-form-button:hover{opacity:1;cursor:pointer}.b-share_theme_dark .b-share-form-button,.b-share_theme_dark .b-share-form-button__before,.b-share_theme_dark .b-share-form-button__after{background:transparent}.b-share_theme_dark .b-share-popup__i{background-color:#333;border-radius:10px;-webkit-box-shadow:0 2px 9px rgba(255,255,255,0.6);-moz-box-shadow:0 2px 9px rgba(255,255,255,0.6);box-shadow:0 2px 9px rgba(255,255,255,0.6)}.b-share_theme_dark .b-share__text{color:#AAA}.b-share_theme_dark .b-share-popup{color:#AAA;border-radius:10px;background-color:#333;background-color:rgba(50,50,50,0.3)}.b-share_theme_dark .b-share-popup__item{background:transparent;color:#ccc}.b-share_theme_dark .b-share-popup .b-share-popup__item__text{color:#ccc}.b-share_theme_counter .b-share{display:inline-block;vertical-align:middle}.b-share-counter{display:none;float:left;margin:3px 6px 3px 3px;color:#fff;font:14px Arial,sans-serif;line-height:18px}.b-share_theme_counter .b-share_type_small .b-share-counter{margin:2px 6px 2px 1px;font-size:11px;line-height:14px}.b-share_theme_counter .b-share-btn__counter .b-share-counter{display:block}.b-share-btn__counter{text-decoration:none}.b-share_theme_counter .b-share-btn__wrap{position:relative;float:left;margin-left:5px}.b-share_theme_counter .b-share_type_small .b-share-btn__wrap{margin-left:4px}.b-share_theme_counter .b-share-btn__wrap:first-child{margin-left:0}.b-share_theme_counter .b-share__link{display:inline-block;cursor:pointer;-webkit-border-radius:3px;border-radius:3px}.b-share_theme_counter .b-share_type_small .b-share__link{-webkit-border-radius:2px;border-radius:2px}.b-share_theme_counter .b-share-icon{display:block;float:left;width:24px;height:24px;background-image:url(//yandex.st/share/static/b-share_counter_large.png);background-position:-20px 0}.b-share_theme_counter .b-share_type_small .b-share-icon{width:18px;height:18px;background-image:url(//yandex.st/share/static/b-share_counter_small.png)}.b-share_theme_counter .b-share-icon_facebook{background-position:0 0}.b-share_theme_counter .b-share-btn__facebook{background-color:#3c5a98}.b-share_theme_counter .b-share-btn__facebook:hover{background-color:#30487a}.b-share_theme_counter .b-share-btn__facebook:active{border-top:2px solid #24365a;background-color:#334d81}.b-share_theme_counter .b-share-icon_moimir{background-position:0 -29px}.b-share_theme_counter .b-share-btn__moimir{background-color:#226eb7}.b-share_theme_counter .b-share-btn__moimir:hover{background-color:#1b5892}.b-share_theme_counter .b-share-btn__moimir:active{border-top:2px solid #14426d;background-color:#1d5e9c}.b-share_theme_counter .b-share-icon_vkontakte{background-position:0 -58px}.b-share_theme_counter .b-share-btn__vkontakte{background-color:#48729e}.b-share_theme_counter .b-share-btn__vkontakte:hover{background-color:#3a5b7e}.b-share_theme_counter .b-share-btn__vkontakte:active{border-top:2px solid #2b445e;background-color:#3d6186}.b-share_theme_counter .b-share-icon_twitter{background-position:0 -87px}.b-share_theme_counter .b-share-btn__twitter{background-color:#00aced}.b-share_theme_counter .b-share-btn__twitter:hover{background-color:#008abe}.b-share_theme_counter .b-share-btn__twitter:active{border-top:2px solid #00668d;background-color:#0092ca}.b-share_theme_counter .b-share-icon_odnoklassniki{background-position:0 -116px}.b-share_theme_counter .b-share-btn__odnoklassniki{background-color:#ff9f4d}.b-share_theme_counter .b-share-btn__odnoklassniki:hover{background-color:#cc7f3e}.b-share_theme_counter .b-share-btn__odnoklassniki:active{border-top:2px solid #975e2e;background-color:#d98742}.b-share_theme_counter .b-share-icon_gplus{background-position:0 -145px}.b-share_theme_counter .b-share-btn__gplus{background-color:#c25234}.b-share_theme_counter .b-share-btn__gplus:hover{background-color:#9b422a}.b-share_theme_counter .b-share-btn__gplus:active{border-top:2px solid #73311f;background-color:#a5462c}.b-share_theme_counter .b-share-icon_yaru{background-position:0 -174px}.b-share_theme_counter .b-share-btn__yaru{background-color:#d83933}.b-share_theme_counter .b-share-btn__yaru:hover{background-color:#ad2e29}.b-share_theme_counter .b-share-btn__yaru:active{border-top:2px solid #80221e;background-color:#b8312b}.b-share_theme_counter .b-share-icon_pinterest{background-position:0 -203px}.b-share_theme_counter .b-share-btn__pinterest{background-color:#cd1e27}.b-share_theme_counter .b-share-btn__pinterest:hover{background-color:#a4181f}.b-share_theme_counter .b-share-btn__pinterest:active{border-top:2px solid #7b1217;background-color:#ae1921}.b-share_theme_counter .b-share__link:active{height:22px}.b-share_theme_counter .b-share_type_small .b-share__link:active{height:16px}.b-share_theme_counter .b-share__link:active .b-share-icon,.b-share_theme_counter .b-share__link:active .b-share-counter{position:relative;top:-1px}.b-share_theme_counter .b-share__link::after{position:absolute;top:0;right:0;bottom:0;left:0;content:"";background-image:url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==)}.b-share_theme_counter .b-share__handle{height:auto;padding:0!important}</style><script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/airgunstyle.ru" type="text/javascript"></script><link href="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/sio.css" id="sio_css" type="text/css" rel="stylesheet"><style type="text/css" id="sio_custom_css">.sio-custom-field input, .sio-csf-label { line-height: 40px!important; font-size: 40px!important; } .sio-bb em { color: #ffffff!important; } .sio-t-column.sio-bb .sio-t-c-inner { background: rgba(0,0,0,.95)!important; } .sio-bb .sio-result { background: rgba(255,255,255,.95)!important; border-color: #2190af!important; } .sio-t-c-inner { width: 869px!important; margin-left: -436px!important; }  .sio-custom-field input { color: #000000!important; } .sio-custom-field { background: #65aefd!important; } .sio-bb .sio-result-title { background: #2190af!important; color: #ffffff!important; } .sio-bb .sio-result-desc { color: #666666!important; } .sio-bb .sio-result-link { color: #666666!important; } .sio-custom-icon { width: 24px!important; height: 28px!important; background: url('https://suggest.io/static/images_generated/65aefd-flag-9.png?v=1') no-repeat!important; }</style></head>
+
+<body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="toptb" class="cl">
+
+<div class="wp">
+<div class="z"><a href="#" title="Телефон представителя  ООО  &quot;Эдган&quot;" style="font-weight: bold;color: red">tel 89203509066</a><a href="javascript:;" onclick="setHomepage('http://airgunstyle.ru/');">В избранное</a><a href="http://airgunstyle.ru/" onclick="addFavorite(this.href, 'Стрелковый Форум AIRGUNSTYLE.ru');return false;">Стрелковый Форум</a></div>
+<div class="y">
+<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="Закрыть вспомогательный доступа" class="switchblind">На вторичном доступа</a>
+<a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="Широкий" class="switchwidth">Широкий</a>
+</div>
+</div>
+</div>
+
+<div id="qmenu_menu" class="p_pop blk" style="display: none;">
+<div class="ptm pbw hm">
+Пожалуйста, <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>войдите на сайт</strong></a><br>или зарегистрируйтесь: <a href="http://airgunstyle.ru/member.php?mod=register" class="xi2 xw1">Регистрация</a>
+</div>
+<div id="fjump_menu" class="btda"></div></div><div id="hd">
+<div class="wp">
+<div class="hdc cl"><h2><a href="http://airgunstyle.ru/" title="Стрелковый Форум AIRGUNSTYLE.ru"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/logo1.png" alt="Стрелковый Форум AIRGUNSTYLE.ru" border="0"></a></h2><script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/logging.js" type="text/javascript"></script>
+<form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&amp;action=login&amp;loginsubmit=yes&amp;infloat=yes&amp;lssubmit=yes" onsubmit="pwmd5('ls_password');return lsSubmit();">
+<div class="fastlg cl">
+<span id="return_ls" style="display:none"></span>
+<div class="y pns">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><label for="ls_username">Аккаунт</label></td>
+<td><input name="username" id="ls_username" class="px vm xg1" value="Логин/Email" onfocus="if(this.value == 'Логин/Email'){this.value = '';this.className = 'px vm';}" onblur="if(this.value == ''){this.value = 'Логин/Email';this.className = 'px vm xg1';}" tabindex="901" type="text"></td>
+<td class="fastlg_l"><label for="ls_cookietime"><input name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903" type="checkbox">Запомнить</label></td>
+<td>&nbsp;<a href="javascript:;" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login&amp;viewlostpw=1')">Забыли пароль?</a></td>
+</tr>
+<tr>
+<td><label for="ls_password">Пароль</label></td>
+<td><input name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902" type="password"></td>
+<td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>Вход</em></button></td>
+<td>&nbsp;<a href="http://airgunstyle.ru/member.php?mod=register" class="xi2 xw1">Регистрация</a></td>
+</tr>
+</tbody></table>
+<input name="quickforward" value="yes" type="hidden">
+<input name="handlekey" value="ls" type="hidden">
+</div>
+
+<div id="uLoginMethod" data-ulogin="display=small;fields=first_name,last_name,bdate,sex,email,nickname;providers=
+vkontakte
+
+,odnoklassniki
+
+,mailru
+
+,yandex
+
+,facebook
+
+,twitter
+
+,google
+
+;hidden=
+
+;redirect_uri=http://airgunstyle.ru/soclogin.php"><iframe src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/panel.htm" style="display: inline-block; margin: 0px; padding: 0px; width: 147px; height: 16px; border: 0px none; overflow: hidden;" id="easyXDM_default6775_provider" name="easyXDM_default6775_provider" frameborder="0"></iframe></div>
+<script>if (typeof uLogin != "undefined") uLogin.initWidget("uLoginMethod");</script>
+</div>
+</form>
+
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/md5.js" type="text/javascript" reload="1"></script>
+</div>
+
+<div style="border-left-width: 0px; border-right-width: 0px; height: 46px; width: 980px; top: 0px; left: 307px; position: fixed; z-index: 199; opacity: 0.85;" id="nv">
+<a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu(137);})">Меню</a>
+<ul><li id="mn_P1" onmouseover="navShow('P1')"><a href="http://airgunstyle.ru/portal.php?mod=list&amp;catid=1" hidefocus="true">Статьи</a></li><li id="mn_portal"><a href="http://airgunstyle.ru/portal.php" hidefocus="true" title="Портал">Портал<span>Портал</span></a></li><li class="a" id="mn_forum"><a href="http://airgunstyle.ru/forum.php" hidefocus="true" title="Форум">Форум<span>Форум</span></a></li><li id="mn_N3c27" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="http://airgunstyle.ru/blogs.html" hidefocus="true">Блоги</a></li><li id="mn_Nc1c5"><a href="http://airgunstyle.ru/chat.html" hidefocus="true">Чат</a></li><li id="mn_Nf615"><a href="http://airgunstyle.ru/radio.html" hidefocus="true">Радио</a></li><li id="mn_home_4" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="http://airgunstyle.ru/home.php" hidefocus="true" title="Мой мир">Мой мир<span>Мой мир</span></a></li><li id="mn_group"><a href="http://airgunstyle.ru/group.php" hidefocus="true" title="Сообщества">Сообщества<span>Сообщества</span></a></li><li id="mn_Nf2d5" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="http://airgunstyle.ru/albums.html" hidefocus="true">Альбомы</a></li></ul>
+</div>
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none">  <li><a href="http://airgunstyle.ru/plugin.php?id=chatbox:chatbox" id="mn_plink_chatbox">Chatbox</a></li>
+ </ul>
+<ul class="p_pop h_pop" id="mn_N3c27_menu" style="display: none"><li><a href="http://airgunstyle.ru/main_blog.html" hidefocus="true">Мой блог</a></li><li><a href="http://airgunstyle.ru/riend_blog.html" hidefocus="true">Блоги друзей</a></li></ul><div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><ul class="p_pop h_pop" id="mn_home_4_menu" style="display: none"><li><a href="http://airgunstyle.ru/podpiski.html" hidefocus="true">Подписки</a></li><li><a href="http://airgunstyle.ru/collect.html" hidefocus="true">Коллекции</a></li><li><a href="http://airgunstyle.ru/goroskop.html" hidefocus="true">Гороскоп</a></li></ul><ul class="p_pop h_pop" id="mn_Nf2d5_menu" style="display: none"><li><a href="http://airgunstyle.ru/albums_my.html" hidefocus="true">Мои альбомы</a></li><li><a href="http://airgunstyle.ru/albums_friend.html" hidefocus="true">Альбомы друзей</a></li></ul><div id="mu" class="cl">
+</div></div>
+</div>
+
+
+
+<div class="vk_wp">
+<div id="wp" class="wp"><script type="text/javascript">var fid = parseInt('137'), tid = parseInt('642');</script>
+
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/forum_viewthread.js" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(1);var imagemaxwidth = '600';var aimgcount = new Array();</script>
+
+<style id="diy_style" type="text/css"></style>
+<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="http://airgunstyle.ru/" class="nvhm" title="Главная">Стрелковый Форум AIRGUNSTYLE.ru</a><em>»</em><a href="http://airgunstyle.ru/forum.php">Форум</a> <em>›</em> <a href="http://airgunstyle.ru/forum.php?gid=77">Хобби</a> <em>›</em> <a href="http://airgunstyle.ru/forum-119-1.html">Электроника</a> <em>›</em> <a href="http://airgunstyle.ru/forum-137-1.html">Arduino и микроконтроллеры</a> <em>›</em> <a href="http://airgunstyle.ru/thread-642-1-1.html">Множим выходы</a>
+</div>
+</div>
+
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="wp cl">
+<div id="pgt" class="pgs mbm cl ">
+<div class="pgt"></div>
+<span class="y pgb"><a href="http://airgunstyle.ru/forum-137-1.html">Вернуться к списку</a></span>
+<a id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=137')" href="javascript:;" title="Новое сообщение"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/pn_post.png" alt="Новое сообщение"></a></div>
+
+
+
+<div id="postlist" class="pl bm">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="pls ptn pbn">
+<div class="hm ptn">
+<span class="xg1">Просм.:</span> <span class="xi1">899</span><span class="pipe">|</span><span class="xg1">Ответить:</span> <span class="xi1">0</span>
+</div>
+</td>
+<td class="plc ptm pbn vwthd">
+<div class="y">
+<a href="http://airgunstyle.ru/forum.php?mod=viewthread&amp;action=printable&amp;tid=642" title="Печать" target="_blank"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/print.png" alt="Печать" class="vm"></a>
+<a href="http://airgunstyle.ru/forum.php?mod=redirect&amp;goto=nextoldset&amp;tid=642" title="Назад"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/thread-prev.png" alt="Назад" class="vm"></a>
+<a href="http://airgunstyle.ru/forum.php?mod=redirect&amp;goto=nextnewset&amp;tid=642" title="Вперед"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/thread-next.png" alt="Вперед" class="vm"></a>
+</div>
+<h1 class="ts">
+<span id="thread_subject">Множим выходы</span>
+</h1>
+<span class="xg1">
+<a href="http://airgunstyle.ru/thread-642-1-1.html" onclick="return copyThreadUrl(this, 'Стрелковый Форум AIRGUNSTYLE.ru')">[Скопировать ссылку]</a>
+</span>
+</td>
+</tr>
+</tbody></table>
+
+
+<table class="ad" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table><div id="post_3442"><table id="pid3442" class="plhin" summary="pid3442" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div style="top: 46px; position: fixed;" id="favatar3442" class="pls favatar">
+ <a name="lastpost"></a><div class="pi">
+<div class="authi"><a href="http://airgunstyle.ru/space-uid-1.html" target="_blank" class="xw1">Makray</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo3442" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo3442_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://airgunstyle.ru/space-uid-1.html" target="_blank" class="xi2">Makray</a></strong>
+<em>Нет на сайте</em>
+</div><dl class="cl">
+<dt>Баланс</dt><dd><a href="http://airgunstyle.ru/home.php?mod=space&amp;uid=1&amp;do=profile" target="_blank" class="xi2">15198</a></dd>
+</dl><div class="imicn">
+<a href="http://airgunstyle.ru/home.php?mod=space&amp;uid=1&amp;do=profile" target="_blank" title="Рекомендовать"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/userinfo.gif" alt="Рекомендовать"></a>
+<a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=showip&amp;idtype=user&amp;id=Makray" id="a_showip_li_3442" class="xi2" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/showip.gif" alt=""> Карта хакера</a>
+<a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=Makray" id="a_repent_3442" class="xi2" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/checkonline.gif" alt=""> Шпионаж</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://airgunstyle.ru/space-uid-1.html" class="avtm" target="_blank"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/avatar.jpg"></a></div>
+</div>
+</div>
+</td>
+	
+<td class="plc">
+<div class="pi">
+<div id="fj" class="y">
+<label class="z">Поднять</label>
+<input class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&amp;ptid=642&amp;authorid=0&amp;postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="Перейти к сообщениям" type="text">
+<a href="javascript:;" id="fj_btn" class="z" title="Перейти к сообщениям"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/fj_btn.png" alt="Перейти к сообщениям" class="vm"></a>
+</div>
+<strong>
+<a href="http://airgunstyle.ru/thread-642-1-1.html" id="postnum3442" onclick="setCopy(this.href, 'Почтовый адрес скопирован успешно');return false;">
+<sup>1</sup></a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon3442" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/online_admin.gif">
+<em id="authorposton3442">Опубликовано  2012-10-15 11:24:48</em>
+<span class="pipe">|</span>
+<a href="http://airgunstyle.ru/forum.php?mod=viewthread&amp;tid=642&amp;page=1&amp;authorid=1" rel="nofollow">Сообщения автора</a>
+<span class="none"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/arw_r.gif" class="vm" alt="Награда за ответ"></span>
+<span class="pipe show">|</span><a href="http://airgunstyle.ru/forum.php?mod=viewthread&amp;tid=642&amp;extra=page%3D1&amp;ordertype=1" class="show">по убыванию</a>
+<span class="pipe show">|</span><a href="javascript:;" onclick="readmode($('thread_subject').innerHTML, 3442);" class="show">Режим чтения</a>
+</div>
+</div>
+</div><div class="pct"><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+ 
+<div class="t_fsz">
+<table cellpadding="0" cellspacing="0"><tbody><tr><td class="t_f" id="postmessage_3442">
+<div class="attach_nopermission attach_tips">
+<div>
+<h3><strong>
+Зарегистрируйтесь сейчас, чтобы найти еще больше друзей, и получить полноценный доступ ко всем функциям сайта!</strong></h3>
+<p>Для просмотра Вам необходимо <a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href);return false;">авторизироваться</a>.<br>Если Вы еще не зарегистрированы, перейдите по ссылке: <a href="http://airgunstyle.ru/member.php?mod=register" onclick="hideWindow('login');showWindow('register', this.href);return false;" title="Зарегистрироваться"> Регистрация</a>. </p>
+</div>
+<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
+</div>
+<strong>Множим выходы с помощью сдвигового регистра 74HC595</strong><font color="#555555"><font face="Verdana, Geneva, Arial, sans-serif"><div align="left">Рассмотрим
+ типичную ситуацию, когда вам нужно больше выходов (пинов), чем может 
+предложить контроллер Arduino. В этом случае самый простой выход — 
+использовать сдвиговый регистр. В данном примере используется 74HC595.</div><div align="left"><i>74HC595
+ — восьмиразрядный сдвиговый регистр с последовательным вводом, 
+последовательным или параллельным выводом информации, с 
+триггером-защелкой и тремя состояниями на выходе.</i></div><div align="left">Другими
+ словами этот регистр позволяет контролировать 8 выходов, используя 
+всего несколько выходов на самом контроллере. При этом несколько таких 
+регистров можно объединять последовательно для каскадирования. Другие 
+подходящие регистры можно поискать по комбинации "595" и "596" в 
+серийном номере. Так, например, STP16C596 может управлять 16 
+светодиодами одновременно без использования дополнительных резисторов.</div><div align="left">В данной схеме используется принцип синхронизированной последовательной передачи сигнаналов. Необходимые значения сигнала (биты <font style="color:rgb(0, 102, 153)"><a href="http://arduino.ru/Reference/Constants" target="_blank">HIGH или LOW</a></font>)&nbsp;&nbsp;передаются
+ в регистр один за другим, при этом регистр получает синхронизирующий 
+сигнал, который заставляет его считать сигнал с входа. Когда байт (1 
+байт = 8 бит) считан, значения всех 8 бит распределены по выходам. То 
+есть передаем в регистр сигналы последовательно, на выходах регистра 
+имеем параллельно 8 сигналов.</div><div align="left">74HC595 может 
+отдавать сигналы не только параллельно, но и последовательно. Это 
+необходимо при объединении нескольких регистров, для получения 16 и 
+более выходов. В этом случае первые 8 бит сигнала передаются на 
+следующий регистр для параллельного вывода на нем, об этом будет 
+рассказано более подробно во втором примере.</div><div align="left">Три 
+возможных состояния на выходе, упомянутые выше, означают, что выход 
+регистра может иметь не только логический ноль или единицу (<font style="color:rgb(0, 102, 153)"><a href="http://arduino.ru/Reference/Constants" target="_blank">HIGH или LOW</a></font>), но и быть в высокоомном (<font style="color:rgb(0, 102, 153)"><a href="http://ru.wikipedia.org/wiki/%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B8%D0%BC%D0%BF%D0%B5%D0%B4%D0%B0%D0%BD%D1%81%D0%BD%D0%BE%D0%B5_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5" target="_blank">высокоимпедансном</a></font>)
+ состоянии — когда выход отключен от схемы. В высокоомное состояние не 
+может быть переведен отдельный выход, а только все выходы регистра 
+разом. Если мы говорим об управлении светодиодами, это может быть 
+полезно в случае, когда мы хотим переключить управление ими на другой 
+контроллер. В примере ниже это состояние никак не используется и 
+довольно редко может быть полезно.</div><strong>Распиновка входов/выходов регистра</strong><br>
+<table class="t_table" cellspacing="0"><tbody><tr><td rowspan="9">
+<ignore_js_op>
+
+<div class="guestviewthumb">
+<div style="margin: 0 auto;">
+<img id="aimg_1670" class="guestviewthumb_cur" aid="1670" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/70_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/70_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1670&amp;size=100x100&amp;key=5d6cb688cf7cc04c&amp;type=1" inpost="1" alt="74HC595_pin_diagram.png" title="74HC595_pin_diagram.png">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</div>
+
+<div class="tip tip_4 aimg_tip" id="aimg_1670_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>74HC595_pin_diagram.png</strong> <em class="xg1">(4.21 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY3MHxmMjhiNDFhMnwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1670" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1670&amp;handlekey=savephoto_1670">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:05 Загрузить</p>
+
+
+</div></div></ignore_js_op></td><td>Пины 1-7, 15</td><td>Q0 " Q7</td><td>Параллельные выходы</td></tr><tr><td>Пин 8</td><td>GND</td><td>Земля</td></tr><tr><td>Пин 9</td><td>Q7"</td><td>Выход для последовательного соединения регистров</td></tr><tr><td>Пин 10</td><td>MR</td><td>Сброс значений регистра. Сброс происходит при получение LOW</td></tr><tr><td>Пин 11</td><td>SH_CP</td><td>Вход для тактовых импульсов</td></tr><tr><td>Пин 12</td><td>ST_CP</td><td>Синронизация ("защелкивание") выходов</td></tr><tr><td>Пин 13</td><td>OE</td><td>Вход для переключения состояния выходов из высокоомного в рабочее</td></tr><tr><td>Пин 14</td><td>DS</td><td>Вход для последовательных данных</td></tr><tr><td>Пин 16</td><td>Vcc</td><td>Питание</td></tr></tbody></table><br>
+<strong>Пример с одним регистром</strong><div align="left">Подключим:</div><ul><li>GND (пин 8) на землю</li><li>Vcc (пин 16) к питанию 5В</li><li>OE (пин 13) на землю</li><li>MR (пин 10) к питанию 5В<br>
+</li></ul><div align="left">Итак, мы запитали регистр и сделали все 
+выходы активными. Это несколько упрощенный способ подключения, так как в
+ момент подачи питания на схему на выходах будут случайные значения. 
+Можно контролировать пин MR и OE непосредственно с Arduino, чтобы 
+обнулить входы и/или подключить выходы в нужный момент. Для упрощения 
+схемы и минимизации количества задействованных выходов Arduino мы будем 
+использовать более простую схему, так как значения регистров и выводов 
+будут перезаписаны, как только программы начнет работать. </div></font><div align="left"><font face="Verdana, Geneva, Arial, sans-serif">
+<ignore_js_op>
+
+<div class="guestviewthumb">
+<div style="margin: 0 auto;">
+<img id="aimg_1669" class="guestviewthumb_cur" aid="1669" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/69_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/69_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1669&amp;size=100x100&amp;key=6bf547dda52748f2&amp;type=1" inpost="1" alt="ShftOutPrimer1.gif" title="ShftOutPrimer1.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</div>
+
+</ignore_js_op></font><div class="tip tip_4 aimg_tip" id="aimg_1669_menu" style="position: absolute; display: none" disautofocus="true"><font face="Verdana, Geneva, Arial, sans-serif">
+<div class="xs0">
+<p><strong>ShftOutPrimer1.gif</strong> <em class="xg1">(26.09 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY2OXw3ZTIzNDRiYXwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1669" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1669&amp;handlekey=savephoto_1669">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:04 Загрузить</p>
+
+
+</div><div align="left">Соединяем с Arduino:</div><ul><li>DS (пин 14) с 11-ым <font style="color:rgb(0, 102, 153)"><a href="http://arduino.ru/Tutorial/DigitalPins" target="_blank">цифровой выход Arduino</a></font> (на схеме синий провод)</li><li>SH_CP (пин 11) с 12-ым цифровым выходом (желтый провод)</li><li>ST_CP (пин 12) c 8-ым (зеленый провод)<br>
+</li></ul><div align="left">Далее эти выходы в тексте и коде именуются 
+dataPin, clockPin и latchPin соответственно. Обратите внимание на 
+конденсатор 0.1 микрофарада на latchPin, он минимизирует шум в схеме при
+ подаче "защелкивающего" импульса.</div></font><div align="left"><font face="Verdana, Geneva, Arial, sans-serif">
+<ignore_js_op>
+
+<div class="guestviewthumb">
+<div style="margin: 0 auto;">
+<img id="aimg_1668" class="guestviewthumb_cur" aid="1668" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/68_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/68_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1668&amp;size=100x100&amp;key=8d224111fddc82b1&amp;type=1" inpost="1" alt="ShftOutPrimer1_2.gif" title="ShftOutPrimer1_2.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</div>
+
+</ignore_js_op></font><div class="tip tip_4 aimg_tip" id="aimg_1668_menu" style="position: absolute; display: none" disautofocus="true"><font face="Verdana, Geneva, Arial, sans-serif">
+<div class="xs0">
+<p><strong>ShftOutPrimer1_2.gif</strong> <em class="xg1">(29.95 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY2OHw3NWYyNjUzYnwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1668" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1668&amp;handlekey=savephoto_1668">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:04 Загрузить</p>
+
+
+</div><div align="left">Подключаем светодиоды к выходам регистра 
+74HC595, катод (короткая ножка) светодиода подключается к общей земле, а
+ анод (длинная ножка) через ограничительный 220-ОМ резистор к выходам 
+регистра. При использовании регистров отличных от&nbsp;&nbsp;74HC595 
+следует свериться с документацией и проверить схему подключения. К 
+некоторым регистрам светодиоды подключаются наоборот — катод к выходам.</div></font><div align="left"><font face="Verdana, Geneva, Arial, sans-serif">
+<ignore_js_op>
+
+<div class="guestviewthumb">
+<div style="margin: 0 auto;">
+<img id="aimg_1667" class="guestviewthumb_cur" aid="1667" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/67_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/67_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1667&amp;size=100x100&amp;key=d81e54103702d7f0&amp;type=1" inpost="1" alt="ShftOutPrimer1_3.gif" title="ShftOutPrimer1_3.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</div>
+
+</ignore_js_op></font><div class="tip tip_4 aimg_tip" id="aimg_1667_menu" style="position: absolute; display: none" disautofocus="true"><font face="Verdana, Geneva, Arial, sans-serif">
+<div class="xs0">
+<p><strong>ShftOutPrimer1_3.gif</strong> <em class="xg1">(41.74 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY2N3w2Yjk3NDdlOXwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1667" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1667&amp;handlekey=savephoto_1667">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:04 Загрузить</p>
+
+
+</div><div align="left">Схема подключения</div></font><div align="left"><font face="Verdana, Geneva, Arial, sans-serif">
+<ignore_js_op>
+
+<div class="guestviewthumb">
+<div style="margin: 0 auto;">
+<img id="aimg_1666" class="guestviewthumb_cur" aid="1666" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/66_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/66_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1666&amp;size=100x100&amp;key=898b2be4d708db2d&amp;type=1" inpost="1" alt="ShftOut_Schema1.gif" title="ShftOut_Schema1.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</div>
+
+</ignore_js_op></font><div class="tip tip_4 aimg_tip" id="aimg_1666_menu" style="position: absolute; display: none" disautofocus="true"><font face="Verdana, Geneva, Arial, sans-serif">
+<div class="xs0">
+<p><strong>ShftOut_Schema1.gif</strong> <em class="xg1">(15.7 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY2NnxmNTc4YTk5MnwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1666" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1666&amp;handlekey=savephoto_1666">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:04 Загрузить</p>
+
+
+</div><div align="left">Ниже приведен код трех программ. Первая, "Hello 
+world", выводит значения байта от 0 до 255. Вторая&nbsp;&nbsp;по одному 
+включает светодиоды. Третья циклически проходит по массиву.</div></font><div align="left"><font face="Verdana, Geneva, Arial, sans-serif">
+<ignore_js_op>
+
+<div class="guestviewthumb">
+<div style="margin: 0 auto;">
+<img id="aimg_1664" class="guestviewthumb_cur" aid="1664" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/64_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/64_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1664&amp;size=100x100&amp;key=f399985fe8290ff4&amp;type=1" inpost="1" alt="595_timing_diagram.png" title="595_timing_diagram.png">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</div>
+
+</ignore_js_op></font><div class="tip tip_4 aimg_tip" id="aimg_1664_menu" style="position: absolute; display: none" disautofocus="true"><font face="Verdana, Geneva, Arial, sans-serif">
+</font><div class="xs0"><font face="Verdana, Geneva, Arial, sans-serif">
+<p><strong>595_timing_diagram.png</strong> <em class="xg1">(16.32 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY2NHxiNDc1ZDc1YXwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1664" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1664&amp;handlekey=savephoto_1664">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:04 Загрузить</p>
+
+
+
+<ignore_js_op>
+
+<div class="guestviewthumb">
+<div style="margin: 0 auto;">
+<img id="aimg_1665" class="guestviewthumb_cur" aid="1665" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/65_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/65_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1665&amp;size=100x100&amp;key=6affbfeb67fa8002&amp;type=1" inpost="1" alt="595_logic_table.png" title="595_logic_table.png">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</div>
+
+</ignore_js_op></font><div class="tip tip_4 aimg_tip" id="aimg_1665_menu" style="position: absolute; display: none" disautofocus="true"><font face="Verdana, Geneva, Arial, sans-serif">
+<div class="xs0">
+<p><strong>595_logic_table.png</strong> <em class="xg1">(21.68 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY2NXw4YTc3M2MyY3wxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1665" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1665&amp;handlekey=savephoto_1665">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:04 Загрузить</p>
+
+
+Пониманию кода могут помочь "временная диаграмма сигналов" регистра и 
+"таблица логики". Когда clockPin переглючается с LOW на HIGH, регистр 
+считывает значения с DS пина. По мере считывания данные записываются во 
+внутреннюю память. Когда latchPin&nbsp;&nbsp;переключается с LOW на 
+HIGH, данные "защелкиваются", то есть передаются на выходы регистра, 
+включая светодиоды.</div><div align="left"> Код примера 1.1</div><br>
+<br>
+[code=cpp]//**************************************************************//<br>
+//&nbsp;&nbsp;Name&nbsp; &nbsp; : shiftOutCode, Hello World&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+//&nbsp;&nbsp;Author&nbsp;&nbsp;: Carlyn Maw,Tom Igoe, David A. Mellis <br>
+//&nbsp;&nbsp;Date&nbsp; &nbsp; : 25 Oct, 2006&nbsp; &nbsp; <br>
+//&nbsp;&nbsp;Modified: 23 Mar 2010&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+//&nbsp;&nbsp;Version : 2.0&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;<br>
+//&nbsp;&nbsp;Notes&nbsp; &nbsp;: Программа использует один сдвиговый регистр 74HC595 <br>
+//&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; : для вывода значений от 0 до 
+255&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <br>
+//****************************************************************<br>
+<br>
+//Пин подключен к ST_CP входу 74HC595<br>
+int latchPin = 8;<br>
+//Пин подключен к SH_CP входу 74HC595<br>
+int clockPin = 12;<br>
+//Пин подключен к DS входу 74HC595<br>
+int dataPin = 11;<br>
+<br>
+<br>
+<br>
+void setup() {<br>
+&nbsp;&nbsp;//устанавливаем режим OUTPUT<br>
+&nbsp;&nbsp;pinMode(latchPin, OUTPUT);<br>
+&nbsp;&nbsp;pinMode(clockPin, OUTPUT);<br>
+&nbsp;&nbsp;pinMode(dataPin, OUTPUT);<br>
+}<br>
+<br>
+void loop() {<br>
+&nbsp;&nbsp;// отсчитываем от 0 до 255&nbsp;&nbsp;и отображаем значение на светодиоде<br>
+&nbsp;&nbsp;for (int numberToDisplay = 0; numberToDisplay &lt; 256; numberToDisplay++) {<br>
+&nbsp; &nbsp; // устанавливаем синхронизацию "защелки" на LOW<br>
+&nbsp; &nbsp; digitalWrite(latchPin, LOW);<br>
+&nbsp; &nbsp; // передаем последовательно на dataPin<br>
+&nbsp; &nbsp; shiftOut(dataPin, clockPin, MSBFIRST, numberToDisplay);&nbsp;&nbsp;<br>
+<br>
+&nbsp; &nbsp; //"защелкиваем" регистр, тем самым устанавливая значения на выходах<br>
+&nbsp; &nbsp; digitalWrite(latchPin, HIGH);<br>
+&nbsp; &nbsp; // пауза перед следующей итерацией<br>
+&nbsp; &nbsp; delay(500);<br>
+&nbsp;&nbsp;}<br>
+}<br>
+[/code]<br>
+<br>
+<br>
+пример 1.2</font><br>
+[code=cpp]/*<br>
+&nbsp;&nbsp;Shift Register Example<br>
+ for 74HC595 shift register<br>
+<br>
+ Created 22 May 2009<br>
+ Created 23 Mar 2010<br>
+ by Tom Igoe<br>
+<br>
+ */<br>
+<br>
+//Пин подключен к ST_CP входу 74HC595<br>
+int latchPin = 8;<br>
+//Пин подключен к SH_CP входу 74HC595<br>
+int clockPin = 12;<br>
+//Пин подключен к DS входу 74HC595<br>
+int dataPin = 11;<br>
+<br>
+void setup() {<br>
+&nbsp;&nbsp;//устанавливаем режим OUTPUT<br>
+&nbsp;&nbsp;pinMode(latchPin, OUTPUT);<br>
+&nbsp;&nbsp;pinMode(dataPin, OUTPUT);&nbsp;&nbsp;<br>
+&nbsp;&nbsp;pinMode(clockPin, OUTPUT);<br>
+&nbsp;&nbsp;Serial.begin(9600);<br>
+&nbsp;&nbsp;Serial.println("reset");<br>
+}<br>
+<br>
+void loop() {<br>
+&nbsp;&nbsp;if (Serial.available() &gt; 0) {<br>
+&nbsp; &nbsp; // Символы от '0' до '9' <br>
+&nbsp; &nbsp; // представлены в ASCII таблице значения от 48 до 57.<br>
+&nbsp; &nbsp; int bitToSet = Serial.read() - 48;<br>
+<br>
+&nbsp; &nbsp; // Записываем HIGH в позицию соответствующую bitToSet<br>
+&nbsp; &nbsp; registerWrite(bitToSet, HIGH);<br>
+&nbsp;&nbsp;}<br>
+}<br>
+<br>
+// Этот метот записывает байт в регистр<br>
+void registerWrite(int whichPin, int whichState) {<br>
+// инициализируем и обнуляем байт<br>
+&nbsp;&nbsp;byte bitsToSend = 0;<br>
+<br>
+&nbsp;&nbsp;//Отключаем вывод на регистре<br>
+&nbsp;&nbsp;digitalWrite(latchPin, LOW);<br>
+<br>
+&nbsp;&nbsp;// устанавливаем HIGH в соответствующем бите<br>
+&nbsp;&nbsp;bitWrite(bitsToSend, whichPin, whichState);<br>
+<br>
+&nbsp;&nbsp;// проталкиваем байт в регистр<br>
+&nbsp;&nbsp;shiftOut(dataPin, clockPin, MSBFIRST, bitsToSend);<br>
+<br>
+&nbsp; &nbsp; // "защелкиваем" регистр, чтобы байт появился на его выходах<br>
+&nbsp;&nbsp;digitalWrite(latchPin, HIGH);<br>
+}<br>
+[/code]<br>
+<br>
+<br>
+<strong>Пример использования каскада сдвиговых регистров</strong><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">В
+ этом примере подключаются два регистра, доводя количество выходов до 
+16, при это на Arduino по прежнему задействовано то же количество 
+выходов.</font></font></font></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">Подключаем второй регистр к питанию и общей земле точно так же, как и первый.</font></font></font></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<ignore_js_op>
+
+</ignore_js_op></font></font></font></p><div class="guestviewthumb"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<div style="margin: 0 auto;">
+<img id="aimg_1671" class="guestviewthumb_cur" aid="1671" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/71_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/71_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1671&amp;size=100x100&amp;key=29a12ef9820ccbc9&amp;type=1" inpost="1" alt="ShftOutPrimer2_1.gif" title="ShftOutPrimer2_1.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</font></font></font></div><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+
+</font></font></font><div class="tip tip_4 aimg_tip" id="aimg_1671_menu" style="position: absolute; display: none" disautofocus="true"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+</font></font></font><div class="xs0"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<p><strong>ShftOutPrimer2_1.gif</strong> <em class="xg1">(43.71 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY3MXxmNDhmMDk0NXwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1671" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1671&amp;handlekey=savephoto_1671">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:11 Загрузить</p>
+
+
+</font></font></font><p></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">Далее
+ DS вход (пин 14) подключается к Q7' выходу (пин 9) первого регистра 
+(синий провод). А SH_CP (пин 11) и ST_CP (pin 12) подключаются 
+параллельно регистру к соответствующим входам первого регистра. Желтый и
+ зеленый провод соответственно.</font></font></font></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<ignore_js_op>
+
+</ignore_js_op></font></font></font></p><div class="guestviewthumb"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<div style="margin: 0 auto;">
+<img id="aimg_1672" class="guestviewthumb_cur" aid="1672" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/72_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/72_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1672&amp;size=100x100&amp;key=c250d5ed4b7a8797&amp;type=1" inpost="1" alt="ShftOutPrimer2_2.gif" title="ShftOutPrimer2_2.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</font></font></font></div><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+
+</font></font></font><div class="tip tip_4 aimg_tip" id="aimg_1672_menu" style="position: absolute; display: none" disautofocus="true"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+</font></font></font><div class="xs0"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<p><strong>ShftOutPrimer2_2.gif</strong> <em class="xg1">(44.49 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY3Mnw2YTEyN2Y1M3wxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1672" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1672&amp;handlekey=savephoto_1672">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:11 Загрузить</p>
+
+
+</font></font></font><p></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">К выходам второго регистра подключаем зеленые светодиоды.</font></font></font></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<ignore_js_op>
+
+</ignore_js_op></font></font></font></p><div class="guestviewthumb"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<div style="margin: 0 auto;">
+<img id="aimg_1673" class="guestviewthumb_cur" aid="1673" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/73_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/73_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1673&amp;size=100x100&amp;key=ff4be1c3e70bd832&amp;type=1" inpost="1" alt="ShftOutPrimer2_3.gif" title="ShftOutPrimer2_3.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</font></font></font></div><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+
+</font></font></font><div class="tip tip_4 aimg_tip" id="aimg_1673_menu" style="position: absolute; display: none" disautofocus="true"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+</font></font></font><div class="xs0"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<p><strong>ShftOutPrimer2_3.gif</strong> <em class="xg1">(63.86 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY3M3xmNjYxNjkwY3wxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1673" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1673&amp;handlekey=savephoto_1673">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:11 Загрузить</p>
+
+
+</font></font></font><p></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">Схема подключения</font></font></font></p><p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<ignore_js_op>
+<style>.guestviewthumb {margin:10px auto; text-align:center;}.guestviewthumb a {font-size:12px;}.guestviewthumb_cur {cursor:url(static/image/common/scf.cur), default; max-width:100px;}.ie6 .guestviewthumb_cur { width:100px !important;}</style>
+</ignore_js_op></font></font></font></p><div class="guestviewthumb"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<div style="margin: 0 auto;">
+<img id="aimg_1674" class="guestviewthumb_cur" aid="1674" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/74_100_100.jpg" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login'+'&amp;referer='+encodeURIComponent(location))" onerror="javascript:if(this.getAttribute('makefile')){this.src=this.getAttribute('makefile'); this.removeAttribute('makefile');}" file="http://airgunstyle.ru/data/attachment/image/000/00/16/74_100_100.jpg" makefile="forum.php?mod=image&amp;aid=1674&amp;size=100x100&amp;key=665e1eb9a09f5573&amp;type=1" inpost="1" alt="ShftOut_Schema2.gif" title="ShftOut_Schema2.gif">
+<br>
+<a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href+'&amp;referer='+encodeURIComponent(location));">Войдите/Зарегистрируйтесь, чтобы увеличить</a>
+</div>
+</font></font></font></div><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+
+</font></font></font><div class="tip tip_4 aimg_tip" id="aimg_1674_menu" style="position: absolute; display: none" disautofocus="true"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+</font></font></font><div class="xs0"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">
+<p><strong>ShftOut_Schema2.gif</strong> <em class="xg1">(30.28 KB, Скачиваний: 0)</em></p>
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=attachment&amp;aid=MTY3NHxiMzUzZjdlNXwxMzk4NDQ1MTg3fDB8NjQy&amp;nothumb=yes" target="_blank">Скачать файл</a>
+
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_1674" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=1674&amp;handlekey=savephoto_1674">Сохранить в альбоме</a>
+
+</p>
+
+<p class="xg1 y">2012-10-15 00:11 Загрузить</p>
+
+
+</font></font></font><p></p><br>
+<p style="line-height:18px;text-indent:nullem;text-align:left"><font style="color:rgb(85, 85, 85)"><font face="Verdana, Geneva, Arial, sans-serif"><font style="font-size:12px">Код примера 2.1</font></font></font></p>[code=cpp]//**************************************************************//<br>
+//&nbsp;&nbsp;Name&nbsp; &nbsp; : shiftOutCode, Hello World&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+//&nbsp;&nbsp;Author&nbsp;&nbsp;: Carlyn Maw,Tom Igoe, David A. Mellis <br>
+//&nbsp;&nbsp;Date&nbsp; &nbsp; : 25 Oct, 2006&nbsp; &nbsp; <br>
+//&nbsp;&nbsp;Modified: 21 Mar 2010&nbsp;&nbsp;<br>
+//&nbsp;&nbsp;Modified: 19 Feb 2011&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <br>
+//&nbsp;&nbsp;Version : 2.0&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;<br>
+//&nbsp;&nbsp;Notes&nbsp; &nbsp;: Программа использует два сдвиговых регистра 74HC595 <br>
+//&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; : для вывода значений от 0 до 
+255&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+//****************************************************************<br>
+<br>
+//Пин подключен к ST_CP входу 74HC595<br>
+int latchPin = 8;<br>
+//Пин подключен к SH_CP входу 74HC595<br>
+int clockPin = 12;<br>
+//Пин подключен к DS входу 74HC595<br>
+int dataPin = 11;<br>
+<br>
+<br>
+<br>
+void setup() {<br>
+&nbsp;&nbsp;//устанавливаем режим OUTPUT<br>
+&nbsp;&nbsp;pinMode(latchPin, OUTPUT);<br>
+&nbsp;&nbsp;pinMode(clockPin, OUTPUT);<br>
+&nbsp;&nbsp;pinMode(dataPin, OUTPUT);<br>
+}<br>
+<br>
+void loop() {<br>
+&nbsp;&nbsp;// отсчитываем от 0 до 255&nbsp;&nbsp;и отображаем значение на светодиоде<br>
+&nbsp;&nbsp;for (int numberToDisplay = 0; numberToDisplay &lt; 256; numberToDisplay++) {<br>
+&nbsp; &nbsp; // устанавливаем синхронизацию "защелки" на LOW<br>
+&nbsp; &nbsp; digitalWrite(latchPin, LOW);<br>
+&nbsp; &nbsp; // передаем отсчет для вывода на зеленые светодиоды<br>
+&nbsp; &nbsp; shiftOut(dataPin, clockPin, MSBFIRST, numberToDisplay);&nbsp;&nbsp;<br>
+&nbsp; &nbsp; // передаем обратный отсчет&nbsp;&nbsp;для вывода на красные светодиоды<br>
+&nbsp; &nbsp; shiftOut(dataPin, clockPin, MSBFIRST, 255-numberToDisplay);<br>
+&nbsp; &nbsp; //"защелкиваем" регистр, тем самым устанавливая значения на выходах<br>
+&nbsp; &nbsp; digitalWrite(latchPin, HIGH);<br>
+&nbsp; &nbsp; // пауза перед следующей итерацией<br>
+&nbsp; &nbsp; delay(500);<br>
+&nbsp;&nbsp;}<br>
+}<br>
+[/code]<br>
+Пример 2.2<br>
+[code=cpp]/*<br>
+ Программа поочередно включается все светодиоды, подключенные к двум<br>
+сдвиговым регистрам 74HC595 .Created 22 May 2009<br>
+ Modified 23 Mar 2010<br>
+ by Tom Igoe<br>
+ */<br>
+<br>
+//Пин подключен к ST_CP входу 74HC595<br>
+const int latchPin = 8;<br>
+//Пин подключен к SH_CP входу 74HC595<br>
+const int clockPin = 12;<br>
+//Пин подключен к DS входу 74HC595<br>
+const int dataPin = 11;<br>
+<br>
+char inputString[2];<br>
+<br>
+void setup() {<br>
+&nbsp; &nbsp;//устанавливаем режим OUTPUT<br>
+&nbsp;&nbsp;pinMode(latchPin, OUTPUT);<br>
+&nbsp;&nbsp;pinMode(dataPin, OUTPUT);&nbsp;&nbsp;<br>
+&nbsp;&nbsp;pinMode(clockPin, OUTPUT);<br>
+&nbsp;&nbsp;Serial.begin(9600);<br>
+&nbsp;&nbsp;Serial.println("reset");<br>
+}<br>
+<br>
+void loop() {<br>
+&nbsp;&nbsp;// проходим циклом по всем 16 выходам двух регистров<br>
+&nbsp;&nbsp;for (int thisLed = 0; thisLed &lt; 16; thisLed++) {<br>
+&nbsp; &nbsp; // записываем сигнал в регистр для очередного светодиода<br>
+&nbsp; &nbsp; registerWrite(thisLed, HIGH);<br>
+&nbsp; &nbsp; // если это не первый светодиод, то отключаем предыдущий<br>
+&nbsp; &nbsp; if (thisLed &gt; 0) {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;registerWrite(thisLed - 1, LOW);<br>
+&nbsp; &nbsp; } <br>
+&nbsp; &nbsp; // если это первый светодиод, то отключаем последний<br>
+&nbsp; &nbsp; else {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;registerWrite(15, LOW);<br>
+&nbsp; &nbsp; } <br>
+&nbsp; &nbsp; // делаем паузу перед следующией итерацией<br>
+&nbsp; &nbsp; delay(250);<br>
+&nbsp;&nbsp;}<br>
+<br>
+}<br>
+<br>
+// этот метод отсылает бит на сдвиговый регистр<br>
+<br>
+void registerWrite(int whichPin, int whichState) {<br>
+&nbsp;&nbsp;// для хранения 16 битов используем unsigned int<br>
+&nbsp;&nbsp;unsigned int bitsToSend = 0;&nbsp; &nbsp; <br>
+<br>
+&nbsp;&nbsp;// выключаем светодиоды на время передачи битов<br>
+&nbsp;&nbsp;digitalWrite(latchPin, LOW);<br>
+<br>
+&nbsp;&nbsp;// устанавливаем HIGH в соответствующий бит <br>
+&nbsp;&nbsp;bitWrite(bitsToSend, whichPin, whichState);<br>
+<br>
+&nbsp;&nbsp;// разбиваем наши 16 бит на два байта <br>
+&nbsp;&nbsp;// для записи в первый и второй регистр<br>
+&nbsp;&nbsp;byte registerOne = highByte(bitsToSend);<br>
+&nbsp;&nbsp;byte registerTwo = lowByte(bitsToSend);<br>
+<br>
+&nbsp;&nbsp;// "проталкиваем" байты в регистры<br>
+&nbsp;&nbsp;shiftOut(dataPin, clockPin, MSBFIRST, registerTwo);<br>
+&nbsp;&nbsp;shiftOut(dataPin, clockPin, MSBFIRST, registerOne);<br>
+<br>
+&nbsp;&nbsp;// "защелкиваем" регистр, чтобы биты появились на выходах регистра<br>
+&nbsp;&nbsp;digitalWrite(latchPin, HIGH);<br>
+}[/code]<br>
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></font></td></tr></tbody></table>
+
+
+</div>
+<div id="comment_3442" class="cm">
+</div>
+
+<div id="post_rate_div_3442"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+
+<div class="singse_share cl mtw ptw">
+<p>
+<a href="http://airgunstyle.ru/forum.php?mod=post&amp;action=reply&amp;fid=137&amp;tid=642&amp;reppost=3442&amp;extra=page=1&amp;page=1" onclick="showWindow('reply', this.href)"><font color="#CD0001"><strong> Поздравляем!</strong></font> Вы можете стать первым кто ответит <font color="#CD0001"><strong>в этой теме</strong></font> Торопитесь!</a>
+</p>
+</div>
+<div class="singse_share cl mtm mbm">
+
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/share.js" type="text/javascript" charset="utf-8"></script>
+<div data-yasharelink="http://airgunstyle.ru/thread-642-1-1.html" class="yashare-auto-init b-share_theme_counter" margin-left:="" 280px;="" data-yasharel10n="ru" data-yasharequickservices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yasharetheme="counter"><span class="b-share"><span class="b-share-btn__wrap"><a rel="nofollow" target="_blank" title="Я.ру" class="b-share__handle b-share__link b-share-btn__yaru" href="http://share.yandex.ru/go.xml?service=yaru&amp;url=http%3A%2F%2Fairgunstyle.ru%2Fthread-642-1-1.html&amp;title=%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%A4%D0%BE%D1%80%D1%83%D0%BC%20AIRGUNSTYLE.ru%20Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B%20-" data-service="yaru"><span class="b-share-icon b-share-icon_yaru"></span><span class="b-share-counter">0</span></a></span><span class="b-share-btn__wrap"><a rel="nofollow" target="_blank" title="ВКонтакте" class="b-share__handle b-share__link b-share-btn__vkontakte" href="http://share.yandex.ru/go.xml?service=vkontakte&amp;url=http%3A%2F%2Fairgunstyle.ru%2Fthread-642-1-1.html&amp;title=%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%A4%D0%BE%D1%80%D1%83%D0%BC%20AIRGUNSTYLE.ru%20Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B%20-" data-service="vkontakte"><span class="b-share-icon b-share-icon_vkontakte"></span><span class="b-share-counter">0</span></a></span><span class="b-share-btn__wrap"><a rel="nofollow" target="_blank" title="Facebook" class="b-share__handle b-share__link b-share-btn__facebook" href="http://share.yandex.ru/go.xml?service=facebook&amp;url=http%3A%2F%2Fairgunstyle.ru%2Fthread-642-1-1.html&amp;title=%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%A4%D0%BE%D1%80%D1%83%D0%BC%20AIRGUNSTYLE.ru%20Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B%20-" data-service="facebook"><span class="b-share-icon b-share-icon_facebook"></span><span class="b-share-counter">0</span></a></span><span class="b-share-btn__wrap"><a rel="nofollow" target="_blank" title="Twitter" class="b-share__handle b-share__link b-share-btn__twitter" href="http://share.yandex.ru/go.xml?service=twitter&amp;url=http%3A%2F%2Fairgunstyle.ru%2Fthread-642-1-1.html&amp;title=%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%A4%D0%BE%D1%80%D1%83%D0%BC%20AIRGUNSTYLE.ru%20Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B%20-" data-service="twitter"><span class="b-share-icon b-share-icon_twitter"></span><span class="b-share-counter">0</span></a></span><span class="b-share-btn__wrap"><a rel="nofollow" target="_blank" title="Одноклассники" class="b-share__handle b-share__link b-share-btn__odnoklassniki" href="http://share.yandex.ru/go.xml?service=odnoklassniki&amp;url=http%3A%2F%2Fairgunstyle.ru%2Fthread-642-1-1.html&amp;title=%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%A4%D0%BE%D1%80%D1%83%D0%BC%20AIRGUNSTYLE.ru%20Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B%20-" data-service="odnoklassniki"><span class="b-share-icon b-share-icon_odnoklassniki"></span><span class="b-share-counter">0</span></a></span><span class="b-share-btn__wrap"><a rel="nofollow" target="_blank" title="Мой Мир" class="b-share__handle b-share__link b-share-btn__moimir" href="http://share.yandex.ru/go.xml?service=moimir&amp;url=http%3A%2F%2Fairgunstyle.ru%2Fthread-642-1-1.html&amp;title=%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%A4%D0%BE%D1%80%D1%83%D0%BC%20AIRGUNSTYLE.ru%20Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B%20-" data-service="moimir"><span class="b-share-icon b-share-icon_moimir"></span><span class="b-share-counter"></span></a></span><span class="b-share-btn__wrap"><a rel="nofollow" target="_blank" title="Google Plus" class="b-share__handle b-share__link b-share-btn__gplus" href="http://share.yandex.ru/go.xml?service=gplus&amp;url=http%3A%2F%2Fairgunstyle.ru%2Fthread-642-1-1.html&amp;title=%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%A4%D0%BE%D1%80%D1%83%D0%BC%20AIRGUNSTYLE.ru%20Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B%20-" data-service="gplus"><span class="b-share-icon b-share-icon_gplus"></span><span class="b-share-counter">0</span></a></span><iframe style="display: none" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/ya-share-cnt.htm"></iframe></span></div> 
+
+
+<!-- Baidu Button END -->
+</div>
+
+
+
+<div id="p_btn" class="mtw mbm hm cl">
+
+<a href="http://airgunstyle.ru/home.php?mod=spacecp&amp;ac=favorite&amp;type=thread&amp;id=642" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' чел.Избранное'" title="Добавить сообщение"><i><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/fav.gif" alt="Избранное">Избранное<span id="favoritenumber" style="display:none">0</span></i></a>
+<a class="followp" href="http://airgunstyle.ru/home.php?mod=spacecp&amp;ac=follow&amp;op=relay&amp;tid=642&amp;from=forum" onclick="showWindow('relaythread', this.href, 'get', 0);" title="Поделиться темой"><i><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/rt.png" alt="Трансляции">Трансляции</i></a>
+<a class="sharep" href="http://airgunstyle.ru/home.php?mod=spacecp&amp;ac=share&amp;type=thread&amp;id=642" onclick="showWindow('sharethread', this.href, 'get', 0);" title="Добавить в закладки"><i><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/oshr.png" alt="Закладки">Закладки</i></a>
+<a href="http://airgunstyle.ru/forum.php?mod=collection&amp;action=edit&amp;op=addthread&amp;tid=642" id="k_collect" onclick="showWindow(this.id, this.href);return false;" onmouseover="this.title = $('collectionnumber').innerHTML + ' чел.Коллекции'" title="thread_collect"><i><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/collection.png" alt="Закладки">Коллекции<span id="collectionnumber" style="display:none">0</span></i></a>
+<a id="recommend_add" href="http://airgunstyle.ru/forum.php?mod=misc&amp;action=recommend&amp;do=add&amp;tid=642&amp;hash=a2e66aa6" onclick="showWindow('login', this.href)" onmouseover="this.title = $('recommendv_add').innerHTML + ' чел.Плюс'" title="Отзывы"><i><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/rec_add.gif" alt="Плюс">Плюс<span id="recommendv_add" style="display:none">0</span></i></a>
+<a id="recommend_subtract" href="http://airgunstyle.ru/forum.php?mod=misc&amp;action=recommend&amp;do=subtract&amp;tid=642&amp;hash=a2e66aa6" onclick="showWindow('login', this.href)" onmouseover="this.title = $('recommendv_subtract').innerHTML + ' чел.Минус'" title="Деловые поездки"><i><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/rec_subtract.gif" alt="Минус">Минус<span id="recommendv_subtract" style="display:none">0</span></i></a>
+</div>
+<div class="sign">Я люблю  Airgunstyle.ru !</div>
+<div class="a_pb"><a href="http://airgunstyle.ru/thread-37-1-1.html" target="_blank">Сервис
+ по доставке товаров с Ebay.com / Ebay.de / Ebay.co.uk / Aliexpress.com 
+/Amazon.com / и крупнейших магазинов Китая , Европы и США&nbsp;</a></div></td>
+</tr>
+<tr id="_postposition3442"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://airgunstyle.ru/forum.php?mod=post&amp;action=reply&amp;fid=137&amp;tid=642&amp;reppost=3442&amp;extra=page%3D1&amp;page=1" onclick="showWindow('reply', this.href)">Ответить</a>
+</em>
+
+<p>
+<a href="javascript:;" id="mgc_post_3442" onmouseover="showMenu(this.id)" class="showmenu">Реквизит</a>
+<a href="javascript:;" onclick="showWindow('miscreport3442', 'misc.php?mod=report&amp;rtype=post&amp;rid=3442&amp;tid=642&amp;fid=137', 'get', -1);return false;">Жалоба</a>
+</p>
+
+<ul id="mgc_post_3442_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=bump&amp;idtype=tid&amp;id=642" id="a_bump" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/bump.gif">Поднять тему</a></li>
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=stick&amp;idtype=tid&amp;id=642" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/stick.gif">Важная тема</a></li>
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=close&amp;idtype=tid&amp;id=642" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/close.gif">Закрыть тему</a></li>
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=open&amp;idtype=tid&amp;id=642" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/open.gif">Рупор</a></li>
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=highlight&amp;idtype=tid&amp;id=642" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/highlight.gif">Цвет карты</a></li>
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=sofa&amp;idtype=tid&amp;id=642" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/sofa.htm">Захватить диван</a></li>
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=jack&amp;idtype=tid&amp;id=642" id="a_jack" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/jack.gif">Топ-тема</a></li>
+<li><a href="http://airgunstyle.ru/home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=3442:642" id="a_namepost_3442" onclick="showWindow(this.id, this.href)"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/namepost.gif">Явление карты</a></li><li>
+</li></ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_3442')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript" reload="1">
+aimgcount[3442] = ['1674','1673','1672','1671','1670','1669','1668','1667','1666','1665','1664'];
+attachimggroup(3442);
+attachimgshow(3442);
+var aimgfid = 0;
+</script>
+</div><div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+</div>
+
+
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+<input name="formhash" value="a2e66aa6" type="hidden">
+<input name="optgroup" type="hidden">
+<input name="operation" type="hidden">
+<input name="listextra" value="page%3D1" type="hidden">
+<input name="page" value="1" type="hidden">
+</form>
+
+
+
+<div class="pgs mtm mbm cl">
+<span class="pgb y"><a href="http://airgunstyle.ru/forum-137-1.html">Вернуться к списку</a></span>
+<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=137')" href="javascript:;" title="Новое сообщение"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/pn_post.png" alt="Новое сообщение"></a>
+</div>
+
+<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+<script type="text/javascript">
+var postminchars = parseInt('10');
+var postmaxchars = parseInt('200000');
+var disablepostctrl = parseInt('0');
+</script>
+
+<div id="f_pst" class="pl bm bmw">
+<form method="post" autocomplete="off" id="fastpostform" action="forum.php?mod=post&amp;action=reply&amp;fid=137&amp;tid=642&amp;extra=page%3D1&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost" onsubmit="return fastpostvalidate(this)">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="pls">
+</td>
+<td class="plc">
+
+<span id="fastpostreturn"></span>
+
+
+<div class="cl">
+<div id="fastsmiliesdiv" class="y"><div id="fastsmiliesdiv_data"><div id="fastsmilies"></div></div></div><div class="hasfsl" id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="http://airgunstyle.ru/forum.php?mod=post&amp;action=reply&amp;fid=137&amp;tid=642" onclick="return switchAdvanceMode(this.href)">Расширенный режим</a>
+</span><script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/seditor.js" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="Полужирный" class="fbld">B</a>
+<a href="javascript:;" title="Цвет текста" class="fclr" id="fastpostforecolor">Color</a>
+<a id="fastpostimg" href="javascript:;" title="Фото" class="fmg">Image</a>
+<a id="fastposturl" href="javascript:;" title="Ссылка" class="flnk">Link</a>
+<a id="fastpostquote" href="javascript:;" title="Цитата" class="fqt">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="Код" class="fcd">Code</a>
+<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+</div></div>
+<div class="area">
+<div class="pt hm">
+Чтобы ответить, вам надо авторизироваться в системе <a href="http://airgunstyle.ru/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href)" class="xi2">Вход</a> | <a href="http://airgunstyle.ru/member.php?mod=register" class="xi2">Регистрация</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="seccheck_fastpost">
+</div>
+
+
+<input name="formhash" value="a2e66aa6" type="hidden">
+<input name="usesig" value="" type="hidden">
+<input name="subject" value="  " type="hidden">
+<p class="ptm pnpost">
+<a href="http://airgunstyle.ru/home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=137" class="y" target="_blank">Правила начислений</a>
+<button type="button" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login&amp;guestmessage=yes')" onmouseover="checkpostrule('seccheck_fastpost', 'ac=reply');this.onmouseover=null" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5"><strong>Ответить</strong></button>
+<label class="lb"><input name="adddynamic" class="pc" value="1" type="checkbox">Добавить в ленту новостей</label>
+<label for="fastpostrefresh"><input id="fastpostrefresh" class="pc" type="checkbox">После ответа перейти к последнему сообщению</label>
+<script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
+</p>
+</td>
+</tr>
+</tbody></table>
+</form>
+</div>
+
+<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, 0, 0, 'forum.php?mod=viewthread&tid=642', 1);}</script>
+</div>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<script type="text/javascript">
+function succeedhandle_followmod(url, msg, values) {
+var fObj = $('followmod_'+values['fuid']);
+if(values['type'] == 'add') {
+fObj.innerHTML = 'nofollow';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+} else if(values['type'] == 'del') {
+fObj.innerHTML = 'Подписаться';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=a2e66aa6&fuid='+values['fuid'];
+}
+}
+fixed_avatar([3442], 1);
+</script>	</div>
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/ulogin.js"></script><div id="ft" class="wp cl">
+<div id="flk" class="y">
+<p>
+<a href="http://airgunstyle.ru/shop/">Магазин</a><span class="pipe">|</span><a href="http://airgunstyle.ru/home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_248&amp;touid=1&amp;pmid=0&amp;daterange=2">Связь с дилером</a><span class="pipe">|</span><a href="http://airgunstyle.ru/forum.php?mod=misc&amp;action=showdarkroom">Темный угол</a><span class="pipe">|</span><a href="http://airgunstyle.ru/forum.php?mobile=yes">Мобильная версия</a><span class="pipe">|</span><a href="http://airgunstyle.ru/archiver/">Архив</a><span class="pipe">|</span><a href="http://airgunstyle.ru/sitemap.php">Карта</a><span class="pipe">|</span><strong><a href="http://airgunstyle.ru/" target="_blank">AIRGUNSTYLE.ru</a></strong>
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click;makray' "+
+"target=_blank><img src='//counter.yadro.ru/hit;makray?t14.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><a href="http://www.liveinternet.ru/click;makray" target="_blank"><img class="qhkpjnmermyrnryqzvpn" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/hit.gif" alt="" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" border="0" height="31" width="88"></a><!--/LiveInternet-->
+<!-- Yandex.Metrika informer -->
+<a href="http://metrika.yandex.ru/stat/?id=12238870&amp;from=informer" target="_blank" rel="nofollow"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/3_0_FFFDFFFF_F5DDF2FF_0_pageviews.png" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:12238870,type:0,lang:'ru'});return false}catch(e){}"></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter12238870 = new Ya.Metrika({id:12238870, enableAll: true});
+        } catch(e) {}
+    });
+    
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/12238870" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<style type="text/css">
+<!--
+.warn18 {
+  background: url("http://airgunstyle.ru/upload/warn18.png") no-repeat scroll 0 0 transparent;
+    cursor: default;
+    height: 41px;
+    position: fixed;
+    right: 0;
+    top: 37px;
+    width: 43px;
+    z-index: 999;
+}
+.warn18 .tip {
+    background: #fff;
+    cursor: default;
+    display: none;
+    font-size: 17px;
+    font-weight: bold;
+    height: 115px;
+    padding: 25px 10px 0;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 41px;
+    width: 302px;
+    z-index: 999;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.warn18:hover .tip {
+    display: block;
+}
+-->
+</style>
+<a class="warn18" href="#">
+  <span class="tip">Сайт может содержать контент, запрещенный к просмотру лицам до 18 лет!</span>
+</a>
+<!-- begin of Top100 code -->
+
+<script id="top100Counter" type="text/javascript" src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/top100.js"></script><a href="http://top100.rambler.ru/home?id=2829496" target="_blank"><img src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/top100.gif" title="Rambler's Top100" alt="Rambler's Top100" border="0"></a>
+<noscript>
+<a href="http://top100.rambler.ru/navi/2829496/">
+<img src="http://counter.rambler.ru/top100.cnt?2829496" alt="Rambler's Top100" border="0" />
+</a>
+
+</noscript>
+<!-- end of Top100 code -->
+<script type="text/javascript">
+	(function() {
+	var _sw = document.createElement("script");
+	_sw.type = "text/javascript";
+	_sw.async = true;_sw.src = "https://suggest.io/js/v2/airgunstyle.ru/ITrhQGe0";var _sh = document.getElementsByTagName("head")[0]; _sh.appendChild(_sw);})();
+</script></p>
+<p class="xs0">
+GMT+3, 2014-4-25 19:59<span id="debuginfo">
+, Processed in 0.063682 second(s), 11 queries
+, Memcache On.
+</span>
+</p>
+
+</div>
+<div id="frt">
+
+<p>Powered by <strong><a href="#" target="_blank">FoundcoreLLC</a></strong> <em>X3.1</em> <a href="#" target="_blank">Licensed</a></p>
+      <p class="xs0">© 2009-2014 <a href="#" target="_blank"> Comsenz Inc.</a> Template By <a href="http://www.airgunstyle.ru/" target="_blank"> FoundcoreLLC</a></p>
+</div></div>
+<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/home.php" type="text/javascript"></script>
+<div style="left: 1277px; visibility: visible;" id="scrolltop">
+<span><a href="http://airgunstyle.ru/forum.php?mod=post&amp;action=reply&amp;fid=137&amp;tid=642&amp;extra=page%3D1&amp;page=1" onclick="showWindow('reply', this.href)" class="replyfast" title="Быстрый ответ"><b>Быстрый ответ</b></a></span>
+<span hidefocus="true"><a title="Вернуться к началу" onclick="window.scrollTo('0','0')" class="scrolltopa"><b>Вернуться к началу</b></a></span>
+<span>
+<a href="http://airgunstyle.ru/forum-137-1.html" hidefocus="true" class="returnlist" title="Назад к списку"><b>Назад к списку</b></a>
+</span>
+</div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+			<div id="discuz_tips" style="display:none;"></div>
+			<script type="text/javascript">
+				var tipsinfo = '|X3.1|0.6||0||0|7|1398445187||2';
+			</script>
+			<script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/discuz_tips.js" type="text/javascript" charset="UTF-8"></script>
+
+</div><div id="sio_csf" class="sio-custom-field"><div class="sio-csf-inner"><div class="sio-search-icon"></div><a class="lsbs-ads" href="https://suggest.io/"></a><div id="sio_csf_label" class="sio-csf-label">искать...</div><div class="sio-close-search-icon"><a onclick="sio.search.hideSearch(); return false;" href=""></a></div><input id="sio_search_field" type="text"></div></div><div id="sio_csi" class="sio-custom-icon sio-flag-9"><div class="sio-csi"></div></div><div id="sio_search_window" class="sio-t-window"><div class="sio-t-column sio-bb"><div class="sio-t-c-inner" id="sio_searchResults"></div></div></div><script src="Arduino%20%D0%B8%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D1%8B%20%D0%9C%D0%BD%D0%BE%D0%B6%D0%B8%D0%BC%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8B_files/easyXDM.js"></script></body></html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-nojs" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Grove - Gas Sensor(MQ5) - Wiki</title>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,o){t&&t(e,n,o),o||(o={});for(var a=i(e),s=a.length,c=o[r]||(o[r]={}),f=0;s>f;f++)a[f].apply(c,n);return c}function o(t,e){s[t]=i(t).concat(e)}function i(t){return s[t]||[]}function a(){return n(e)}var s={};return{on:o,emit:e,create:a,listeners:i,_events:s}}var r="nr@context";e.exports=n()},{}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(f){"stack"in f&&(t(1),t(4),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:8,2:5,3:9,4:7,5:17,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(2);t("loader").features.stn=!0,t(1),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:6,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o);if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var a=document;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&n(a);for(var s=XMLHttpRequest.prototype;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=i(e,"fn-",null,e.name||"anonymous"):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:17,2:18,ee:"QJf3ax"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:18,2:17,ee:"QJf3ax"}],7:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:18,2:17,ee:"QJf3ax"}],8:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:18,2:17,ee:"QJf3ax"}],9:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),f=s(a),u=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new u(t);try{i.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",r)}catch(o){}}return e},window.XMLHttpRequest.prototype=u.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:5,2:18,ee:"QJf3ax"}],10:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(1),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(2);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:11,2:14,3:9,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],11:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],14:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,f="addEventListener",u="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),s[f]("load",n,!1)):(c[u]("onreadystatechange",r),s[u]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],17:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],18:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper";e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,f,u;try{i=this,n=o(arguments),f=r&&r(n,i)||{}}catch(d){c([d,"",[n,i,a],f])}s(e+"start",[n,i,a],f);try{return u=t.apply(i,n)}catch(p){throw s(e+"err",[n,i,p],f),p}finally{s(e+"end",[n,i,u],f)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,nrWrapper)}function a(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function s(e,n,r){try{t.emit(e,n,r)}catch(o){c([o,e,n,r])}}function c(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=a,e.flag=i,e}},{1:17,ee:"QJf3ax"}]},{},["G9z0Bl",3,10,4]);;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"da95655101",applicationID:"5671388",sa:1,agent:"js-agent.newrelic.com/nr-460.min.js"}</script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"374dae60aa8b1264db8aa7ded4a637f0",petok:"a19e19cac6afdd579d7f9839040ef20929781d7e-1452981383-1800",zone:"seeedstudio.com",rocket:"0",apps:{"ga_key":{"ua":"UA-11009501-1","ga_bs":"2"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=38857570ac/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAMEWF9bGwYGU1BRDwk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:11,2:10,3:8,4:12,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){if(window.addEventListener){var e=t("handle"),n=t("ee");t(1),window.addEventListener("click",function(){e("inc",["ck"])},!1),window.addEventListener("hashchange",function(){e("inc",["hc"])},!1),n.on("pushState-start",function(){e("inc",["ps"])})}},{1:9,ee:"QJf3ax",handle:"D5DuLP"}],6:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],7:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:11,2:10,3:9,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t,e){function n(){return s}if(t[1]){var r=t[1];if("function"==typeof r){var s=a(r,"nr@wrapped",function(){return i(r,"fn-",n,r.name||"anonymous")});this.wrapped=t[1]=s,o.emit("initEventContext",[t,e],this.wrapped)}else"function"==typeof r.handleEvent&&i.inPlace(r,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],10:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){function r(){return a}this.ctx={};var a={"nr@context":this.ctx};o.emit("initTimerContext",[t,n],a),t[0]=i(t[0],"fn-",r,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],12:[function(t,e){function n(){f.inPlace(this,p,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:8,2:26,ee:"QJf3ax"}],13:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1),u=window.XMLHttpRequest;t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof u&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:14,3:12,4:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],14:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],15:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:24,2:25,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:24,2:15,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,13,7,6,5]);</script>
+<meta name="generator" content="MediaWiki 1.20.3">
+<link rel="shortcut icon" href="http://www.seeedstudio.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.seeedstudio.com/wiki/opensearch_desc.php" title="Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://www.seeedstudio.com/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom feed" href="http://www.seeedstudio.com/wiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/load.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/load_002.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/load_003.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Grove_-_Gas_Sensor(MQ5)","wgTitle":"Grove - Gas Sensor(MQ5)","wgCurRevisionId":109550,"wgArticleId":2790,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Grove_-_Gas_Sensor(MQ5)","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":true,"previewDialog":false,"publish":true,"toc":false},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: seeedc6_wikidb2:resourceloader:filter:minify-js:7:b3e9d3cf8e43ad3f6fbbaa56f87bf00d */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">.source-arduino{line-height:normal;}.source-arduino li,.source-arduino pre{line-height:normal;border:0px none white;}.arduino.source-arduino .de1,.arduino.source-arduino .de2{font:normal normal 1em/1.2em monospace;margin:0;padding:0;background:none;vertical-align:top;font-family:monospace,monospace;}.arduino.source-arduino{font-family:monospace;}.arduino.source-arduino .imp{font-weight:bold;color:red;}.arduino.source-arduino li,.arduino.source-arduino .li1{font-weight:normal;vertical-align:top;}.arduino.source-arduino .ln{width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}.arduino.source-arduino .li2{font-weight:bold;vertical-align:top;}.arduino.source-arduino .kw1{color:#006699;font-weight:bold;}.arduino.source-arduino .kw2{color:#006699;font-weight:bold;}.arduino.source-arduino .kw3{color:#006699;}.arduino.source-arduino .kw4{color:#808080;font-weight:bold;}.arduino.source-arduino .co1{color:#008200;}.arduino.source-arduino .co2{color:#808080;}.arduino.source-arduino .coMULTI{color:#008200;}.arduino.source-arduino .es0{color:#000099;font-weight:bold;}.arduino.source-arduino .es1{color:#000099;font-weight:bold;}.arduino.source-arduino .es2{color:#660099;font-weight:bold;}.arduino.source-arduino .es3{color:#660099;font-weight:bold;}.arduino.source-arduino .es4{color:#660099;font-weight:bold;}.arduino.source-arduino .es5{color:#006699;font-weight:bold;}.arduino.source-arduino .br0{color:#008000;}.arduino.source-arduino .sy0{color:#008000;}.arduino.source-arduino .sy1{color:#000080;}.arduino.source-arduino .sy2{color:#000040;}.arduino.source-arduino .sy3{color:#000040;}.arduino.source-arduino .sy4{color:#008080;}.arduino.source-arduino .st0{color:#009dff;}.arduino.source-arduino .nu0{color:#530303;}.arduino.source-arduino .nu6{color:#530303;}.arduino.source-arduino .nu8{color:#530303;}.arduino.source-arduino .nu12{color:#530303;}.arduino.source-arduino .nu16{color:#530303;}.arduino.source-arduino .nu17{color:#530303;}.arduino.source-arduino .nu18{color:#530303;}.arduino.source-arduino .nu19{color:#530303;}.arduino.source-arduino .me1{color:#006699;}.arduino.source-arduino .me2{color:#006699;}.arduino.source-arduino .ln-xtra,.arduino.source-arduino li.ln-xtra,.arduino.source-arduino div.ln-xtra{background-color:#ffc;}.arduino.source-arduino span.xtra{display:block;}</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--><script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-11009501-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Grove_-_Gas_Sensor_MQ5 skin-vector action-view vector-animateLayout">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+ 
+<div id="content" class="mw-body">
+<a href="#top" style="position: fixed;z-index: 8;left: 110px;bottom: 20px;cursor: pointer;float: left;">↑<small>TOP</small></a>
+<a id="top"></a>
+<div id="mw-js-message" style="display:none;"></div>
+ 
+<h1 id="firstHeading" class="firstHeading"><span dir="auto">Grove - Gas Sensor(MQ5)</span></h1>
+ 
+ 
+<div id="bodyContent">
+ 
+<div id="siteSub">From Wiki 来自痴汉的爱</div>
+ 
+ 
+<div id="contentSub"></div>
+ 
+ 
+<div id="jump-to-nav" class="mw-jump">
+Jump to: <a href="#mw-head">navigation</a>, <a href="#p-search">search</a>
+</div>
+ 
+ 
+<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"> <div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="http://www.seeedstudio.com/wiki/File:Twig-Gas_Sensor.bmp" class="image"><img alt="Twig-Gas Sensor.bmp" src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/350px-Twig-Gas_Sensor.jpg" class="thumbimage" height="263" width="350"></a> <div class="thumbcaption"><div class="magnify"><a href="http://www.seeedstudio.com/wiki/File:Twig-Gas_Sensor.bmp" class="internal" title="Enlarge"><img src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/magnify-clip.png" alt="" height="11" width="15"></a></div></div></div></div>
+<p>The Grove - Gas Sensor(MQ5) module is useful for gas leakage detection (in home and industry). It is suitable for detecting <font color="Blue">H2, LPG, CH4, CO, Alcohol</font>.
+ Due to its high sensitivity and fast response time, measurements can be
+ taken as soon as possible. The sensitivity of the sensor can be 
+adjusted by using the potentiometer.
+<br><br>
+<a href="http://www.seeedstudio.com/depot/Grove-Gas-SensorMQ5-p-938.html?cPath=25_127" target="_blank" rel="nofollow"><img alt="Get One Now Banner.png" src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/150px-Get_One_Now_Banner.png" height="46" width="150"></a>
+<br>
+<br>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Features"><span class="tocnumber">1</span> <span class="toctext"><b>Features</b></span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Specification"><span class="tocnumber">2</span> <span class="toctext"><b>Specification</b></span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Application_Ideas"><span class="tocnumber">3</span> <span class="toctext"><b>Application Ideas</b></span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Hardware_Overview"><span class="tocnumber">4</span> <span class="toctext"><b>Hardware Overview</b></span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Getting_Started"><span class="tocnumber">5</span> <span class="toctext"><b>Getting Started</b></span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Gas_Detection_:_Basic_Example"><span class="tocnumber">5.1</span> <span class="toctext">Gas Detection&nbsp;: Basic Example</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Measurement_:_Approximation"><span class="tocnumber">5.2</span> <span class="toctext">Measurement&nbsp;: Approximation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Suggest_Reading_.2F_References"><span class="tocnumber">6</span> <span class="toctext"><b>Suggest Reading / References</b></span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Resources"><span class="tocnumber">7</span> <span class="toctext"><b>Resources</b></span></a></li>
+</ul>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2> <span class="mw-headline" id="Features"> <b><big>Features</big></b> </span></h2>
+<ul><li>Wide detecting scope
+</li><li>Stable and long life
+</li><li>Fast response and High sensitivity
+</li></ul>
+<h2> <span class="mw-headline" id="Specification"> <b><big>Specification</big></b> </span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th> Item </th>
+<th> Parameter </th>
+<th> Min </th>
+<th> Typical </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td width="200"> VCC </td>
+<td width="200"> Working Voltage </td>
+<td width="200">4.9 </td>
+<td width="200">5 </td>
+<td width="200">5.1 </td>
+<td width="200">V
+</td></tr>
+<tr>
+<td>PH </td>
+<td> Heating consumption </td>
+<td> 0.5 </td>
+<td> - </td>
+<td> 800 </td>
+<td> mW
+</td></tr>
+<tr>
+<td>RL </td>
+<td> Load resistance </td>
+<td> </td>
+<td> adjustable </td>
+<td> </td>
+<td>
+</td></tr>
+<tr>
+<td>RH</td>
+<td> Heater resistance</td>
+<td> - </td>
+<td> 31±10% </td>
+<td> - </td>
+<td> Ω
+</td></tr>
+<tr>
+<td>Rs</td>
+<td> Sensing Resistance</td>
+<td> 10 </td>
+<td> - </td>
+<td> 60 </td>
+<td> kΩ
+</td></tr>
+<tr>
+<td>Scope</td>
+<td> Detecting Concentration </td>
+<td> 200 </td>
+<td> - </td>
+<td> 10000 </td>
+<td> ppm
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Application_Ideas"> <b><big>Application Ideas</big></b> </span></h2>
+<ul><li>Gas leakage detection.
+</li><li>Toys.
+</li></ul>
+<h2> <span class="mw-headline" id="Hardware_Overview"> <b><big>Hardware Overview</big></b> </span></h2>
+<p>This is a Analog output sensor. This needs to be connected to any one Analog socket in <a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/index.php?title=Base_shield_v2&amp;uselang=en">Base Shield</a>. The examples used in this tutorial makes uses of A0 analog pin. Connect this module to the A0 port of Base Shield.
+</p><p>It is possible to connect the Grove module to Arduino directly by
+ using jumper wires by using the connection as shown in the below table:
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th> Arduino </th>
+<th> Gas Sensor
+</th></tr>
+<tr>
+<td> 5V </td>
+<td> VCC
+</td></tr>
+<tr>
+<td> GND </td>
+<td> GND
+</td></tr>
+<tr>
+<td> NC </td>
+<td> NC
+</td></tr>
+<tr>
+<td> Analog A0 </td>
+<td> SIG
+</td></tr></tbody></table>
+<p><br>
+The output voltage from the Gas sensor increases when the concentration 
+of gas increases. Sensitivity can be adjusted by varying the 
+potentiometer.
+<font color="Red">Please note that the best preheat time for the sensor is above 24 hours</font>. For detailed information about the MQ-5 sensor, please refer to the data-sheet provided in resource section.
+</p><p><br>
+</p>
+<h2> <span class="mw-headline" id="Getting_Started"> <b><big>Getting Started</big></b> </span></h2>
+<p><a href="http://www.seeedstudio.com/wiki/File:Read_Gas_Sensor_data_MQ2_MQ5.jpg" class="image" title="Gas Sensor Connected to A0"><img alt="Gas Sensor Connected to A0" src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/600px-Read_Gas_Sensor_data_MQ2_MQ5.jpg" height="434" width="600"></a>
+</p><p>Connect the Grove - Gas Sensor(MQ5) to A0 port as shown in the above picture.
+</p>
+<h3> <span class="mw-headline" id="Gas_Detection_:_Basic_Example">Gas Detection&nbsp;: Basic Example</span></h3>
+<p>In this example, the sensor is connected to A0 pin. The voltage read 
+from the sensor is displayed. This value can be used as a threshold to 
+detect any increase/decrease in gas concentration.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw4">float</span> sensor_volt<span class="sy4">;</span> 
+  <span class="kw4">float</span> sensorValue<span class="sy4">;</span>
+&nbsp;
+  sensorValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>A0<span class="br0">)</span><span class="sy4">;</span>
+  sensor_volt <span class="sy1">=</span> sensorValue<span class="sy2">/</span><span class="nu0">1024</span><span class="sy2">*</span><span class="nu16">5.0</span><span class="sy4">;</span>
+&nbsp;
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"sensor_volt = "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>sensor_volt<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"V"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h3> <span class="mw-headline" id="Measurement_:_Approximation"> Measurement&nbsp;: Approximation </span></h3>
+<p>This examples demonstrates a way to know the approximate 
+concentration of Gas. As per the data-sheet of the MQ5 sensors, these 
+equations are tested for standard conditions and are not calibrated. It 
+may vary based on change in temperature or humidity.
+</p><p>1.Keep the Gas Sensor in clean air environment. Upload the below program.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw4">float</span> sensor_volt<span class="sy4">;</span> 
+  <span class="kw4">float</span> RS_air<span class="sy4">;</span> <span class="co1">//  Get the value of RS via in a clear air</span>
+  <span class="kw4">float</span> R0<span class="sy4">;</span>  <span class="co1">// Get the value of R0 via in H2</span>
+  <span class="kw4">float</span> sensorValue<span class="sy4">;</span>
+&nbsp;
+<span class="coMULTI">/*--- Get a average data by testing 100 times ---*/</span>   
+    <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">0</span> <span class="sy4">;</span> x <span class="sy1">&lt;</span> <span class="nu0">100</span> <span class="sy4">;</span> x<span class="sy2">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    sensorValue <span class="sy1">=</span> sensorValue <span class="sy2">+</span> <span class="kw3">analogRead</span><span class="br0">(</span>A0<span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  sensorValue <span class="sy1">=</span> sensorValue<span class="sy2">/</span><span class="nu16">100.0</span><span class="sy4">;</span>
+<span class="coMULTI">/*-----------------------------------------------*/</span>
+&nbsp;
+  sensor_volt <span class="sy1">=</span> sensorValue<span class="sy2">/</span><span class="nu0">1024</span><span class="sy2">*</span><span class="nu16">5.0</span><span class="sy4">;</span>
+  RS_air <span class="sy1">=</span> <span class="br0">(</span><span class="nu16">5.0</span><span class="sy2">-</span>sensor_volt<span class="br0">)</span><span class="sy2">/</span>sensor_volt<span class="sy4">;</span> <span class="co1">// omit *RL</span>
+  R0 <span class="sy1">=</span> RS_air<span class="sy2">/</span><span class="nu16">6.5</span><span class="sy4">;</span> <span class="co1">// The ratio of RS/R0 is 6.5 in a clear air from Graph (Found using WebPlotDigitizer)</span>
+&nbsp;
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"sensor_volt = "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>sensor_volt<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"V"</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"R0 = "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>R0<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+<span class="br0">}</span></pre></div></div>
+<p><br>
+</p><p>2. Then, open the serial monitor of Arduino IDE. Write down the 
+value of R0 and this needs to be used in the next program. Please node 
+down the R0 after the reading stabilizes.
+</p><p><br>
+<font color="Red">Replace the R0 below with value of R0 tested above </font>. Expose the sensor to any one of the gas listed above.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+  <span class="kw4">float</span> sensor_volt<span class="sy4">;</span>
+  <span class="kw4">float</span> RS_gas<span class="sy4">;</span> <span class="co1">// Get value of RS in a GAS</span>
+  <span class="kw4">float</span> ratio<span class="sy4">;</span> <span class="co1">// Get ratio RS_GAS/RS_air</span>
+  <span class="kw4">int</span> sensorValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>A0<span class="br0">)</span><span class="sy4">;</span>
+  sensor_volt<span class="sy1">=</span><span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span>sensorValue<span class="sy2">/</span><span class="nu0">1024</span><span class="sy2">*</span><span class="nu16">5.0</span><span class="sy4">;</span>
+  RS_gas <span class="sy1">=</span> <span class="br0">(</span><span class="nu16">5.0</span><span class="sy2">-</span>sensor_volt<span class="br0">)</span><span class="sy2">/</span>sensor_volt<span class="sy4">;</span> <span class="co1">// omit *RL</span>
+&nbsp;
+  <span class="coMULTI">/*-Replace the name "R0" with the value of R0 in the demo of First Test -*/</span>
+  ratio <span class="sy1">=</span> RS_gas<span class="sy2">/</span>R0<span class="sy4">;</span>  <span class="co1">// ratio = RS/R0 </span>
+  <span class="coMULTI">/*-----------------------------------------------------------------------*/</span>
+&nbsp;
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"sensor_volt = "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>sensor_volt<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"RS_ratio = "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>RS_gas<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Rs/R0 = "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>ratio<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"<span class="es1">\n</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+<span class="br0">}</span></pre></div></div>
+<p><br>
+</p><p>Now, we can get the concentration of gas from the below figure <br>
+</p><p><a href="http://www.seeedstudio.com/wiki/File:Gas_Sensor_4.png" class="image"><img alt="Gas Sensor 4.png" src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/600px-Gas_Sensor_4.png" height="530" width="600"></a>
+</p><p>According to the figure, we can see that the minimum 
+concentration we can test is 200ppm and the maximum is 10000ppm, in a 
+other word, we can get a concentration of gas between 0.02% and 1%. 
+However, we can't provide a formula because the relation between ratio 
+and concentration is nonlinear.
+<br>
+</p>
+<h2> <span class="mw-headline" id="Suggest_Reading_.2F_References"> <b><big>Suggest Reading / References</big></b> </span></h2>
+<dl><dd> <a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/Download_Arduino_and_install_Arduino_driver">Download Arduino and install Arduino driver</a><br>
+</dd><dd> <a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/Getting_Started_with_Seeeduino">Getting Started with Seeeduino</a><br>
+</dd><dd> <a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/How_to_choose_A_Gas_Sensor">How to choose a Gas Sensor</a><br>
+</dd><dd> <a rel="nofollow" target="_blank" class="external text" href="http://en.wikipedia.org/wiki/Flammability_limit">What's LEL</a><br>
+</dd></dl>
+<h2> <span class="mw-headline" id="Resources"> <b><big>Resources</big></b> </span></h2>
+<ul><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/File:Gas_Sensor_Eagle_files.zip">Grove Gas Sensor - EAGLE (Schematic and Board) files </a><br>
+</li><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/File:Gas_Sensor_Schematic.pdf">Grove Gas Sensor - PDF Schematic</a><br>
+</li><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/File:MQ-5.pdf">MQ-5 Datasheet</a>
+</li><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/images/e/e2/101020056.pdf"><i><b>Wiki in PDF Format</b></i></a>
+</li></ul>
+ 
+ </div>  
+ 
+<div class="printfooter">
+Retrieved from "<a href="http://www.seeedstudio.com/wiki/index.php?title=Grove_-_Gas_Sensor%28MQ5%29&amp;oldid=109550">http://www.seeedstudio.com/wiki/index.php?title=Grove_-_Gas_Sensor(MQ5)&amp;oldid=109550</a>" </div>
+ 
+ 
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>  
+<div class="visualClear"></div>
+ 
+ 
+</div>
+ 
+</div>
+ 
+ 
+<div id="mw-head" class="noprint">
+ 
+<div id="p-personal" class="">
+<h5>Personal tools</h5>
+<ul>
+<li id="pt-login"><a href="http://www.seeedstudio.com/wiki/index.php?title=Special:UserLogin&amp;returnto=Grove+-+Gas+Sensor%28MQ5%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+</ul>
+</div>
+ 
+<div id="left-navigation">
+ 
+<div id="p-namespaces" class="vectorTabs">
+<h5>Namespaces</h5>
+<ul>
+<li id="ca-nstab-main" class="selected"><span><a href="http://www.seeedstudio.com/wiki/Grove_-_Gas_Sensor%28MQ5%29" title="View the content page [c]" accesskey="c">Page</a></span></li>
+<li id="ca-talk" class="new"><span><a href="http://www.seeedstudio.com/wiki/index.php?title=Talk:Grove_-_Gas_Sensor%28MQ5%29&amp;action=edit&amp;redlink=1" title="FAQ about the content page [t]" accesskey="t">FAQ</a></span></li>
+<a href="http://www.seeedstudio.com/wiki/index.php?title=Talk:Grove_-_Gas_Sensor%28MQ5%29&amp;action=edit&amp;redlink=1">
+<span id="faq_link" style="position:fixed;z-index:8;right:0;top:50%;cursor:pointer;float:right;height:110px;width:40px;background-image: url(/wiki/skins/common/images/FAQ.png);background-repeat:no-repeat;background-position:0px 0px;" title="FAQ" onmouseout="style.width='40px'" onmouseover="style.width='124px'"></span></a>
+</ul>
+</div>
+ 
+ 
+<div id="p-variants" class="vectorMenu emptyPortlet">
+<h4>
+</h4>
+<h5><span>Variants</span><a href="#"></a></h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+ 
+</div>
+<div id="right-navigation">
+ 
+<div id="p-views" class="vectorTabs">
+<h5>Views</h5>
+<ul>
+<li id="ca-view" class="selected"><span><a href="http://www.seeedstudio.com/wiki/Grove_-_Gas_Sensor%28MQ5%29">Read</a></span></li>
+<li id="ca-viewsource"><span><a href="http://www.seeedstudio.com/wiki/index.php?title=Grove_-_Gas_Sensor%28MQ5%29&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></span></li>
+<li id="ca-history" class="collapsible"><span><a href="http://www.seeedstudio.com/wiki/index.php?title=Grove_-_Gas_Sensor%28MQ5%29&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+</ul>
+</div>
+ 
+ 
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+<h5><span>Actions</span><a href="#"></a></h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+ 
+ 
+<div id="p-search">
+<h5><label for="searchInput">Search</label></h5>
+<form action="/wiki/index.php" id="searchform">
+<div>
+<input name="search" title="Search Wiki [f]" accesskey="f" id="searchInput" type="search"> <input name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" type="submit"> <input name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" type="submit"> <input name="title" value="Special:Search" type="hidden">
+</div>
+</form>
+</div>
+ 
+</div>
+</div>
+ 
+ 
+<div id="mw-panel" class="noprint">
+ 
+<div id="p-logo"><a style="background-image: url(/wiki/skins/common/images/logo.png);" href="http://www.seeedstudio.com/wiki/Main_Page" title="Visit the main page"></a></div>
+ 
+ 
+<div class="portal" id="p-navigation">
+<h5>Navigation</h5>
+<div class="body">
+<ul>
+<li id="n-Getting-Started"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Getting_Started">Getting Started</a></li>
+<li id="n-Learning-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Learning">Learning</a></li>
+<li id="n-Product"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Product">Product</a></li>
+<li id="n-Arduino-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Arduino">&nbsp;&nbsp;&nbsp;&nbsp;Arduino</a></li>
+<li id="n-Shield-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Shield">&nbsp;&nbsp;&nbsp;&nbsp;Shield</a></li>
+<li id="n-Grove-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Grove">&nbsp;&nbsp;&nbsp;&nbsp;Grove</a></li>
+<li id="n-Kit-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Kit">&nbsp;&nbsp;&nbsp;&nbsp;Kit</a></li>
+<li id="n-Kit-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Xadow">&nbsp;&nbsp;&nbsp;&nbsp;Xadow</a></li>
+<li id="n-Kit-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Mbed">&nbsp;&nbsp;&nbsp;&nbsp;Mbed</a></li>
+</ul>
+</div>
+</div>
+<div class="portal" id="p-Support-Nav">
+<h5>Support</h5>
+<div class="body">
+<ul>
+<li id="n-Forum"><a href="http://www.seeedstudio.com/forum" rel="nofollow">Forum</a></li>
+<li id="n-Wish"><a href="http://www.seeedstudio.com/wish" rel="nofollow">Wish</a></li>
+<li id="n-SeeedStudio-Nav"><a href="http://www.seeedstudio.com/depot" rel="nofollow">SeeedStudio</a></li>
+<li id="n-Taobao-Nav"><a href="http://xidikaiyuanshuma.tmall.com/" rel="nofollow">Taobao</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="portal" id="p-Navigation">
+<h5>Navigation</h5>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a href="http://www.seeedstudio.com/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+<li id="n-randompage"><a href="http://www.seeedstudio.com/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+<li id="n-recentchanges"><a href="http://www.seeedstudio.com/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="portal" id="p-Collections">
+<h5>Collections</h5>
+<div class="body">
+<ul>
+<li id="n-Motor"><a href="http://www.seeedstudio.com/wiki/Category:Motors">Motor</a></li>
+<li id="n-Arduino"><a href="http://www.seeedstudio.com/wiki/Category:Arduino">Arduino</a></li>
+<li id="n-Grove"><a href="http://www.seeedstudio.com/wiki/Category:Grove">Grove</a></li>
+<li id="n-Shield"><a href="http://www.seeedstudio.com/wiki/Category:Shield">Shield</a></li>
+<li id="n-Kit"><a href="http://www.seeedstudio.com/wiki/Category:Kit">Kit</a></li>
+<li id="n-Xadow"><a href="http://www.seeedstudio.com/wiki/Category:Xadow">Xadow</a></li>
+<li id="n-Rephone"><a href="http://www.seeedstudio.com/wiki/Category:Rephone">Rephone</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="portal" id="p-tb">
+<h5>Toolbox</h5>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a href="http://www.seeedstudio.com/wiki/Special:WhatLinksHere/Grove_-_Gas_Sensor%28MQ5%29" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+<li id="t-recentchangeslinked"><a href="http://www.seeedstudio.com/wiki/Special:RecentChangesLinked/Grove_-_Gas_Sensor%28MQ5%29" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://www.seeedstudio.com/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+<li id="t-print"><a href="http://www.seeedstudio.com/wiki/index.php?title=Grove_-_Gas_Sensor%28MQ5%29&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+<li id="t-permalink"><a href="http://www.seeedstudio.com/wiki/index.php?title=Grove_-_Gas_Sensor%28MQ5%29&amp;oldid=109550" title="Permanent link to this revision of the page">Permanent link</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+ 
+ 
+ 
+</div>
+ 
+ 
+<div id="footer">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last modified on 3 November 2015, at 11:42.</li>
+<li id="footer-info-viewcount">This page has been accessed 27,935 times.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-about"><a href="http://www.seeedstudio.com/wiki/Wiki:About" title="Wiki:About">About Wiki</a></li>
+<li id="footer-places-disclaimer"><a href="http://www.seeedstudio.com/wiki/Wiki:General_disclaimer" title="Wiki:General disclaimer">Seeed Studio</a></li>
+</ul>
+<ul id="footer-icons" class="noprint">
+<li id="footer-poweredbyico">
+<a href="http://www.mediawiki.org/"><img src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+</li>
+</ul>
+<div style="clear:both"></div>
+</div>
+ 
+<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/load.php"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","ext.FancyBoxThumbs"], null, true);
+}</script>
+<script>
+var fbtFancyBoxOptions = {"openEffect":"elastic","closeEffect":"elastic","helpers":{"title":{"type":"inside"}}};
+</script>
+<script src="Grove%20-%20Gas%20Sensor%28MQ5%29%20-%20Wiki_files/load_002.php"></script>
+ <script type="text/javascript">/* CloudFlare analytics upgrade */
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"da95655101","applicationID":"5671388","transactionName":"YgFSNUEFWUIFVBdaX1tLcQJHDVhfS1YAR1laCh8XWgFA","queueTime":0,"applicationTime":795,"atts":"TkZRQwkfSkw=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-768.min.js"}</script>
+
+</body></html>

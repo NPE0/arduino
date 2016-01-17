@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<!--html5-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html style="" class=" js no-touch boxshadow opacity fontface svg inlinesvg svgclippaths no-ie8compat" lang="en"><!--<![endif]--><head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  	<meta charset="utf-8">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Temperature Web Panel and DHT22 sensor">
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum">
+	<script src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ga.js" async="" type="text/javascript"></script><script language="JavaScript" type="text/javascript" src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/script.js"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://forum.arduino.cc/Themes/arduinoWide";
+		var smf_images_url = "http://forum.arduino.cc/Themes/arduinoWide/images";
+		var smf_scripturl = "http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+	// ]]>
+</script>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-22581631-3']);
+	  _gaq.push(['_setDomainName', 'arduino.cc']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<title>Temperature Web Panel and DHT22 sensor - Arduino Forum</title>
+	<link rel="shortcut icon" type="image/x-icon" href="http://forum.arduino.cc/favicon.png">
+	<link rel="stylesheet" type="text/css" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/print.css" media="print">
+	<link rel="help" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=help" target="_blank">
+	<link rel="search" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=search">
+	<link rel="contents" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - RSS" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;type=rss;action=.xml">
+	<link rel="prev" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.0;prev_next=prev">
+	<link rel="next" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.0;prev_next=next">
+	<link rel="stylesheet" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/fonts.css" type="text/css">
+	<link rel="stylesheet" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/arduino-icons.css">
+	<link rel="stylesheet" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/animation.css"><!--[if IE 7]>
+	<link rel="stylesheet" href="https://id.arduino.cc//css/arduino-icons-ie7.css"><![endif]-->
+	<!--[if gte IE 9]><!-->
+	<link rel="stylesheet" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/foundation2.css" type="text/css">
+	<!--[endif]---->
+	<!--[if IE 8]>
+		<link rel='stylesheet' href='https://id.arduino.cc/css/foundation_ie8.css' type='text/css' />	
+	<![endif]-->
+	<link rel="stylesheet" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/typeplate.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/common.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/forum-style.css" type="text/css" media="screen">
+	
+	<script src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/custom.js"></script>
+
+	
+	<link rel="index" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;board=93.0"><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+			document.getElementById("upshrinkHeader2").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			var current_header_ic = false;
+
+			function shrinkHeaderIC(mode)
+			{
+				document.cookie = "upshrinkIC=" + (mode ? 1 : 0);
+				document.getElementById("upshrink_ic").src = smf_images_url + (mode ? "/expand.gif" : "/collapse.gif");
+
+				document.getElementById("upshrinkHeaderIC").style.display = mode ? "none" : "";
+
+				current_header_ic = mode;
+			}
+		// ]]></script>
+                  <script language="JavaScript" type="text/javascript" src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/mootools.js"></script>
+                  <script language="JavaScript" type="text/javascript" src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/menu.js"></script><link href="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/jquery.css" rel="stylesheet" type="text/css"><script src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/jquery.js"></script><script language="JavaScript" type="text/javascript" src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/t.js"></script></head>
+ <body style="padding-top: 40px;">
+
+
+<div style="display: block;" id="menuWings" class="fixed"></div>
+  <div id="wrapper">
+
+  
+<script>
+	var userAgent = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
+	if(userAgent.indexOf('mac')>0){
+		$("head").append('<style type="text/css">@-moz-document url-prefix() {h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, th a, th a:hover, h3 a:hover, h4 a:hover, h5 a:hover, #wikitext h2 a:hover, #wikitext h3 a:hover, #wikitext h4 a:hover {padding-bottom: 0.5em!important;} #pageheader .search input{font-family: "TyponineSans Regular 18";} #pagefooter .monospace{margin-top: -4px;} #navWrapper ul.left &gt; li{margin-top: -2px; padding-bottom: 2px;}#navWrapper ul.right &gt; li{margin-top: -5px; padding-bottom: 5px;}#navWrapper ul.right &gt; li ul{margin-top: 4px;} .slider-container .fixed-caption p{padding:8px 0 14px 0}}</style>');
+	}
+</script>
+
+<!--[if IE]>
+<link rel='stylesheet' href='https://id.arduino.cc//css/ie-monospace.css' type='text/css' />
+<![endif]-->
+
+<div id="menuWings" class="fixed"></div>
+
+<!--[if IE 8]>
+<div class="alert-box panel ie8alert">
+  <p><strong>Arduino.cc offers limited compatibility for Internet Explorer 8. Get a modern browser as Chrome, Firefox or Safari.</strong></p>
+  <a href="" class="close">&times;</a>
+</div>
+<![endif]-->
+
+<div id="pageheader">
+	<div class="row">
+		<div class="small-6 large-8 eight columns">
+			<div class="title"><a href="http://arduino.cc/">Arduino</a></div>
+		</div>
+		<div class="small-6 large-4 four columns search">
+			<div class="row collapse">
+				<form method="POST" action="index.php?action=search2" accept-charset="UTF-8" name="searchform"> 
+	<div class="small-12 twelve columns">
+		<i class="icon-search-2"></i>
+		<input name="search" placeholder="Search the Arduino Forum" type="text">
+		<input name="btnG" value="search" type="submit">
+	</div>
+</form>			</div>
+		</div>
+	</div>
+
+	<!--[if gte IE 9]><!-->
+	<div id="navWrapper" class="sticky fixed">
+	<!--[endif]---->
+	<!--[if IE 8]>
+		<div id="navWrapper">
+	<![endif]-->
+		<nav class="top-bar" data-options="is_hover:true">
+			<ul class="title-area">
+				<li class="name"></li>
+			</ul>
+
+			
+		<section class="top-bar-section">
+				<ul class="left">
+					<li style="display: block;" id="navLogo">
+						<a href="http://arduino.cc/">
+							<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/logo_46.png" alt="userpicture">
+						</a>
+					</li>
+					<li style="display: none;" id="navHome"><a href="http://arduino.cc/">Home</a></li>
+					<li class="has-dropdown not-click"><a href="#">Buy</a>
+						<ul class="dropdown"><li class="title back js-generated"><h5><a href="#"><span class="backArrow">Back</span></a></h5></li>
+							<li><a href="http://store.arduino.cc/ww/index.php">Store</a></li>
+							<li><a href="http://arduino.cc/en/Main/Buy">Distributors</a></li>
+						</ul>
+					</li>
+					<li><a href="http://arduino.cc/en/Main/Software">Download</a></li>
+					<li><a href="http://arduino.cc/en/Main/Products">Products</a></li>
+					<li class="has-dropdown not-click"><a href="#">Learning</a>
+						<ul class="dropdown"><li class="title back js-generated"><h5><a href="#"><span class="backArrow">Back</span></a></h5></li>
+							<li><a href="http://arduino.cc/en/Guide/HomePage">Getting started</a></li>
+							<li><a href="http://arduino.cc/en/Tutorial/HomePage">Examples</a></li>
+							<li><a href="http://playground.arduino.cc/">Playground</a></li>
+						</ul>
+					</li>
+					<li><a href="http://arduino.cc/en/Reference/HomePage">Reference</a></li>
+					<li class="has-dropdown active not-click"><a href="#">Support</a>
+						<ul class="dropdown"><li class="title back js-generated"><h5><a href="#"><span class="backArrow">Back</span></a></h5></li>
+							<li><a href="http://arduino.cc/en/Main/FAQ">FAQ</a></li>
+							<li><a href="http://forum.arduino.cc/">Forum</a></li>
+							<li><a href="http://arduino.cc/en/ContactUs">Contact Us</a></li>
+						</ul>
+					</li>
+					<li><a href="http://blog.arduino.cc/">Blog</a></li>
+				</ul>
+
+								<ul class="right">
+					<li><a href="https://id.arduino.cc/auth/login/?returnurl=http%3A%2F%2Fforum.arduino.cc%2Findex.php%3Ftopic%3D201803.0" class="cart">LOG IN</a></li>
+					<li><a href="https://id.arduino.cc/auth/signup" class="cart">SIGN UP</a></li>
+				</ul>
+							</section></nav>
+	</div>
+</div>
+
+
+
+<div id="mainarea">
+
+	<div id="userPosts">
+		<ul class="inline-list right">
+						<li><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=search;advanced">Advanced Search</a></li>
+		</ul>
+	</div>
+
+	
+<a name="top"></a>
+<a name="msg1487196"></a>
+<div><div id="navBreadCrumb"><span class="homeIcon"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/home_icon.gif" alt="home icon" title=" home icon " height="11" width="9"></a></span> | <a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;" class="nav">Arduino Forum</a>&nbsp;::&nbsp;<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;#14" class="nav">Products</a>&nbsp;::&nbsp;<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;board=93.0" class="nav">Arduino Yún</a>&nbsp;::&nbsp;Temperature Web Panel and DHT22 sensor</div></div>
+      <div class="msgMenu">
+			  <div class="nav" style="margin-bottom: 2px;"> <a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.0;prev_next=prev#new">« previous topic&nbsp;</a> <a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.0;prev_next=next#new">&nbsp;next topic »</a></div>
+      </div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="middletext" style="padding-bottom: 4px;" valign="bottom">Pages: [<b>1</b>]   &nbsp;&nbsp;<a href="#lastPost"><b>Go Down</b></a></td>
+		<td>
+      <div class="msgMenu">
+			  <div style="margin-bottom: -1px;">
+			  <table cellpadding="0" cellspacing="0">
+				  <tbody><tr><td>
+					  
+	<div class="right" id="forumActions">
+		<ul class="button-group">
+
+		<li><a class="small button" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=printpage;topic=201803.0" target="_blank">Print</a></li>
+		</ul>
+	</div>
+
+	
+				  </td></tr>
+			  </tbody></table>
+			  </div>
+      </div>
+		</td>
+	</tr>
+</tbody></table>
+						<div class="catbgf">
+						</div>
+<table class="tborder" style="border-bottom: 0;" cellpadding="3" cellspacing="0" border="0" width="100%">
+		<tbody><tr class="titlebg">
+				<td style="padding-left: 6px;" valign="middle" width="2%">
+						<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/normal_post.gif" alt="" align="bottom">
+				</td>
+				<td width="13%"> Author</td>
+				<td style="padding-left: 6px;" id="top_subject" valign="middle" width="85%">
+						Topic: Temperature Web Panel and DHT22 sensor &nbsp;(Read 584 times)
+				</td>
+		</tr>
+		<tr>
+				<td colspan="3" class="smalltext">0 Members and 1 Guest are viewing this topic.
+				</td>
+		</tr>
+</tbody></table>
+<form action="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=quickmod2;topic=201803.0" method="post" accept-charset="UTF-8" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('da5011c04156bb6d408cb11e32f74e14') : confirm('Are you sure you want to do this?');">
+<table class="bordercolor" cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr><td style="padding: 1px 1px 0 1px;">
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700" title="View the profile of raxpa">raxpa</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">Newbie</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 0</div>
+								<div class="memberPosts">Posts: 31</div>
+								
+								<div class="memberAvatar" style="overflow: auto; width: 100%;"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/raxpa.jpg" alt="" class="avatar" border="0" height="65" width="65"></div><div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1487196#msg1487196"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1487196">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1487196#msg1487196">Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b> on:</b> November 29, 2013, 09:46:19 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Hi everyone,<br>I'm really a newbie and I was try to get the temperature web panel example work with a dth22 sensor.<br>There is someone able to teach me how?<br>TIA</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1487196" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1488142"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=214565" title="View the profile of spirit1">spirit1</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">Newbie</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 0</div>
+								<div class="memberPosts">Posts: 16</div>
+								<div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=214565"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1488142#msg1488142"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1488142">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1488142#msg1488142">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #1 on:</b> November 30, 2013, 05:23:59 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">I suggest you to start with youtube, there's a lot of guides that show you how to make things work <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/smiley-wink.png" alt="smiley-wink" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1488142" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1494311"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700" title="View the profile of raxpa">raxpa</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">Newbie</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 0</div>
+								<div class="memberPosts">Posts: 31</div>
+								
+								<div class="memberAvatar" style="overflow: auto; width: 100%;"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/raxpa.jpg" alt="" class="avatar" border="0" height="65" width="65"></div><div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1494311#msg1494311"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1494311">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1494311#msg1494311">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #2 on:</b> December 04, 2013, 12:41:45 pm »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">I find out that ... if I'm using any Serial or 
+Console print(), println() or write() statements in setup(), they won't 
+show up when you open the serial monitor or Console connection<br><br>so every tutorial use this ... and i'm stuck</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1494311" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1495268"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=151442" title="View the profile of Federico Fissore">Federico Fissore</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">God Member</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 12</div>
+								<div class="memberPosts">Posts: 655</div>
+								<div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=151442"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495268#msg1495268"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1495268">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495268#msg1495268">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #3 on:</b> December 05, 2013, 05:26:37 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">I would suggest to start from something easier, like for example 04.Communication &gt; ASCIITable</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1495268" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1495346"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700" title="View the profile of raxpa">raxpa</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">Newbie</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 0</div>
+								<div class="memberPosts">Posts: 31</div>
+								
+								<div class="memberAvatar" style="overflow: auto; width: 100%;"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/raxpa.jpg" alt="" class="avatar" border="0" height="65" width="65"></div><div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495346#msg1495346"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1495346">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495346#msg1495346">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #4 on:</b> December 05, 2013, 06:40:39 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Thanks Federico... but in the meanwhile I'm 
+learning I just would like to know if there is a Class for DHT11, DHT22 
+working for arduino Yun and maybe use someone's else code to grab my 
+data...<br><br></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1495346" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1495563"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=151442" title="View the profile of Federico Fissore">Federico Fissore</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">God Member</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 12</div>
+								<div class="memberPosts">Posts: 655</div>
+								<div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=151442"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495563#msg1495563"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1495563">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495563#msg1495563">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #5 on:</b> December 05, 2013, 09:29:24 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Google brought me here <a href="http://www.adafruit.com/products/385#Learn" target="_blank" rel="nofollow">http://www.adafruit.com/products/385#Learn</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1495563" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1495645"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700" title="View the profile of raxpa">raxpa</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">Newbie</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 0</div>
+								<div class="memberPosts">Posts: 31</div>
+								
+								<div class="memberAvatar" style="overflow: auto; width: 100%;"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/raxpa.jpg" alt="" class="avatar" border="0" height="65" width="65"></div><div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495645#msg1495645"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/exclamation.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1495645">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495645#msg1495645">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #6 on:</b> December 05, 2013, 10:46:19 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Finally works, that's my code<br><br><div class="codeheader">Code:</div><div class="code"><pre style="margin-top: 0; display: inline;">// Example testing sketch for various DHT humidity/temperature sensors<br>// Written by ladyada, public domain<br>#include &lt;Console.h&gt;<br>#include "DHT.h"<br><br>#define DHTPIN 2&nbsp; &nbsp; &nbsp;// what pin we're connected to<br><br>// Uncomment whatever type you're using!<br>//#define DHTTYPE DHT11&nbsp; &nbsp;// DHT 11 <br>#define DHTTYPE DHT22&nbsp; &nbsp;// DHT 22&nbsp; (AM2302)<br>//#define DHTTYPE DHT21&nbsp; &nbsp;// DHT 21 (AM2301)<br><br>// Connect pin 1 (on the left) of the sensor to +5V<br>// Connect pin 2 of the sensor to whatever your DHTPIN is<br>// Connect pin 4 (on the right) of the sensor to GROUND<br>// Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor<br><br>DHT dht(DHTPIN, DHTTYPE);<br><br>void setup() {<br>&nbsp; Bridge.begin();<br>&nbsp; Console.begin(); <br>&nbsp; while (!Console){<br>&nbsp; &nbsp; ; // wait for Console port to connect.<br>&nbsp; }<br>&nbsp; Console.println("You're connected to the Console!!!!");<br>&nbsp; Console.println("DHTxx test!");<br>&nbsp; <br>&nbsp; dht.begin();<br>}<br><br>void loop() {<br>&nbsp; // Reading temperature or humidity takes about 250 milliseconds!<br>&nbsp; // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)<br>&nbsp; float h = dht.readHumidity();<br>&nbsp; float t = dht.readTemperature();<br><br>&nbsp; // check if returns are valid, if they are NaN (not a number) then something went wrong!<br>&nbsp; if (isnan(t) || isnan(h)) {<br>&nbsp; &nbsp; Console.println("Failed to read from DHT");<br>&nbsp; } else {<br>&nbsp; &nbsp; Console.print("Humidity: "); <br>&nbsp; &nbsp; Console.print(h);<br>&nbsp; &nbsp; Console.print(" %\t");<br>&nbsp; &nbsp; Console.print("Temperature: "); <br>&nbsp; &nbsp; Console.print(t);<br>&nbsp; &nbsp; Console.println(" *C");<br>&nbsp; &nbsp; delay(5000); // Poll every 50ms<br>&nbsp; }<br>&nbsp; <br>}<br><br></pre></div><br>Most of the example the work with serial.print so in order to fix it I managed with console print!!!<br>Thank's Federico for your help<br></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1495645" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1495672"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=151442" title="View the profile of Federico Fissore">Federico Fissore</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">God Member</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 12</div>
+								<div class="memberPosts">Posts: 655</div>
+								<div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=151442"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495672#msg1495672"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1495672">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495672#msg1495672">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #7 on:</b> December 05, 2013, 11:05:16 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">nice job, well done ! <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/smiley.png" alt="smiley" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1495672" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg1495680"></a>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="16%">
+						<div class="profile">
+
+							<div class="memberName"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700" title="View the profile of raxpa">raxpa</a> <div class="genderIcon"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ghost.png">
+                </div>
+              </div>
+							<div class="profileText">
+								<div class="memberOnline"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span></div>
+								<div class="memberPostGroup">Newbie</div>
+								<div class="memberGroupStars"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/star.gif" alt="*" border="0"></div><div class="memberKarma">Karma: 0</div>
+								<div class="memberPosts">Posts: 31</div>
+								
+								<div class="memberAvatar" style="overflow: auto; width: 100%;"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/raxpa.jpg" alt="" class="avatar" border="0" height="65" width="65"></div><div class="memberIcons">
+								<div class="memberIM">
+								
+								
+								</div>
+								<div class="memberViewProfile"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=profile;u=220700"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/user.png" alt="View Profile" title="View Profile" border="0"></a></div></div>
+							</div></div>
+
+						</td>
+						<td height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495680#msg1495680"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div class="postSubject" id="subject_1495680">
+										<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg1495680#msg1495680">Re: Temperature Web Panel and DHT22 sensor</a>
+									</div>
+									<div class="postDate">« <b>Reply #8 on:</b> December 05, 2013, 11:08:57 am »</div></td>
+								<td class="postIconMenu" align="right" height="20" valign="bottom">	
+			<a href="#" class="increaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Bigger" align="middle"><b> Bigger</b></a>
+			<a href="#" class="decreaseFont"> <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Smaller" align="middle"><b> Smaller</b></a>
+			<a href="#" class="resetFont"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/edit-size-up.png" alt=" Reset" align="middle"><b> Reset</b></a>
+		
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Però la pappa pronta non me l'hai passata&nbsp; <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/smiley-razz.png" alt="smiley-razz" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" width="100%">
+								</td>
+							</tr><tr>
+								<td class="postLastModified" id="modified_1495680" valign="bottom">
+								</td>
+								<td class="postReportIp" align="right" valign="bottom">
+									<img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/ip.gif" alt="" border="0">
+									Logged
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+<tr>
+<td class="windowbg3"><br>
+</td>
+</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</tbody></table>
+<a name="lastPost"></a>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="middletext">Pages: [<b>1</b>]   &nbsp;&nbsp;<a href="#top"><b>Go Up</b></a></td>
+		<td class="msgMenu">
+			<table cellpadding="0" cellspacing="0">
+				<tbody><tr><td>
+					
+	<div class="right" id="forumActions">
+		<ul class="button-group">
+
+		<li><a class="small button" href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;action=printpage;topic=201803.0" target="_blank">Print</a></li>
+		</ul>
+	</div>
+
+	
+				</td></tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+<script language="JavaScript" type="text/javascript" src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 201803;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="da5011c04156bb6d408cb11e32f74e14" /><input type="hidden" name="topic" value="201803" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'da5011c04156bb6d408cb11e32f74e14\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 584 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table style="margin-bottom: 1ex;" cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tbody><tr>
+		</tr>
+</tbody></table>
+      <div class="msgMenu">
+			  <div class="nav" style="margin-bottom: 2px;"> <a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.0;prev_next=prev#new">« previous topic&nbsp;</a> <a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;topic=201803.0;prev_next=next#new">&nbsp;next topic »</a></div>
+      </div><div><div id="navBreadCrumb"><span class="homeIcon"><a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;"><img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/home_icon.gif" alt="home icon" title=" home icon " height="11" width="9"></a></span> | <a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;" class="nav">Arduino Forum</a>&nbsp;::&nbsp;<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;#14" class="nav">Products</a>&nbsp;::&nbsp;<a href="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;board=93.0" class="nav">Arduino Yún</a>&nbsp;::&nbsp;Temperature Web Panel and DHT22 sensor</div></div>
+	<table class="topicMenu" cellpadding="0" cellspacing="0" border="0">
+		<tbody><tr><td>
+			
+	<div class="right" id="forumActions">
+		<ul class="button-group">
+
+		
+		</ul>
+	</div>
+
+	
+		</td></tr>
+	</tbody></table>
+</form>
+<div class="tborder"><div class="titlebg2" style="padding: 4px;" align="right">
+	<form action="http://forum.arduino.cc/index.php?PHPSESSID=mi05fll1drtrn79lbvfndpvvs7&amp;" method="get" accept-charset="UTF-8" style="padding:0; margin: 0;">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#1">General Category</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=1.0"> =&gt; General Discussion</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Using Arduino</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=2.0"> =&gt; Installation &amp; Troubleshooting</option>
+			<option value="?board=3.0"> =&gt; Project Guidance</option>
+			<option value="?board=4.0"> =&gt; Programming Questions</option>
+			<option value="?board=5.0"> =&gt; General Electronics</option>
+			<option value="?board=6.0"> =&gt; LEDs and Multiplexing</option>
+			<option value="?board=7.0"> =&gt; Displays</option>
+			<option value="?board=8.0"> =&gt; Audio</option>
+			<option value="?board=9.0"> =&gt; Motors, Mechanics, and Power</option>
+			<option value="?board=10.0"> =&gt; Sensors</option>
+			<option value="?board=11.0"> =&gt; Networking, Protocols, and Devices</option>
+			<option value="?board=12.0"> =&gt; Interfacing w/ Software on the Computer </option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Topics</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=13.0"> =&gt; E-Textiles and Craft</option>
+			<option value="?board=14.0"> =&gt; Robotics</option>
+			<option value="?board=15.0"> =&gt; Science and Measurement</option>
+			<option value="?board=16.0"> =&gt; Home Automation and Networked Objects</option>
+			<option value="?board=17.0"> =&gt; Device Hacking</option>
+			<option value="?board=18.0"> =&gt; Education and Teaching</option>
+			<option value="?board=19.0"> =&gt; Interactive Art</option>
+			<option value="?board=20.0"> =&gt; Product Design</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=21.0"> =&gt; Suggestions for the Arduino Project</option>
+			<option value="?board=22.0"> =&gt; Other Hardware Development</option>
+			<option value="?board=23.0"> =&gt; Other Software Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Community</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=24.0"> =&gt; Website and Forum</option>
+			<option value="?board=25.0"> =&gt; Products and Services</option>
+			<option value="?board=26.0"> =&gt; Gigs and Collaborations</option>
+			<option value="?board=27.0"> =&gt; Workshops and Events</option>
+			<option value="?board=28.0"> =&gt; Local Groups</option>
+			<option value="?board=29.0"> =&gt; Exhibition / Gallery</option>
+			<option value="?board=30.0"> =&gt; Bar Sport</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">International</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=31.0"> =&gt; Deutsch</option>
+			<option value="?board=32.0"> =&gt; Español</option>
+			<option value="?board=33.0"> =&gt; Français</option>
+			<option value="?board=34.0"> =&gt; Italiano</option>
+			<option value="?board=35.0"> =&gt; Portugues</option>
+			<option value="?board=36.0"> =&gt; Scandinavia</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#12">Forum 2005-2010 (read only)</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=37.0"> ===&gt; Uno Punto Zero</option>
+			<option value="?board=38.0"> ===&gt; Bar Sport</option>
+			<option value="?board=39.0"> ===&gt; Frequently-Asked Questions</option>
+			<option value="?board=40.0"> ===&gt; News</option>
+			<option value="?board=41.0"> ===&gt; Exhibition</option>
+			<option value="?board=42.0"> ===&gt; Workshops</option>
+			<option value="?board=43.0"> ===&gt; Interfacing</option>
+			<option value="?board=44.0"> ===&gt; Bugs &amp; Suggestions</option>
+			<option value="?board=45.0"> ===&gt; Development</option>
+			<option value="?board=46.0"> ===&gt; Troubleshooting</option>
+			<option value="?board=47.0"> ===&gt; Portugues</option>
+			<option value="?board=48.0"> ===&gt; Deutsch</option>
+			<option value="?board=49.0"> ===&gt; Español</option>
+			<option value="?board=50.0"> ===&gt; Français</option>
+			<option value="?board=51.0"> ===&gt; Italiano</option>
+			<option value="?board=52.0"> ===&gt; Scandinavia</option>
+			<option value="?board=53.0"> ===&gt; Development</option>
+			<option value="?board=54.0"> ===&gt; Interfacing</option>
+			<option value="?board=55.0"> ===&gt; Syntax &amp; Programs</option>
+			<option value="?board=56.0"> ===&gt; Bugs &amp; Suggestions</option>
+			<option value="?board=57.0"> ===&gt; Troubleshooting</option>
+			<option value="?board=58.0"> ===&gt; Report Spam at Arduino.cc</option>
+			<option value="?board=59.0"> ===&gt; Forum</option>
+			<option value="?board=60.0"> ===&gt; Playground Wiki</option>
+			<option value="?board=61.0"> =&gt; General</option>
+			<option value="?board=62.0"> =&gt; Hardware</option>
+			<option value="?board=63.0"> =&gt; Software</option>
+			<option value="?board=64.0"> =&gt; International</option>
+			<option value="?board=65.0"> =&gt; Web/Forum/Email/Spam</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Using Arduino</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=66.0"> =&gt; Storage</option>
+			<option value="?board=67.0"> =&gt; Microcontrollers</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">International</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=72.0"> ===&gt; Humor y Debate</option>
+			<option value="?board=73.0"> ===&gt; Talleres, Encuentros, ...</option>
+			<option value="?board=74.0"> ===&gt; Tutoriels et cours</option>
+			<option value="?board=75.0"> ===&gt; Réalisations et Projets Finis</option>
+			<option value="?board=76.0"> ===&gt; Le bar</option>
+			<option value="?board=77.0"> =&gt; Nederlands</option>
+			<option value="?board=78.0"> ===&gt; Software</option>
+			<option value="?board=79.0"> ===&gt; Hardware</option>
+			<option value="?board=80.0"> ===&gt; Proyectos</option>
+			<option value="?board=81.0"> ===&gt; Documentación</option>
+			<option value="?board=82.0"> =&gt; India</option>
+			<option value="?board=83.0"> ===&gt; Hardware</option>
+			<option value="?board=84.0"> ===&gt; Software</option>
+			<option value="?board=85.0"> ===&gt; Megatopic</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#14">Products</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=86.0"> =&gt; The Arduino Starter Kit</option>
+			<option value="?board=87.0"> =&gt; Arduino Due</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">International</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=88.0"> ===&gt; Generale</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#14">Products</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=89.0"> =&gt; Arduino Esplora</option>
+			<option value="?board=90.0"> =&gt; Arduino GSM Shield</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#15">Maker Faire Rome - The European Edition</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=91.0"> =&gt; Makers</option>
+			<option value="?board=92.0"> =&gt; Events and Tour</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#14">Products</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=93.0" selected="selected"> =&gt; Arduino Yún</option>
+		</select>&nbsp;
+		<input value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://forum.arduino.cc/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" type="button">
+	</form>
+</div></div><br>
+			<div id="footerarea">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.19</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF © 2013, Simple Machines</a>
+		</span>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			window.addEventListener("load", smf_codeFix, false);
+			function smf_codeFix()
+			{
+				var codeFix = document.getElementsByTagName ? document.getElementsByTagName("div") : document.all.tags("div");
+
+				for (var i = 0; i < codeFix.length; i++)
+				{
+					if (codeFix[i].className == "code" && (codeFix[i].scrollWidth > codeFix[i].clientWidth || codeFix[i].clientWidth == 0))
+						codeFix[i].style.overflow = "scroll";
+				}
+			}
+		// ]]></script>
+	  </div>
+    </div>
+    </div>
+           <br><style>.pagefooter a { color: white !important; }</style><div id="pagefooter" class="pagefooter">
+  <div class="row">
+    <div class="large-8 eight columns">
+      <div class="large-4 four columns newsletter-box">
+        <!-- Begin MailChimp Signup Form -->
+        <h6>Newsletter</h6>
+        <form action="http://arduino.us5.list-manage.com/subscribe/post?u=0140d17584d1c002bcd94d0e8&amp;id=69a7d1abe4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+          <input name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email to sign up" required="" type="email">
+          <i class="icon-right-small"></i>
+          <input value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="newsletter-button" type="submit">
+        </form>
+        <!--End mc_embed_signup-->
+      </div>
+      <div class="clearfix"></div>
+      <ul class="inline-list">
+        <li class="monospace">©2014 Arduino</li>
+        <li><a href="http://arduino.cc/en/Main/CopyrightNotice">Copyright Notice</a></li>
+        <li><a href="http://arduino.cc/en/Main/ContactUs">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="large-4 four columns">
+      <ul id="arduinoSocialLinks" class="arduino-social-links">
+        <li>
+          <a href="https://twitter.com/arduino">
+            <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/twitter.png">
+          </a>
+        </li>
+        <li>
+          <a href="http://www.facebook.com/official.arduino">
+            <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/facebook.png">
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/+Arduino">
+            <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/gplus.png">
+          </a>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/arduino_cc">
+            <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/flickr.png">
+          </a>
+        </li>
+        <li>
+          <a href="http://youtube.com/arduinoteam">
+            <img src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/youtube.png">
+          </a>
+        </li>
+      </ul>
+    </div>    
+  </div>
+</div>
+
+	<div id="ajax_in_progress" style="display: none;">Loading...</div>	
+	<!--[if gte IE 9]><!-->
+	<script src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/foundation.js"></script>
+	<script src="Temperature%20Web%20Panel%20and%20DHT22%20sensor%20-%20Arduino%20Forum_files/foundation_002.js"></script>
+	<script>
+	  $(document).foundation();
+	</script>
+	<!--<![endif]-->
+	<!--[if IE 8]>
+	<script src="https://id.arduino.cc/js/foundation_ie8.min.js"></script>
+	<script src="https://id.arduino.cc/js/jquery.foundation.alerts.js"></script>
+	<script src="https://id.arduino.cc/js/app.js"></script>
+	<![endif]-->
+	
+ 
+
+
+</body></html>
