@@ -1,16 +1,8 @@
 #include <LiquidCrystal.h>
 #include "dht.h"
+#include "EEPROMAnything.h"
 
-dht DHT;
 
-#define DHT22_PIN 6
-#define BRIGHT_PIN 10
-#define BRIGHT_CONTROL_PIN 8
-
-//#define SERIAL_ON 1
-
-   // initialize the library with the numbers of the interface pins
-  LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
   byte degree[8] = {
     0b11000,
     0b11000,
@@ -159,9 +151,21 @@ dht DHT;
 #define BR_RIGHT_UP 6
 #define BR_RIGHT_DOWN 7
 
+/////////////HARD ////////////////
+dht DHT;
 
-  
-int bright_state=20;
+#define DHT22_PIN 6
+#define BRIGHT_PIN 10
+#define BRIGHT_CONTROL_PIN 8
+
+//#define SERIAL_ON 1
+
+   // initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+//////////BRIGHT_CONTROL///////////////
+ 
+
 #define BRIGHT_100 150
 #define BRIGHT_0 0
 #define BRIGHT_STEP 5
@@ -171,10 +175,24 @@ int bright_state=20;
 #define STATE_PRINT_LCD 0
 #define STATE_BRIGHT_CONTROL 1
 
+///////////CONFIG///////////////
+struct config_t
+{
+    int brightness=20;
+} configuration;
+
+
+
+
 void setup() {
 
+  EEPROM_readAnything(0, configuration);
+  if (configuration.brightness<0)configuration.brightness=20;
+  
   pinMode(BRIGHT_PIN, OUTPUT);
-  analogWrite(BRIGHT_PIN, getBrightLevel(bright_state));
+  analogWrite(BRIGHT_PIN, getBrightLevel(configuration.brightness));
+ 
+  
   pinMode(BRIGHT_CONTROL_PIN, INPUT);
   
  // set up the LCD's number of columns and rows:
@@ -223,28 +241,35 @@ void loop() {
     buttonState =digitalRead(BRIGHT_CONTROL_PIN);
     if (buttonState==HIGH){
 
-        bright_state =bright_state+pow(-1,brightDirect)* BRIGHT_STEP;
+        
+        
+        int brightness =configuration.brightness+pow(-1,brightDirect)* BRIGHT_STEP;
 
-        if (bright_state>100){
-          bright_state=100;
+        if (brightness>100){
+          brightness=100;
           brightDirect=1;
         }
 
-        if (bright_state<0){
-          bright_state=0;
+        if (brightness<0){
+          brightness=0;
           brightDirect=0;
         }
 
         #ifdef SERIAL_ON
-          Serial.print(getBrightLevel(bright_state));
+          Serial.print(getBrightLevel(brightness));
           Serial.println();
         #endif
         
         
-        analogWrite(BRIGHT_PIN, getBrightLevel(bright_state));  
+        analogWrite(BRIGHT_PIN, getBrightLevel(brightness));  
+
+        saveBrighness(brightness);
         
-        printBrighnessState();
+        printBrighnessState(brightness);
+        
         state =STATE_BRIGHT_CONTROL;
+        
+    
         
         bri_prev_time =micros();
         delay(250);
@@ -283,11 +308,18 @@ void loop() {
 
 }
 
-/**Возврат уровня ШИМ для текущего значения яркости*/
-int getBrightLevel(int percent){
-  return  1.0* BRIGHT_0+ 1.0* percent*BRIGHT_PERCENT;
-}
 
+
+
+/**Возврат уровня ШИМ для текущего значения яркости*/
+int getBrightLevel(int brightness_percent){
+  return  1.0* BRIGHT_0+ 1.0* brightness_percent*BRIGHT_PERCENT;
+}
+  
+  void saveBrighness(int brightness){
+     configuration.brightness =brightness;
+     EEPROM_writeAnything(0, configuration);
+   }
 
 
 char* header= " B\1A\2H. TEM\3. ";
@@ -355,7 +387,7 @@ void printLCD(int chk){
 }
 
 
-void printBrighnessState(){
+void printBrighnessState(int brightness){
 
 
   if (state!=STATE_BRIGHT_CONTROL){
@@ -385,13 +417,12 @@ void printBrighnessState(){
   }
 
 
- 
   lcd.setCursor(1, 1);
   lcd.print("      ");
- lcd.print(bright_state);
- if (bright_state<10){
+  lcd.print(brightness);
+ if (brightness<10){
   lcd.print("       ");
- }else if (bright_state<100){
+ }else if (brightness<100){
   lcd.print("      ");
  }else{
   lcd.print("     ");
