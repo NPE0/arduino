@@ -7,7 +7,7 @@ dht DHT;
 #define BRIGHT_PIN 10
 #define BRIGHT_CONTROL_PIN 8
 
-#define SERIAL_ON 1
+//#define SERIAL_ON 1
 
    // initialize the library with the numbers of the interface pins
   LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
@@ -118,19 +118,58 @@ dht DHT;
     0b00000
   }; 
 
+ byte up_arr[8] = {
+    0b00100,
+    0b01110,
+    0b10101,
+    0b10101,
+    0b00100,
+    0b00100,
+    0b00100,
+    0b00000
+  }; 
 
+ byte down_arr[8] = {
+    0b00100,
+    0b00100,
+    0b00100,
+    0b10101,
+    0b10101,
+    0b01110,
+    0b00100,
+    0b00000
+  }; 
+
+//символы
+//group 1
 #define CYR_L 1
 #define CYR_Z 2
 #define CYR_P 3
-#define CYR_YA 8
-#define CYR_SS 9
 
+//group 2
+#define CYR_YA 1
+#define CYR_SS 2
+
+#define UP_ARR 3
+#define DOWN_ARR 8
+
+//group3 
+#define BR_LEFT_UP 4
+#define BR_LEFT_DOWN 5
+#define BR_RIGHT_UP 6
+#define BR_RIGHT_DOWN 7
+
+
+  
 int bright_state=20;
 #define BRIGHT_100 150
 #define BRIGHT_0 0
 #define BRIGHT_STEP 5
 #define BRIGHT_PERCENT (BRIGHT_100 -BRIGHT_0)/100.0
 
+#define STATE_START -1
+#define STATE_PRINT_LCD 0
+#define STATE_BRIGHT_CONTROL 1
 
 void setup() {
 
@@ -140,13 +179,8 @@ void setup() {
   
  // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
-
+  lcd.clear();
   
-  lcd.createChar(0, degree);
- 
-  
- 
-
  
 
   printBrackets();
@@ -178,7 +212,10 @@ uint32_t bri_prev_time=0;
 int chk;
 
 // -1 - start 0- print temp, 1-set brighness
-int state=-1;
+int state= STATE_START;
+  
+
+
 
 void loop() {
 
@@ -199,22 +236,22 @@ void loop() {
         }
 
         #ifdef SERIAL_ON
-        Serial.print(getBrightLevel(bright_state));
-        Serial.println();
+          Serial.print(getBrightLevel(bright_state));
+          Serial.println();
         #endif
         
         
         analogWrite(BRIGHT_PIN, getBrightLevel(bright_state));  
         
         printBrighnessState();
-        state =1;
+        state =STATE_BRIGHT_CONTROL;
         
         bri_prev_time =micros();
         delay(250);
         return;
       }
       
-      if (state ==1 ){
+      if (state == STATE_BRIGHT_CONTROL ){
         if (micros() -bri_prev_time  <1000000){
           return;
         }
@@ -237,7 +274,7 @@ void loop() {
         printSerial(chk,start,stop); 
       #endif
       
-      state=0;  
+      state=STATE_PRINT_LCD;  
       lcd_prev_time =micros();
     }
 
@@ -256,7 +293,7 @@ int getBrightLevel(int percent){
 char* header= " B\1A\2H. TEM\3. ";
 
 void printHeader(bool anim){
-  if (state==0){
+  if (state==STATE_PRINT_LCD){
     return;
   }
  
@@ -296,7 +333,8 @@ void printLCD(int chk){
     case DHTLIB_OK:
         
         lcd.print(" ");
-        lcd.print(DHT.humidity,1);lcd.print("%  ");
+        lcd.print(DHT.humidity,1);
+        lcd.print("%  ");
         lcd.print(DHT.temperature,1);
         lcd.write((byte)0);
         lcd.print(" ");
@@ -318,19 +356,34 @@ void printLCD(int chk){
 
 
 void printBrighnessState(){
-  lcd.createChar(CYR_YA, cyr_ya);
-  lcd.createChar(CYR_SS, cyr_ss);
 
-  if (state!=1){
+
+  if (state!=STATE_BRIGHT_CONTROL){
     printBrackets() ;
+
+
+    lcd.createChar(CYR_YA,   cyr_ya);
+    lcd.createChar(CYR_SS,   cyr_ss);
+    lcd.createChar(UP_ARR,   up_arr);
+    lcd.createChar(DOWN_ARR, down_arr);
+
     
     lcd.setCursor(1, 0);
     lcd.print("   ");
     lcd.write(CYR_YA);
     lcd.print("PKOCT");
     lcd.write(CYR_SS);
-    lcd.write(":   ");
+
+    lcd.write("    ");
   }
+
+  lcd.setCursor(12, 0);
+  if (brightDirect==0){
+    lcd.write((byte)UP_ARR);
+  }else{
+    lcd.write((byte)DOWN_ARR);      
+  }
+
 
  
   lcd.setCursor(1, 1);
@@ -348,19 +401,20 @@ void printBrighnessState(){
 }
 
 void printBrackets(){
-   lcd.createChar(4, bigs_upL);
-  lcd.createChar(5, bigs_doL);
-  lcd.createChar(6, bigs_upR);
-  lcd.createChar(7, bigs_doR);
-  
-   lcd.setCursor(0, 0);
-  lcd.write((byte)4);
+  lcd.createChar(BR_LEFT_UP,     bigs_upL);
+  lcd.createChar(BR_LEFT_DOWN,   bigs_doL);
+  lcd.createChar(BR_RIGHT_UP,    bigs_upR);
+  lcd.createChar(BR_RIGHT_DOWN,  bigs_doR);
+
+ 
+  lcd.setCursor(0, 0);
+  lcd.write(BR_LEFT_UP);
   lcd.setCursor(0, 1);
-  lcd.write((byte)5);
+  lcd.write(BR_LEFT_DOWN);
   lcd.setCursor(15, 0);
-  lcd.write((byte)6);
+  lcd.write(BR_RIGHT_UP);
   lcd.setCursor(15, 1);
-  lcd.write((byte)7);
+  lcd.write(BR_RIGHT_DOWN);
 }
 
 
