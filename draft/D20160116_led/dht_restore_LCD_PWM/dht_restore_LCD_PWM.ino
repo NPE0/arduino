@@ -239,11 +239,16 @@ void loop() {
 
   
     buttonState =digitalRead(BRIGHT_CONTROL_PIN);
+    
     if (buttonState==HIGH){
 
+      int brightness =configuration.brightness;
+
+      //cрабатывание на второй раз
+        if (state ==STATE_BRIGHT_CONTROL){
+          brightness =brightness+pow(-1,brightDirect)* BRIGHT_STEP;
+        }
         
-        
-        int brightness =configuration.brightness+pow(-1,brightDirect)* BRIGHT_STEP;
 
         if (brightness>100){
           brightness=100;
@@ -263,7 +268,9 @@ void loop() {
         
         analogWrite(BRIGHT_PIN, getBrightLevel(brightness));  
 
-        saveBrighness(brightness);
+        if (state ==STATE_BRIGHT_CONTROL){
+          saveBrighness(brightness);
+        }
         
         printBrighnessState(brightness);
         
@@ -272,7 +279,7 @@ void loop() {
     
         
         bri_prev_time =micros();
-        delay(250);
+        delay(200);
         return;
       }
       
@@ -316,10 +323,13 @@ int getBrightLevel(int brightness_percent){
   return  1.0* BRIGHT_0+ 1.0* brightness_percent*BRIGHT_PERCENT;
 }
   
-  void saveBrighness(int brightness){
-     configuration.brightness =brightness;
-     EEPROM_writeAnything(0, configuration);
-   }
+
+
+/**Сохраняет уровень яркости во внутреннюю память*/
+void saveBrighness(int brightness){
+  configuration.brightness =brightness;
+  EEPROM_writeAnything(0, configuration);
+}
 
 
 char* header= " B\1A\2H. TEM\3. ";
