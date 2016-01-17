@@ -246,7 +246,12 @@ void loop() {
 
       //cрабатывание на второй раз
         if (state ==STATE_BRIGHT_CONTROL){
-          brightness =brightness+pow(-1,brightDirect)* BRIGHT_STEP;
+          
+          if (brightness<15){
+            brightness =brightness+pow(-1,brightDirect);
+          }else{
+            brightness =brightness+pow(-1,brightDirect)* BRIGHT_STEP;
+          }
         }
         
 
@@ -431,11 +436,11 @@ void printBrighnessState(int brightness){
   lcd.print("      ");
   lcd.print(brightness);
  if (brightness<10){
-  lcd.print("       ");
+  lcd.print("%      ");
  }else if (brightness<100){
-  lcd.print("      ");
+  lcd.print("%     ");
  }else{
-  lcd.print("     ");
+  lcd.print("%    ");
   }
   
   
