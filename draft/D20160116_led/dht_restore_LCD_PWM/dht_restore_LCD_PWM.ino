@@ -134,9 +134,9 @@
 
 //символы
 //group 1
-#define CYR_L 1
-#define CYR_Z 2
-#define CYR_P 3
+#define CYR_L '\1'
+#define CYR_Z '\2'
+#define CYR_P '\3'
 
 //group 2
 #define CYR_YA 1
@@ -345,7 +345,7 @@ void printHeader(bool anim){
   }
  
   lcd.createChar(0, degree);
-  lcd.createChar(1, cyr_l);
+  lcd.createChar(CYR_L, cyr_l);
   lcd.createChar(CYR_Z, cyr_z);
   lcd.createChar(CYR_P, cyr_p);
   
